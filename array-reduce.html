@@ -41,45 +41,33 @@
             </button>
         </header>
 
-        <article class="example-card" id="example-reduce">
-            <h2>Array Reduce: No initial value</h2>
-            <p class="description">We use <code>reduce</code> to reduce array of strings into a single string
-                (concatenates all strings). When we don't have an initial value, the first element is used as the
-                initial value. Reduce starts from the second element and applies the callback function to each element.
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
+        <code-explainer id="example-reduce">
+            <h2 slot="title">Array Reduce: No initial value</h2>
+            <div slot="description">
+                <p>We use <code>reduce</code> to reduce array of strings into a single string
+                    (concatenates all strings). When we don't have an initial value, the first element is used as the
+                    initial value. Reduce starts from the second element and applies the callback function to each
+                    element.
+                </p>
+            </div>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
 const sentence = words.reduce(
     (accumulator, word) => {
         return accumulator + " " + word;
     }
 );</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <!-- Variables will be injected here -->
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+        </code-explainer>
 
-        <article class="example-card" id="example-reduce-even-count">
-            <h2>Array Reduce: with initial value</h2>
-            <p class="description">We use <code>reduce</code> to count how many even numbers are in the array. Uses an
-                initial value of
-                <code>0</code> as we start counting from 0. Because we have initital value, reduce starts from the
-                first element.
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const numbers = [2, 5, 10, 7, 2];
+        <code-explainer id="example-reduce-even-count">
+            <h2 slot="title">Array Reduce: with initial value</h2>
+            <div slot="description">
+                <p>We use <code>reduce</code> to count how many even numbers are in the array. Uses an
+                    initial value of
+                    <code>0</code> as we start counting from 0. Because we have initital value, reduce starts from the
+                    first element.
+                </p>
+            </div>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const numbers = [2, 5, 10, 7, 2];
 const evenCount = numbers.reduce(
     (count, num) => {
         if (num % 2 === 0) {
@@ -90,19 +78,7 @@ const evenCount = numbers.reduce(
     },
     0
 );</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+        </code-explainer>
 
     </main>
 
@@ -115,6 +91,7 @@ const evenCount = numbers.reduce(
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 
+    <script src="code-explainer.js"></script>
     <script src="examples-array-reduce.js"></script>
     <script src="explainer.js"></script>
     <script src="theme.js"></script>

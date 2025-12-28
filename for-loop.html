@@ -41,70 +41,43 @@
             </button>
         </header>
 
-        <article class="example-card" id="example-for-loop-classic">
-            <h2>Classic For Loop</h2>
-            <p class="description">Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
-                starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
-                counter is less than 5, resulting in exactly 5 iterations (from 0 to 4).
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">for (let i = 0; i < 5; i++) {
+        <code-explainer id="example-for-loop-classic">
+            <h2 slot="title">Classic For Loop</h2>
+            <div slot="description">
+                <p>Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
+                    starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
+                    counter is less than 5, resulting in exactly 5 iterations (from 0 to 4).
+                </p>
+            </div>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">for (let i = 0; i < 5; i++) {
   console.log(i);
 }</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <!-- Variables will be injected here -->
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+        </code-explainer>
 
-        <article class="example-card" id="example-for-loop-array">
-            <h2>Iterating Through an Array</h2>
-            <p class="description">This example shows how to use the loop index <code>i</code> to access array
-                elements and
-                perform operations within the loop body.
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const names = ["Alice", "Bob", "Charlie", "David"];
+        <code-explainer id="example-for-loop-array">
+            <h2 slot="title">Iterating Through an Array</h2>
+            <div slot="description">
+                <p>This example shows how to use the loop index <code>i</code> to access array
+                    elements and perform operations within the loop body.
+                </p>
+            </div>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const names = ["Alice", "Bob", "Charlie", "David"];
 
 for (let i = 0; i < names.length; i++) {
   const name = names[i];
   const greetings = `Hello, ${name}`;
   console.log(greetings);
 }</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <!-- Variables will be injected here -->
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+        </code-explainer>
 
-        <article class="example-card" id="example-for-of-loop">
-            <h2>The <code>for..of</code> Loop</h2>
-            <p class="description">The <code>for..of</code> loop lets you iterate over arrays. It gives you direct
-                access to each element, always from first to last. It doesn't give you the index of the element.
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const results = [
+        <code-explainer id="example-for-of-loop">
+            <h2 slot="title">The <code>for..of</code> Loop</h2>
+            <div slot="description">
+                <p>The <code>for..of</code> loop lets you iterate over arrays. It gives you direct
+                    access to each element, always from first to last. It doesn't give you the index of the element.
+                </p>
+            </div>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const results = [
   { name: "Alice", score: 85 },
   { name: "Bob", score: 70 },
   { name: "Charlie", score: 92 }
@@ -117,20 +90,7 @@ for (const result of results) {
     passed.push(studentName);
   }
 }</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <!-- Variables will be injected here -->
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+        </code-explainer>
     </main>
 
     <!-- Prism JS -->
@@ -142,6 +102,7 @@ for (const result of results) {
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 
+    <script src="code-explainer.js"></script>
     <script src="examples-for-loop.js"></script>
     <script src="explainer.js"></script>
     <script src="theme.js"></script>
