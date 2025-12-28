@@ -67,6 +67,70 @@
             </div>
         </article>
 
+        <article class="example-card" id="example-for-loop-array">
+            <h2>Iterating Through an Array</h2>
+            <p class="description">This example shows how to use the loop index <code>i</code> to access array
+                elements and
+                perform operations within the loop body.
+            </p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const names = ["Alice", "Bob", "Charlie", "David"];
+
+for (let i = 0; i < names.length; i++) {
+  const name = names[i];
+  const greetings = `Hello, ${name}`;
+  console.log(greetings);
+}</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <!-- Variables will be injected here -->
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
+        <article class="example-card" id="example-for-of-loop">
+            <h2>The <code>for..of</code> Loop</h2>
+            <p class="description">The <code>for..of</code> loop lets you iterate over arrays. It gives you direct
+                access to each element, always from first to last. It doesn't give you the index of the element.
+            </p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const results = [
+  { name: "Alice", score: 85 },
+  { name: "Bob", score: 70 },
+  { name: "Charlie", score: 92 }
+];
+const passed = [];
+
+for (const result of results) {
+  if (result.score > 80) {
+    const studentName = result.name;
+    passed.push(studentName);
+  }
+}</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <!-- Variables will be injected here -->
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
     </main>
 
     <!-- Prism JS -->
