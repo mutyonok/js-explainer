@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Map - JS Concept Explainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Prism CSS -->
+    <link id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="app">
+        <header class="app-header">
+            <div class="header-content">
+                <a href="index.html" class="back-link">← Back to Concepts</a>
+                <h1>Array Map</h1>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <!-- Moon icon (for light mode) -->
+                <svg class="icon-moon" width="24" height="24">
+                    <use href="assets/moon.svg#icon-moon"></use>
+                </svg>
+                <!-- Sun icon (for dark mode) -->
+                <svg class="icon-sun" width="24" height="24">
+                    <use href="assets/sun.svg#icon-sun"></use>
+                </svg>
+            </button>
+        </header>
+
+        <article class="example-card" id="example-array-map">
+            <h2>Array Map</h2>
+            <p class="description">You can use map to transform an array of strings to array of their lengths. Note the
+                explicit return inside the map function.</p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const strings = ["apple", "banana", "cherry"];
+const lengths = strings.map((str) => {
+  return str.length;
+});</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
+        <article class="example-card" id="example-array-map-squares">
+            <h2>Array Map, example 2</h2>
+            <p class="description">We use <code>map</code> to transform an array of numbers to array of their squares.
+                Note the explicit <code>return</code> inside the callback function.</p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const numbers = [2, 3, 4];
+const squares = numbers.map((num) => {
+  return num * num;
+});</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
+        <article class="example-card" id="example-array-map-students">
+            <h2>Array Map: Implicit Return</h2>
+            <p class="description">We transform an array of student objects into an array of greetings.
+                This example uses an <b>arrow function with an implicit return</b>.
+                Implicit return is a short syntax where the result of the expression is automatically returned without
+                using the <code>return</code> keyword or curly braces.</p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const students = [
+  { name: "Alice", age: 20 },
+  { name: "Bob", age: 22 }
+];
+const greetings = students.map(student => `hello, ${student.name}!`);</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
+        <article class="example-card" id="example-array-map-songs">
+            <h2>Array Map: Song Titles</h2>
+            <p class="description">We transform an array of strings that represent songs in the format "Artist - Title"
+                into an array of just the titles.</p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const songs = ["Daft Punk - One More Time", "Justice - Genesis"];
+const titles = songs.map((song) => {
+  const artistAndTitle = song.split(" - ");
+  return artistAndTitle[1];
+});</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+
+    <script src="examples-array-map.js"></script>
+    <script src="explainer.js"></script>
+    <script src="theme.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
