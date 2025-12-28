@@ -1,29 +1,44 @@
 const exampleConfig = [
     {
-        id: "example-for-loop",
+        id: "example-for-loop-classic",
         steps: [
             { lines: "1", range: { text: "let i = 0" }, variables: { i: "undefined" }, description: "Loop initialization: let i = 0" },
-            { lines: "1", range: { text: "i < 10" }, variables: { i: 0 }, description: "Condition check: 0 < 10 is true." },
+            { lines: "1", range: { text: "i < 5" }, variables: { i: 0 }, description: "Condition check: 0 < 5 is true." },
             { lines: "2", variables: { i: 0 }, description: "Loop body executes." },
             { lines: "1", range: { text: "i++" }, variables: { i: 0 }, description: "Increment: i becomes 1." },
-            { lines: "1", range: { text: "i < 10" }, variables: { i: 1 }, description: "Condition check: 1 < 10 is true." },
+
+            { lines: "1", range: { text: "i < 5" }, variables: { i: 1 }, description: "Condition check: 1 < 5 is true." },
             { lines: "2", variables: { i: 1 }, description: "Loop body executes." },
-            // ... truncated for brevity in demo, user can extend
-            { lines: "1", range: { text: "i++" }, variables: { i: 1 }, description: "Increment: i becomes 2." }
+            { lines: "1", range: { text: "i++" }, variables: { i: 1 }, description: "Increment: i becomes 2." },
+
+            { lines: "1", range: { text: "i < 5" }, variables: { i: 2 }, description: "Condition check: 2 < 5 is true." },
+            { lines: "2", variables: { i: 2 }, description: "Loop body executes." },
+            { lines: "1", range: { text: "i++" }, variables: { i: 2 }, description: "Increment: i becomes 3." },
+
+            { lines: "1", range: { text: "i < 5" }, variables: { i: 3 }, description: "Condition check: 3 < 5 is true." },
+            { lines: "2", variables: { i: 3 }, description: "Loop body executes." },
+            { lines: "1", range: { text: "i++" }, variables: { i: 3 }, description: "Increment: i becomes 4." },
+
+            { lines: "1", range: { text: "i < 5" }, variables: { i: 4 }, description: "Condition check: 4 < 5 is true." },
+            { lines: "2", variables: { i: 4 }, description: "Loop body executes." },
+            { lines: "1", range: { text: "i++" }, variables: { i: 4 }, description: "Increment: i becomes 5." },
+
+            { lines: "1", range: { text: "i < 5" }, variables: { i: 5 }, description: "Condition check: 5 < 5 is FALSE. Loop ends." },
+            { lines: "3", description: "Browser steps out of the loop." }
         ]
     },
     {
         id: "example-array-map",
         steps: [
             { lines: "1", variables: {}, description: "1. Define source array." },
-            { lines: "2", variables: { strings: '["apple", "banana", "cherry"]' }, description: "2. Call map(). Map creates a NEW array." },
-            { lines: "2", range: { text: "str" }, variables: { str: '"apple"' }, description: "3. First iteration. str is 'apple'." },
+            { lines: "2", variables: { strings: '["apple", "banana", "cherry"]' }, description: "2. Call <code>map()</code>. Map creates a NEW array." },
+            { lines: "2", range: { text: "str" }, variables: { str: '"apple"' }, description: "3. First iteration. <code>str</code> is 'apple'." },
             { lines: "3", variables: { str: '"apple"' }, description: "4. Return length (5)." },
-            { lines: "2", range: { text: "str" }, variables: { str: '"banana"' }, description: "5. Second iteration. str is 'banana'." },
+            { lines: "2", range: { text: "str" }, variables: { str: '"banana"' }, description: "5. Second iteration. <code>str</code> is 'banana'." },
             { lines: "3", variables: { str: '"banana"' }, description: "6. Return length (6)." },
-            { lines: "2", range: { text: "str" }, variables: { str: '"cherry"' }, description: "7. Third iteration. str is 'cherry'." },
+            { lines: "2", range: { text: "str" }, variables: { str: '"cherry"' }, description: "7. Third iteration. <code>str</code> is 'cherry'." },
             { lines: "3", variables: { str: '"cherry"' }, description: "8. Return length (6)." },
-            { lines: "2", variables: { lengths: '[5, 6, 6]' }, description: "9. Map finishes. Returns new array." }
+            { lines: "2", variables: { lengths: '[5, 6, 6]' }, description: "9. Map finishes and returns new array. We save it in variable <code>lengths</code>." }
         ]
     },
     {

@@ -36,36 +36,12 @@
             </button>
         </header>
 
-        <article class="example-card" id="example-reduce">
-            <h2>Array Reduce</h2>
-            <p class="description">Reduces array of strings into a single string (concatenates all strings).</p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
-const sentence = words.reduce((accumulator, word) => {
-  return accumulator + " " + word;
-}, "");</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <!-- Variables will be injected here -->
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
-
-        <article class="example-card" id="example-for-loop">
+        <article class="example-card" id="example-for-loop-classic">
             <h2>Classic For Loop</h2>
-            <p class="description">Iterates 10 times. The condition is checked before each iteration.</p>
+            <p class="description">Iterates 5 times. The condition is checked before each iteration.</p>
             <div class="content-grid">
                 <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">for (let i = 0; i < 10; i++) {
+                    <pre class="line-numbers"><code class="language-javascript">for (let i = 0; i < 5; i++) {
   console.log(i);
 }</code></pre>
                 </figure>
@@ -85,7 +61,8 @@ const sentence = words.reduce((accumulator, word) => {
 
         <article class="example-card" id="example-array-map">
             <h2>Array Map</h2>
-            <p class="description">Map array of strings to array of their lengths. Note the explicit return.</p>
+            <p class="description">You can use map to transform an array of strings to array of their lengths. Note the
+                explicit return inside the map function.</p>
             <div class="content-grid">
                 <figure class="code-panel">
                     <pre class="line-numbers"><code class="language-javascript">const strings = ["apple", "banana", "cherry"];
@@ -128,6 +105,31 @@ const squares = numbers.map((num) => {
                 <button class="btn-next">Next Step</button>
             </div>
         </article>
+
+        <article class="example-card" id="example-reduce">
+            <h2>Array Reduce</h2>
+            <p class="description">Reduces array of strings into a single string (concatenates all strings).</p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
+const sentence = words.reduce((accumulator, word) => {
+  return accumulator + " " + word;
+}, "");</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <!-- Variables will be injected here -->
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
     </main>
 
     <!-- Prism JS -->

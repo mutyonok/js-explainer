@@ -54,9 +54,9 @@ class Explainer {
 
         // 1. Update Description & Button Text
         if (step) {
-            this.descEl.textContent = step.description;
+            this.descEl.innerHTML = step.description;
         } else {
-            this.descEl.textContent = this.originalDescription;
+            this.descEl.innerHTML = this.originalDescription;
         }
 
         // Update Button Text
