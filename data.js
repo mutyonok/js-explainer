@@ -31,14 +31,14 @@ const exampleConfig = [
         id: "example-array-map",
         steps: [
             { lines: "1", variables: {}, description: "1. Define source array." },
-            { lines: "2", variables: { strings: '["apple", "banana", "cherry"]' }, description: "2. Call <code>map()</code>. map() creates a NEW array and will fill it with values returned from the callback function." },
+            { lines: "2", variables: { strings: '["apple", "banana", "cherry"]' }, description: "2. Call <code>map()</code>. <code>map</code> creates a NEW array and will fill it with values returned from the callback function." },
             { lines: "2", range: { text: "str" }, variables: { str: '"apple"' }, description: "3. First iteration. <code>str</code> is 'apple'." },
             { lines: "3", variables: { str: '"apple"' }, description: "4. Return length (5). 5 is pushed to the new array." },
             { lines: "2", range: { text: "str" }, variables: { str: '"banana"' }, description: "5. Second iteration. <code>str</code> is 'banana'." },
             { lines: "3", variables: { str: '"banana"' }, description: "6. Return length (6). 6 is pushed to the new array." },
             { lines: "2", range: { text: "str" }, variables: { str: '"cherry"' }, description: "7. Third iteration. <code>str</code> is 'cherry'." },
             { lines: "3", variables: { str: '"cherry"' }, description: "8. Return length (6). 6 is pushed to the new array." },
-            { lines: "2", variables: { lengths: '[5, 6, 6]' }, description: "9. Map finishes and returns new array. We save it in variable <code>lengths</code>." }
+            { lines: "2", variables: { lengths: '[5, 6, 6]' }, description: "9. <code>map</code> finishes and returns new array. We save it in variable <code>lengths</code>." }
         ]
     },
     {
@@ -48,7 +48,7 @@ const exampleConfig = [
             {
                 "lines": "2",
                 "variables": { "numbers": "[2, 3, 4]" },
-                "description": "2. Call map(). map() creates a NEW array and will fill it with returned values from the callback function."
+                "description": "2. Call <code>map()</code>. <code>map</code> creates a NEW array and will fill it with returned values from the callback function."
             },
             {
                 "lines": "2",

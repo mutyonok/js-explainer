@@ -7,7 +7,9 @@
     <title>JS Concept Explainer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
 
     <!-- Prism CSS -->
     <link id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
@@ -38,7 +40,10 @@
 
         <article class="example-card" id="example-for-loop-classic">
             <h2>Classic For Loop</h2>
-            <p class="description">Iterates 5 times. The condition is checked before each iteration.</p>
+            <p class="description">Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
+                starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
+                counter is less than 5, resulting in exactly 5 iterations (from 0 to 4).
+            </p>
             <div class="content-grid">
                 <figure class="code-panel">
                     <pre class="line-numbers"><code class="language-javascript">for (let i = 0; i < 5; i++) {
@@ -85,7 +90,8 @@ const lengths = strings.map((str) => {
 
         <article class="example-card" id="example-array-map-squares">
             <h2>Array Map, example 2</h2>
-            <p class="description">Map array of numbers to array of their squares. Note the explicit return.</p>
+            <p class="description">We use <code>map</code> to transform an array of numbers to array of their squares.
+                Note the explicit <code>return</code> inside the callback function.</p>
             <div class="content-grid">
                 <figure class="code-panel">
                     <pre class="line-numbers"><code class="language-javascript">const numbers = [2, 3, 4];
@@ -108,7 +114,10 @@ const squares = numbers.map((num) => {
 
         <article class="example-card" id="example-reduce">
             <h2>Array Reduce: No initial value</h2>
-            <p class="description">Reduces array of strings into a single string (concatenates all strings).</p>
+            <p class="description">We use <code>reduce</code> to reduce array of strings into a single string
+                (concatenates all strings). When we don't have an initial value, the first element is used as the
+                initial value. Reduce starts from the second element and applies the callback function to each element.
+            </p>
             <div class="content-grid">
                 <figure class="code-panel">
                     <pre class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
@@ -132,8 +141,10 @@ const sentence = words.reduce((accumulator, word) => {
 
         <article class="example-card" id="example-reduce-even-count">
             <h2>Array Reduce: with initial value</h2>
-            <p class="description">Counts how many even numbers are in the array. Uses an initial value of
-                <code>0</code>.
+            <p class="description">We use <code>reduce</code> to count how many even numbers are in the array. Uses an
+                initial value of
+                <code>0</code> as we start counting from 0. Because we have initital value, reduce starts from the
+                first element.
             </p>
             <div class="content-grid">
                 <figure class="code-panel">

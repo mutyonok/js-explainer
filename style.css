@@ -228,7 +228,10 @@ body.light-theme .theme-toggle .icon-moon {
 }
 
 /* Prism Overrides & Custom Highlights */
-pre[class*="language-"] {
+pre[class*="language-"],
+code[class*="language-"],
+code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
     border-radius: 8px !important;
     border: 1px solid var(--prism-border);
     background: var(--prism-bg) !important;
@@ -269,7 +272,7 @@ pre[class*="language-"] {
 
 .variables-container {
     flex-grow: 1;
-    font-family: 'Fira Code', monospace;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
     /* Monospace for data */
     font-size: 0.9rem;
 }
