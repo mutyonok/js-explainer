@@ -1,0 +1,379 @@
+:root {
+    /* Dark Theme (Default) */
+    --bg-color: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-color: #e2e8f0;
+    --text-muted: #94a3b8;
+    --text-heading: #f8fafc;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --accent-bg-hover: rgba(56, 189, 248, 0.1);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+
+    --highlight-default-bg: rgba(255, 255, 0, 0.2);
+    --highlight-default-border: rgba(255, 255, 0, 0.5);
+
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+
+    --prism-bg: rgba(0, 0, 0, 0.3);
+    --prism-border: rgba(255, 255, 255, 0.05);
+
+    --panel-bg: rgba(0, 0, 0, 0.2);
+    --panel-header-border: rgba(255, 255, 255, 0.1);
+
+    --empty-state-color: #64748b;
+    --var-value-color: #e2e8f0;
+
+    --btn-reset-border: #64748b;
+    --btn-reset-color: #94a3b8;
+    --btn-reset-hover-border: #94a3b8;
+    --btn-reset-hover-color: #f8fafc;
+    --btn-reset-hover-bg: rgba(255, 255, 255, 0.05);
+
+    --btn-text-color: var(--bg-color);
+    /* For buttons with accent background */
+    --btn-hover-text: white;
+}
+
+body.light-theme {
+    /* Light Theme Overrides */
+    --bg-color: #f8fafc;
+    /* Slate 50 */
+    --card-bg: #ffffff;
+    --text-color: #334155;
+    /* Slate 700 */
+    --text-muted: #64748b;
+    /* Slate 500 */
+    --text-heading: #1e293b;
+    /* Slate 800 */
+    --accent-color: #0284c7;
+    /* Sky 600 - darker for contrast on white */
+    --accent-hover: #0369a1;
+    /* Sky 700 */
+    --accent-bg-hover: rgba(2, 132, 199, 0.1);
+    --border-color: #e2e8f0;
+    /* Slate 200 */
+    --border-subtle: #f1f5f9;
+    /* Slate 100 */
+
+    --highlight-default-bg: rgba(255, 215, 0, 0.2);
+    --highlight-default-border: rgba(218, 165, 32, 0.5);
+
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    --prism-bg: #f1f5f9;
+    --prism-border: #e2e8f0;
+
+    --panel-bg: #f8fafc;
+    --panel-header-border: #e2e8f0;
+
+    --empty-state-color: #94a3b8;
+    --var-value-color: #334155;
+
+    --btn-reset-border: #cbd5e1;
+    --btn-reset-color: #64748b;
+    --btn-reset-hover-border: #94a3b8;
+    --btn-reset-hover-color: #475569;
+    --btn-reset-hover-bg: #f1f5f9;
+
+    --btn-text-color: white;
+    /* Contrast against accent color */
+}
+
+/* Modern Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#app {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header & Theme Toggle */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    text-align: left;
+    /* Changed from center to accommodate button */
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    /* Removed bottom margin as header handles spacing */
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--card-bg);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.theme-toggle svg {
+    display: none;
+}
+
+/* Show Sun in Dark Mode (Default) */
+.theme-toggle .icon-sun {
+    display: block;
+}
+
+/* Show Moon in Light Mode */
+body.light-theme .theme-toggle .icon-sun {
+    display: none;
+}
+
+body.light-theme .theme-toggle .icon-moon {
+    display: block;
+}
+
+.example-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.example-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.example-card h2 {
+    margin-top: 0;
+    color: var(--text-heading);
+    font-size: 1.5rem;
+}
+
+.example-card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Prism Overrides & Custom Highlights */
+pre[class*="language-"] {
+    border-radius: 8px !important;
+    border: 1px solid var(--prism-border);
+    background: var(--prism-bg) !important;
+    margin: 0 !important;
+    height: 100%;
+    /* Fill panels */
+}
+
+/* Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: start;
+    /* Fix vertical alignment */
+}
+
+.data-panel {
+    background: var(--panel-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-panel h3 {
+    margin-top: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--panel-header-border);
+    padding-bottom: 0.5rem;
+}
+
+.variables-container {
+    flex-grow: 1;
+    font-family: 'Fira Code', monospace;
+    /* Monospace for data */
+    font-size: 0.9rem;
+}
+
+.empty-state {
+    color: var(--empty-state-color);
+    font-style: italic;
+    padding: 0.5rem 0;
+}
+
+.variable-item {
+    display: flex;
+    justify-content: flex-start;
+    /* Align start */
+    gap: 0.5rem;
+    /* Gap between name: and value */
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.variable-item:last-child {
+    border-bottom: none;
+}
+
+.var-name {
+    color: var(--accent-color);
+}
+
+.var-value {
+    color: var(--var-value-color);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+button {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+button:hover {
+    background: var(--accent-bg-hover);
+}
+
+.btn-next {
+    background: var(--accent-color);
+    color: var(--btn-text-color);
+}
+
+.btn-next:hover {
+    background: var(--accent-hover);
+    color: white;
+}
+
+.btn-reset {
+    border-color: var(--btn-reset-border);
+    color: var(--btn-reset-color);
+}
+
+.btn-reset:hover {
+    border-color: var(--btn-reset-hover-border);
+    color: var(--btn-reset-hover-color);
+    background: var(--btn-reset-hover-bg);
+}
+
+/* Custom Highlight styles (fallback or addition to Prism) */
+/* Note: Prism Line Highlight uses .line-highlight class */
+.line-highlight {
+    background: linear-gradient(to right, var(--accent-bg-hover) 70%, rgba(56, 189, 248, 0));
+}
+
+mark.custom-highlight {
+    background: transparent;
+    color: inherit;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 0 2px;
+    box-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(56, 189, 248, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    }
+}
