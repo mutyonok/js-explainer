@@ -4,23 +4,23 @@ const exampleConfig = [
         steps: [
             { lines: "1", range: { text: "let i = 0" }, variables: { i: "undefined" }, description: "Loop initialization: let i = 0" },
             { lines: "1", range: { text: "i < 5" }, variables: { i: 0 }, description: "Condition check: 0 < 5 is true." },
-            { lines: "2", variables: { i: 0 }, description: "Loop body executes." },
+            { lines: "2", variables: { i: 0 }, description: "Loop body executes. Print 0 to console." },
             { lines: "1", range: { text: "i++" }, variables: { i: 0 }, description: "Increment: i becomes 1." },
 
             { lines: "1", range: { text: "i < 5" }, variables: { i: 1 }, description: "Condition check: 1 < 5 is true." },
-            { lines: "2", variables: { i: 1 }, description: "Loop body executes." },
+            { lines: "2", variables: { i: 1 }, description: "Loop body executes. Print 1 to console." },
             { lines: "1", range: { text: "i++" }, variables: { i: 1 }, description: "Increment: i becomes 2." },
 
             { lines: "1", range: { text: "i < 5" }, variables: { i: 2 }, description: "Condition check: 2 < 5 is true." },
-            { lines: "2", variables: { i: 2 }, description: "Loop body executes." },
+            { lines: "2", variables: { i: 2 }, description: "Loop body executes. Print 2 to console." },
             { lines: "1", range: { text: "i++" }, variables: { i: 2 }, description: "Increment: i becomes 3." },
 
             { lines: "1", range: { text: "i < 5" }, variables: { i: 3 }, description: "Condition check: 3 < 5 is true." },
-            { lines: "2", variables: { i: 3 }, description: "Loop body executes." },
+            { lines: "2", variables: { i: 3 }, description: "Loop body executes. Print 3 to console." },
             { lines: "1", range: { text: "i++" }, variables: { i: 3 }, description: "Increment: i becomes 4." },
 
             { lines: "1", range: { text: "i < 5" }, variables: { i: 4 }, description: "Condition check: 4 < 5 is true." },
-            { lines: "2", variables: { i: 4 }, description: "Loop body executes." },
+            { lines: "2", variables: { i: 4 }, description: "Loop body executes. Print 4 to console." },
             { lines: "1", range: { text: "i++" }, variables: { i: 4 }, description: "Increment: i becomes 5." },
 
             { lines: "1", range: { text: "i < 5" }, variables: { i: 5 }, description: "Condition check: 5 < 5 is FALSE. Loop ends." },
@@ -90,6 +90,34 @@ const exampleConfig = [
                 "lines": "2",
                 "variables": { "squares": "[4, 9, 16]" },
                 "description": "9. map() finishes and returns the new array. We store it in variable <code>squares</code>."
+            }
+        ]
+    },
+    {
+        id: "example-array-map-students",
+        steps: [
+            { lines: "1-4", variables: {}, description: "1. Define source array of student objects." },
+            {
+                lines: "5",
+                variables: { students: '[{"name":"Alice","age":20},{"name":"Bob","age":22}]' },
+                description: "2. Call <code>map()</code> with an arrow function. We use <b>implicit return</b> here."
+            },
+            {
+                lines: "5",
+                range: { text: "student" },
+                variables: { student: '{"name":"Alice","age":20}' },
+                description: "3. First iteration. <code>student</code> is the first object. Note that <b>implicit return</b> means we don't use <code>return</code> keyword and curly braces. The expression after <code>=></code> is automatically returned."
+            },
+            {
+                lines: "5",
+                range: { text: "student" },
+                variables: { student: '{"name":"Bob","age":22}' },
+                description: "4. Second iteration. <code>student</code> is the second object. Implicit return is used when the function body is a single expression."
+            },
+            {
+                lines: "5",
+                variables: { greetings: '["hello, Alice!", "hello, Bob!"]' },
+                description: "5. <code>map</code> finishes. <b>Implicit return</b> is cleaner but only works for single-line expressions. If you need multiple statements, you must use curly braces and an explicit <code>return</code>."
             }
         ]
     },

@@ -112,6 +112,33 @@ const squares = numbers.map((num) => {
             </div>
         </article>
 
+        <article class="example-card" id="example-array-map-students">
+            <h2>Array Map: Implicit Return</h2>
+            <p class="description">We transform an array of student objects into an array of greetings.
+                This example uses an <b>arrow function with an implicit return</b>.
+                Implicit return is a short syntax where the result of the expression is automatically returned without
+                using the <code>return</code> keyword or curly braces.</p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const students = [
+  { name: "Alice", age: 20 },
+  { name: "Bob", age: 22 }
+];
+const greetings = students.map(student => `hello, ${student.name}!`);</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
         <article class="example-card" id="example-reduce">
             <h2>Array Reduce: No initial value</h2>
             <p class="description">We use <code>reduce</code> to reduce array of strings into a single string
