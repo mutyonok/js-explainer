@@ -107,14 +107,14 @@ const squares = numbers.map((num) => {
         </article>
 
         <article class="example-card" id="example-reduce">
-            <h2>Array Reduce</h2>
+            <h2>Array Reduce: No initial value</h2>
             <p class="description">Reduces array of strings into a single string (concatenates all strings).</p>
             <div class="content-grid">
                 <figure class="code-panel">
                     <pre class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
 const sentence = words.reduce((accumulator, word) => {
   return accumulator + " " + word;
-}, "");</code></pre>
+});</code></pre>
                 </figure>
                 <aside class="data-panel" aria-label="Variables Inspector">
                     <h3>Variables</h3>
