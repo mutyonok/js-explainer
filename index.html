@@ -148,9 +148,11 @@ const greetings = students.map(student => `hello, ${student.name}!`);</code></pr
             <div class="content-grid">
                 <figure class="code-panel">
                     <pre class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
-const sentence = words.reduce((accumulator, word) => {
-  return accumulator + " " + word;
-});</code></pre>
+const sentence = words.reduce(
+    (accumulator, word) => {
+        return accumulator + " " + word;
+    }
+);</code></pre>
                 </figure>
                 <aside class="data-panel" aria-label="Variables Inspector">
                     <h3>Variables</h3>
@@ -176,13 +178,16 @@ const sentence = words.reduce((accumulator, word) => {
             <div class="content-grid">
                 <figure class="code-panel">
                     <pre class="line-numbers"><code class="language-javascript">const numbers = [2, 5, 10, 7, 2];
-const evenCount = numbers.reduce((count, num) => {
-  if (num % 2 === 0) {
-    return count + 1;
-  } else {
-    return count;
-  }
-}, 0);</code></pre>
+const evenCount = numbers.reduce(
+    (count, num) => {
+        if (num % 2 === 0) {
+            return count + 1;
+        } else {
+            return count;
+        }
+    },
+    0
+);</code></pre>
                 </figure>
                 <aside class="data-panel" aria-label="Variables Inspector">
                     <h3>Variables</h3>
