@@ -192,5 +192,53 @@ const exampleConfig = [
 
             { lines: "2", variables: { evenCount: 3 }, description: "18. <code>reduce()</code> finishes. Final accumulator value is 3 and we store it in variable <code>evenCount</code>." }
         ]
+    },
+    {
+        id: "example-array-map-songs",
+        steps: [
+            { lines: "1", variables: {}, description: "1. Define source array of song strings." },
+            {
+                lines: "2",
+                variables: { songs: '["Daft Punk - One More Time", "Justice - Genesis"]' },
+                description: "2. Call <code>map()</code>. We will iterate through each song string."
+            },
+            {
+                lines: "2",
+                range: { text: "song" },
+                variables: { song: '"Daft Punk - One More Time"' },
+                description: "3. First iteration. <code>song</code> is the first string."
+            },
+            {
+                lines: "3",
+                variables: { song: '"Daft Punk - One More Time"', artistAndTitle: '["Daft Punk", "One More Time"]' },
+                description: "4. Split the string by ' - '. <code>artistAndTitle</code> is now an array with two elements: 'Daft Punk' and 'One More Time'."
+            },
+            {
+                lines: "4",
+                variables: { song: '"Daft Punk - One More Time"', artistAndTitle: '["Daft Punk", "One More Time"]' },
+                description: "5. Return the second element (index 1), which is the title. 'One More Time' is pushed to the new array."
+            },
+            {
+                lines: "2",
+                range: { text: "song" },
+                variables: { song: '"Justice - Genesis"' },
+                description: "6. Second iteration. <code>song</code> is the second string."
+            },
+            {
+                lines: "3",
+                variables: { song: '"Justice - Genesis"', artistAndTitle: '["Justice", "Genesis"]' },
+                description: "7. Split the string by ' - '. <code>artistAndTitle</code> is now ['Justice', 'Genesis']."
+            },
+            {
+                lines: "4",
+                variables: { song: '"Justice - Genesis"', artistAndTitle: '["Justice", "Genesis"]' },
+                description: "8. Return the title 'Genesis'. It is pushed to the new array."
+            },
+            {
+                lines: "2",
+                variables: { titles: '["One More Time", "Genesis"]' },
+                description: "9. <code>map</code> finishes and returns the new array of titles."
+            }
+        ]
     }
 ];
