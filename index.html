@@ -11,19 +11,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <!-- Prism CSS -->
-    <link id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
-        rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
-        rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css"
-        rel="stylesheet" />
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main id="app">
+    <main id="app" class="index-page">
         <header class="app-header">
             <h1>JS Concept Explainer</h1>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -38,208 +30,40 @@
             </button>
         </header>
 
-        <article class="example-card" id="example-for-loop-classic">
-            <h2>Classic For Loop</h2>
-            <p class="description">Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
-                starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
-                counter is less than 5, resulting in exactly 5 iterations (from 0 to 4).
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">for (let i = 0; i < 5; i++) {
-  console.log(i);
-}</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <!-- Variables will be injected here -->
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+        <section class="concepts-intro">
+            <p>Interactive step-by-step explanations of JavaScript concepts. Click on a concept to explore examples.</p>
+        </section>
 
-        <article class="example-card" id="example-array-map">
-            <h2>Array Map</h2>
-            <p class="description">You can use map to transform an array of strings to array of their lengths. Note the
-                explicit return inside the map function.</p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const strings = ["apple", "banana", "cherry"];
-const lengths = strings.map((str) => {
-  return str.length;
-});</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+        <section class="concepts-grid">
+            <a href="for-loop.html" class="concept-card">
+                <h2>For Loop</h2>
+                <p class="concept-description">Learn how classic for loops work with iteration, conditions, and
+                    increments.</p>
+                <div class="concept-meta">
+                    <span class="example-count">1 example</span>
+                </div>
+            </a>
 
-        <article class="example-card" id="example-array-map-squares">
-            <h2>Array Map, example 2</h2>
-            <p class="description">We use <code>map</code> to transform an array of numbers to array of their squares.
-                Note the explicit <code>return</code> inside the callback function.</p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const numbers = [2, 3, 4];
-const squares = numbers.map((num) => {
-  return num * num;
-});</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
+            <a href="array-map.html" class="concept-card">
+                <h2>Array Map</h2>
+                <p class="concept-description">Transform arrays by applying a function to each element. Explore explicit
+                    returns, implicit returns, and practical use cases.</p>
+                <div class="concept-meta">
+                    <span class="example-count">4 examples</span>
+                </div>
+            </a>
 
-        <article class="example-card" id="example-array-map-students">
-            <h2>Array Map: Implicit Return</h2>
-            <p class="description">We transform an array of student objects into an array of greetings.
-                This example uses an <b>arrow function with an implicit return</b>.
-                Implicit return is a short syntax where the result of the expression is automatically returned without
-                using the <code>return</code> keyword or curly braces.</p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const students = [
-  { name: "Alice", age: 20 },
-  { name: "Bob", age: 22 }
-];
-const greetings = students.map(student => `hello, ${student.name}!`);</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
-
-        <article class="example-card" id="example-array-map-songs">
-            <h2>Array Map: Song Titles</h2>
-            <p class="description">We transform an array of strings that represent songs in the format "Artist - Title"
-                into an array of just the titles.</p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const songs = ["Daft Punk - One More Time", "Justice - Genesis"];
-const titles = songs.map((song) => {
-  const artistAndTitle = song.split(" - ");
-  return artistAndTitle[1];
-});</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
-
-        <article class="example-card" id="example-reduce">
-            <h2>Array Reduce: No initial value</h2>
-            <p class="description">We use <code>reduce</code> to reduce array of strings into a single string
-                (concatenates all strings). When we don't have an initial value, the first element is used as the
-                initial value. Reduce starts from the second element and applies the callback function to each element.
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const words = ["I", "love", "JS"];
-const sentence = words.reduce(
-    (accumulator, word) => {
-        return accumulator + " " + word;
-    }
-);</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <!-- Variables will be injected here -->
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
-
-        <article class="example-card" id="example-reduce-even-count">
-            <h2>Array Reduce: with initial value</h2>
-            <p class="description">We use <code>reduce</code> to count how many even numbers are in the array. Uses an
-                initial value of
-                <code>0</code> as we start counting from 0. Because we have initital value, reduce starts from the
-                first element.
-            </p>
-            <div class="content-grid">
-                <figure class="code-panel">
-                    <pre class="line-numbers"><code class="language-javascript">const numbers = [2, 5, 10, 7, 2];
-const evenCount = numbers.reduce(
-    (count, num) => {
-        if (num % 2 === 0) {
-            return count + 1;
-        } else {
-            return count;
-        }
-    },
-    0
-);</code></pre>
-                </figure>
-                <aside class="data-panel" aria-label="Variables Inspector">
-                    <h3>Variables</h3>
-                    <div class="variables-container">
-                        <div class="empty-state">No active variables</div>
-                    </div>
-                </aside>
-            </div>
-            <div class="controls">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-next">Next Step</button>
-            </div>
-        </article>
-
+            <a href="array-reduce.html" class="concept-card">
+                <h2>Array Reduce</h2>
+                <p class="concept-description">Reduce arrays to a single value using accumulator patterns with and
+                    without initial values.</p>
+                <div class="concept-meta">
+                    <span class="example-count">2 examples</span>
+                </div>
+            </a>
+        </section>
     </main>
 
-    <!-- Prism JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-
-    <script src="data.js"></script>
-    <script src="explainer.js"></script>
     <script src="script.js"></script>
 </body>
 
