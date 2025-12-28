@@ -251,7 +251,7 @@ body.light-theme .theme-toggle .icon-moon {
 pre[class*="language-"],
 code[class*="language-"],
 code {
-    font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+    font-family: 'IBM Plex Mono', monospace !important;
     border-radius: 8px !important;
     border: 1px solid var(--prism-border);
     background: var(--prism-bg) !important;
@@ -292,7 +292,7 @@ code {
 
 .variables-container {
     flex-grow: 1;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     /* Monospace for data */
     font-size: 0.9rem;
 }
