@@ -130,6 +130,35 @@ const sentence = words.reduce((accumulator, word) => {
             </div>
         </article>
 
+        <article class="example-card" id="example-reduce-even-count">
+            <h2>Array Reduce: with initial value</h2>
+            <p class="description">Counts how many even numbers are in the array. Uses an initial value of
+                <code>0</code>.
+            </p>
+            <div class="content-grid">
+                <figure class="code-panel">
+                    <pre class="line-numbers"><code class="language-javascript">const numbers = [2, 5, 10, 7, 2];
+const evenCount = numbers.reduce((count, num) => {
+  if (num % 2 === 0) {
+    return count + 1;
+  } else {
+    return count;
+  }
+}, 0);</code></pre>
+                </figure>
+                <aside class="data-panel" aria-label="Variables Inspector">
+                    <h3>Variables</h3>
+                    <div class="variables-container">
+                        <div class="empty-state">No active variables</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="controls">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-next">Next Step</button>
+            </div>
+        </article>
+
     </main>
 
     <!-- Prism JS -->
