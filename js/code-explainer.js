@@ -60,12 +60,14 @@ class CodeExplainer extends HTMLElement {
         const titleSlot = this.querySelector('[slot="title"]');
         const descriptionSlot = this.querySelector('[slot="description"]');
         const codeSlot = this.querySelector('[slot="code"]');
+        const summarySlot = this.querySelector('[slot="summary"]');
         const scriptTag = this.querySelector('script[type="application/json"]');
 
         // Extract content from slots
         const title = titleSlot ? titleSlot.innerHTML : 'Example';
         const description = descriptionSlot ? descriptionSlot.innerHTML : '';
         const code = codeSlot ? codeSlot.outerHTML : '';
+        const summary = summarySlot ? summarySlot.innerHTML : '';
 
         // Build the HTML structure
         // NOTE: We don't set an ID on the article to avoid duplicate IDs
@@ -89,6 +91,7 @@ class CodeExplainer extends HTMLElement {
                     <button class="btn-reset">Reset</button>
                     <button class="btn-next">Next Step</button>
                 </div>
+                ${summary ? `<p class="summary-section">${summary}</p>` : ''}
             </article>
         `;
 

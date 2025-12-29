@@ -371,6 +371,39 @@ button:hover {
     background: var(--btn-reset-hover-bg);
 }
 
+/* Summary Section */
+.summary-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.summary-section strong {
+    color: var(--text-heading);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.summary-section ul {
+    margin: 0.5rem 0 0 1.5rem;
+    padding: 0;
+}
+
+.summary-section li {
+    margin-bottom: 0.5rem;
+}
+
+.summary-section code {
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--prism-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid var(--prism-border);
+}
+
 /* Custom Highlight styles (fallback or addition to Prism) */
 /* Note: Prism Line Highlight uses .line-highlight class */
 .line-highlight {

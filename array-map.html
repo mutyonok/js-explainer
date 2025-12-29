@@ -63,6 +63,14 @@ const lengths = strings.map((str) => {
   { "lines": "2", "variables": { "lengths": [5,6,6] }, "description": "9. <code>map</code> finishes and returns new array. We save it in variable lengths." }
 ]
         </script>
+            <div slot="summary">
+                <strong>Key Points:</strong>
+                <ul>
+                    <li><code>map()</code> creates a new array (doesn't modify the original)</li>
+                    <li>Each element is transformed by the callback function</li>
+                    <li>The callback must use explicit <code>return</code> when using curly braces <code>{}</code></li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-array-map-squares">
@@ -88,6 +96,13 @@ const squares = numbers.map((num) => {
   { "lines": "2", "variables": { "squares": [4,9,16] }, "description": "9. <code>map</code> finishes and returns the new array. We store it in variable squares." }
 ]
         </script>
+            <div slot="summary">
+                <strong>Key Points:</strong>
+                <ul>
+                    <li>Same pattern as example 1: explicit return required with curly braces</li>
+                    <li>The callback receives each element and returns the transformed value</li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-array-map-students">
@@ -113,6 +128,14 @@ const greetings = students.map(student => `hello, ${student.name}!`);
   { "lines": "5", "variables": { "greetings": ["hello, Alice!","hello, Bob!"] }, "description": "5. <code>map</code> finishes. Implicit return is cleaner but only works for single-line expressions. If you need multiple statements, you must use curly braces and an explicit return." }
 ]
         </script>
+            <div slot="summary">
+                <strong>Key Points:</strong>
+                <ul>
+                    <li>Arrow functions can use implicit return for single expressions</li>
+                    <li>No curly braces <code>{}</code> and no <code>return</code> keyword needed</li>
+                    <li>Cleaner syntax but only works for single-line expressions</li>
+                </ul>
+            </div>
         </code-explainer>
 
 
@@ -141,6 +164,14 @@ const titles = songs.map((song) => {
   { "lines": "2", "variables": { "titles": ["One More Time","Genesis"] }, "description": "9. <code>map</code> finishes and returns the new array of titles." }
 ]
         </script>
+            <div slot="summary">
+                <strong>Key Points:</strong>
+                <ul>
+                    <li><code>map()</code> can handle complex transformations with multiple statements</li>
+                    <li>When using multiple statements, curly braces and explicit <code>return</code> are required</li>
+                    <li>Useful for extracting or processing data from each element</li>
+                </ul>
+            </div>
         </code-explainer>
 
 
