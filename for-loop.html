@@ -117,6 +117,38 @@ for (let i = 0; i < names.length; i++) {
             </script>
         </code-explainer>
 
+        <code-explainer id="example-for-loop-partial">
+            <h2 slot="title">Starting Loop from a Different Index</h2>
+            <p slot="description">
+                The loop variable <code>i</code> just matches the array index, and you can start from any valid index.<br>
+                In this example we want to print last three elements of the array, we use <code>numbers.length - 3</code> to calculate the starting index dynamically. This ensures
+                we always access the last 3 elements, even if you change the array and add more numbers.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const numbers = [10, 1, 5, 20, 30, 7];
+
+for (let i = numbers.length - 3; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "description": "Declare variable <code>numbers</code> and initialize it with an array of 6 numbers.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]" } },
+    { "lines": "3", "range": { "text": "numbers.length - 3" }, "description": "Calculate starting index: <code>numbers.length - 3</code> = <code>6 - 3</code> = <code>3</code>. This dynamically determines where to start the loop.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]" } },
+    { "lines": "3", "range": { "text": "let i = numbers.length - 3" }, "description": "Loop initialization: <code>i</code> is set to <code>3</code> (calculated from <code>numbers.length - 3</code>, not hardcoded).", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": "undefined" } },
+    { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>3 < 6</code> is true.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 3 } },
+    { "lines": "4", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 3 }, "description": "Access array element at index 3 and log it to console: <code>20</code>." },
+    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <code>i</code> becomes <code>4</code>.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 3 } },
+    { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>4 < 6</code> is true.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 4 } },
+    { "lines": "4", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 4 }, "description": "Access array element at index 4 and log it to console: <code>30</code>." },
+    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <code>i</code> becomes <code>5</code>.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 4 } },
+    { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>5 < 6</code> is true.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 5 } },
+    { "lines": "4", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 5 }, "description": "Access array element at index 5 and log it to console: <code>7</code>." },
+    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <code>i</code> becomes <code>6</code>.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 5 } },
+    { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>6 < 6</code> is FALSE. Loop ends.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 6 } },
+    { "lines": "5", "description": "Execution continues after the loop." }
+]
+            </script>
+        </code-explainer>
+
         <code-explainer id="example-for-of-loop">
             <h2 slot="title">The <code>for..of</code> Loop: arrays</h2>
             <p slot="description">
@@ -160,7 +192,7 @@ for (const result of results) {
             <h2 slot="title">The <code>for..of</code> Loop: strings</h2>
             <p slot="description">
                 The <code>for..of</code> loop can also iterate over strings, giving you access to each character
-                one at a time. This example checks whether each character in "hello" is a vowel or consonant.
+                one at a time - always from first to last character. This example checks whether each character in "hello" is a vowel or consonant.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const word = "hello";
 
