@@ -21,6 +21,9 @@
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
+    
+    <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/code-explainer.js"></script>
 </head>
 
 <body>
@@ -87,10 +90,19 @@ const sentence = words.reduce(
             {
                 "lines": "2",
                 "variables": { "sentence": "I love JS" },
-                "description": "7. <code>reduce()</code> finishes and returns the final accumulator value. We store it in variable <code>sentence</code>."
+                "description": "7. <code>reduce()</code> finishes and returns the final accumulator value. We store it in <code>sentence</code> variable."
             }
         ]
 </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>First element becomes accumulator</strong>: When no initial value is provided, the first array element automatically becomes the starting accumulator value</li>
+                    <li><strong>Iteration starts from second element</strong>: Reduce begins processing from index 1, not index 0</li>
+                    <li><strong>Transformation pattern</strong>: Demonstrates how reduce can transform an array into a single accumulated value (strings → sentence)</li>
+                    <li><strong>Accumulator updates</strong>: Shows how the accumulator value grows with each iteration</li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-reduce-even-count">
@@ -138,9 +150,18 @@ const evenCount = numbers.reduce(
             { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 2, "num": 2 }, "description": "16. Check condition: <code>2 % 2 === 0</code> is <b>true</b>." },
             { "lines": "5", "range": { "text": "return count + 1" }, "variables": { "count": 2, "num": 2 }, "description": "17. Return <code>count + 1</code> (3). We have an even number so we want accumulator to count it. New accumulator value is 3 (2 + 1)." },
 
-            { "lines": "2", "variables": { "evenCount": 3 }, "description": "18. <code>reduce()</code> finishes. Final accumulator value is 3 and we store it in variable <code>evenCount</code>." }
+            { "lines": "2", "variables": { "evenCount": 3 }, "description": "18. <code>reduce()</code> finishes. Final accumulator value is 3 and we store it in <code>evenCount</code> variable." }
         ]
             </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Explicit initial value</strong>: When an initial value is provided (e.g., <code>0</code>), the accumulator starts with that value</li>
+                    <li><strong>Iteration starts from first element</strong>: Reduce processes all elements starting from index 0</li>
+                    <li><strong>Conditional accumulator updates</strong>: Demonstrates using <code>if/else</code> logic to conditionally ignore elements that don't meet the criteria</li>
+                    <li><strong>Counting pattern</strong>: Shows how reduce can be used for counting elements that meet specific criteria</li>
+                </ul>
+            </div>
         </code-explainer>
 
     </main>
@@ -153,12 +174,6 @@ const evenCount = numbers.reduce(
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-
-    <script src="js/theme.js"></script>
-    <script src="js/explainer.js"></script>
-    <script src="js/code-explainer.js"></script>
-
-    <script src="js/index.js"></script>
 </body>
 
 </html>

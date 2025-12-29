@@ -21,6 +21,9 @@
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
+    
+    <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/code-explainer.js"></script>
 </head>
 
 <body>
@@ -64,7 +67,7 @@ const lengths = strings.map((str) => {
 ]
         </script>
             <div slot="summary">
-                <strong>Key Points:</strong>
+                <h3>Key Points:</h3>
                 <ul>
                     <li><code>map()</code> creates a new array (doesn't modify the original)</li>
                     <li>Each element is transformed by the callback function</li>
@@ -97,7 +100,7 @@ const squares = numbers.map((num) => {
 ]
         </script>
             <div slot="summary">
-                <strong>Key Points:</strong>
+                <h3>Key Points:</h3>
                 <ul>
                     <li>Same pattern as example 1: explicit return required with curly braces</li>
                     <li>The callback receives each element and returns the transformed value</li>
@@ -165,7 +168,7 @@ const titles = songs.map((song) => {
 ]
         </script>
             <div slot="summary">
-                <strong>Key Points:</strong>
+                <h3>Key Points:</h3>
                 <ul>
                     <li><code>map()</code> can handle complex transformations with multiple statements</li>
                     <li>When using multiple statements, curly braces and explicit <code>return</code> are required</li>
@@ -185,11 +188,6 @@ const titles = songs.map((song) => {
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-
-    <script src="js/theme.js"></script>
-    <script src="js/explainer.js"></script>
-    <script src="js/code-explainer.js"></script>
-    <script src="js/index.js"></script>
 </body>
 
 </html>

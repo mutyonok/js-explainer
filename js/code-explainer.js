@@ -1,3 +1,5 @@
+import { Explainer } from './explainer.js';
+
 /**
  * CodeExplainer Web Component
  * 
@@ -112,3 +114,5 @@ class CodeExplainer extends HTMLElement {
 
 // Define the custom element
 customElements.define('code-explainer', CodeExplainer);
+
+export { CodeExplainer };

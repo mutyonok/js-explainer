@@ -1,4 +1,4 @@
-class Explainer {
+export class Explainer {
     constructor(rootElementId, config) {
         this.rootElement = document.getElementById(rootElementId);
         if (!this.rootElement) {
