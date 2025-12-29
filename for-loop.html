@@ -43,12 +43,11 @@
 
         <code-explainer id="example-for-loop-classic">
             <h2 slot="title">Classic For Loop</h2>
-            <div slot="description">
-                <p>Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
-                    starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
-                    counter is less than 5, resulting in exactly 5 iterations (from 0 to 4).
-                </p>
-            </div>
+            <p slot="description">
+                Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
+                starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
+                counter is less than 5, resulting in exactly 5 iterations (from 0 to 4).
+            </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">for (let i = 0; i < 5; i++) {
   console.log(i);
 }</code></pre>
@@ -78,11 +77,10 @@
 
         <code-explainer id="example-for-loop-array">
             <h2 slot="title">Iterating Through an Array</h2>
-            <div slot="description">
-                <p>This example shows how to use the loop index <code>i</code> to access array
-                    elements and perform operations within the loop body.
-                </p>
-            </div>
+            <p slot="description">
+                This example shows how to use the loop index <code>i</code> to access array
+                elements and perform operations within the loop body.
+            </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const names = ["Alice", "Bob", "Charlie", "David"];
 
 for (let i = 0; i < names.length; i++) {
@@ -122,11 +120,10 @@ for (let i = 0; i < names.length; i++) {
 
         <code-explainer id="example-for-of-loop">
             <h2 slot="title">The <code>for..of</code> Loop</h2>
-            <div slot="description">
-                <p>The <code>for..of</code> loop lets you iterate over arrays. It gives you direct
-                    access to each element, always from first to last. It doesn't give you the index of the element.
-                </p>
-            </div>
+            <p slot="description">
+                The <code>for..of</code> loop lets you iterate over arrays. It gives you direct
+                access to each element, always from first to last. It doesn't give you the index of the element.
+            </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const results = [
   { name: "Alice", score: 85 },
   { name: "Bob", score: 70 },
