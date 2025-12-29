@@ -19,7 +19,7 @@ class Explainer {
 
         // Cache raw code and description
         this.originalCode = this.codeEl.textContent;
-        this.originalDescription = this.descEl.textContent;
+        this.originalDescription = this.descEl.innerHTML;
 
         // Bind events
         this.nextBtn.addEventListener('click', () => this.next());

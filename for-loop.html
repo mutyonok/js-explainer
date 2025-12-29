@@ -42,7 +42,7 @@
         </header>
 
         <code-explainer id="example-for-loop-classic">
-            <h2 slot="title">Classic For Loop</h2>
+            <h2 slot="title">Classic <code>for</code> Loop</h2>
             <p slot="description">
                 Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
                 starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
@@ -119,7 +119,7 @@ for (let i = 0; i < names.length; i++) {
         </code-explainer>
 
         <code-explainer id="example-for-of-loop">
-            <h2 slot="title">The <code>for..of</code> Loop</h2>
+            <h2 slot="title">The <code>for..of</code> Loop: arrays</h2>
             <p slot="description">
                 The <code>for..of</code> loop lets you iterate over arrays. It gives you direct
                 access to each element, always from first to last. It doesn't give you the index of the element.
@@ -153,6 +153,45 @@ for (const result of results) {
     { "lines": "11", "range": { "text": "passed.push(studentName)" }, "description": "Push <code>studentName</code> to the <code>passed</code> array.", "variables": { "results": "[...]", "passed": "['Alice', 'Charlie']", "result": "{name: 'Charlie', score: 92}", "studentName": "'Charlie'" } },
     { "lines": "8", "range": { "text": "const result of results" }, "description": "No more elements in <code>results</code>. The loop finishes.", "variables": { "results": "[...]", "passed": "['Alice', 'Charlie']" } },
     { "lines": "14", "description": "Execution continues after the loop." }
+]
+            </script>
+        </code-explainer>
+
+        <code-explainer id="example-for-of-string">
+            <h2 slot="title">The <code>for..of</code> Loop: strings</h2>
+            <p slot="description">
+                The <code>for..of</code> loop can also iterate over strings, giving you access to each character
+                one at a time. This example checks whether each character in "hello" is a vowel or consonant.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const word = "hello";
+
+for (const char of word) {
+  if ('aeiouAEIOU'.includes(char)) {
+    console.log(`${char} is a vowel`);
+  } else {
+    console.log(`${char} is a consonant`);
+  }
+}</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "description": "Declare variable <code>word</code> and initialize it with the string \"hello\".", "variables": { "word": "\"hello\"" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Loop begins. <code>char</code> is assigned the first character: 'h'.", "variables": { "word": "\"hello\"", "char": "'h'" } },
+    { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is 'h' in 'aeiouAEIOU'? No, the condition is false.", "variables": { "word": "\"hello\"", "char": "'h'" } },
+    { "lines": "7", "range": { "text": "console.log(`${char} is a consonant`)" }, "description": "Execute else block. Log 'h is a consonant' to console.", "variables": { "word": "\"hello\"", "char": "'h'" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the second character: 'e'.", "variables": { "word": "\"hello\"", "char": "'e'" } },
+    { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is 'e' in 'aeiouAEIOU'? Yes, the condition is true.", "variables": { "word": "\"hello\"", "char": "'e'" } },
+    { "lines": "5", "range": { "text": "console.log(`${char} is a vowel`)" }, "description": "Execute if block. Log 'e is a vowel' to console.", "variables": { "word": "\"hello\"", "char": "'e'" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the third character: 'l'.", "variables": { "word": "\"hello\"", "char": "'l'" } },
+    { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is 'l' in 'aeiouAEIOU'? No, the condition is false.", "variables": { "word": "\"hello\"", "char": "'l'" } },
+    { "lines": "7", "range": { "text": "console.log(`${char} is a consonant`)" }, "description": "Execute else block. Log 'l is a consonant' to console.", "variables": { "word": "\"hello\"", "char": "'l'" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the fourth character: 'l'.", "variables": { "word": "\"hello\"", "char": "'l'" } },
+    { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is 'l' in 'aeiouAEIOU'? No, the condition is false.", "variables": { "word": "\"hello\"", "char": "'l'" } },
+    { "lines": "7", "range": { "text": "console.log(`${char} is a consonant`)" }, "description": "Execute else block. Log 'l is a consonant' to console.", "variables": { "word": "\"hello\"", "char": "'l'" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the fifth character: 'o'.", "variables": { "word": "\"hello\"", "char": "'o'" } },
+    { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is 'o' in 'aeiouAEIOU'? Yes, the condition is true.", "variables": { "word": "\"hello\"", "char": "'o'" } },
+    { "lines": "5", "range": { "text": "console.log(`${char} is a vowel`)" }, "description": "Execute if block. Log 'o is a vowel' to console.", "variables": { "word": "\"hello\"", "char": "'o'" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "No more characters in <code>word</code>. The loop finishes.", "variables": { "word": "\"hello\"" } },
+    { "lines": "8", "description": "Execution continues after the loop." }
 ]
             </script>
         </code-explainer>
