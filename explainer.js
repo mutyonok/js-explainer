@@ -37,12 +37,11 @@ class Explainer {
     }
 
     next() {
-        const maxStep = this.config.steps.length - 1;
-        if (this.stepIndex < maxStep) {
+        const lastStep = this.config.steps.length - 1;
+        if (this.stepIndex < lastStep) {
             this.stepIndex++;
         } else {
-            // Loop back to start
-            this.stepIndex = 0;
+            this.stepIndex = -1;
         }
         this.render();
     }
@@ -50,7 +49,7 @@ class Explainer {
     render() {
         const step = this.stepIndex >= 0 ? this.config.steps[this.stepIndex] : null;
 
-        const maxStep = this.config.steps.length - 1;
+        const lastStep = this.config.steps.length - 1;
 
         // 1. Update Description & Button Text
         if (step) {
@@ -60,7 +59,7 @@ class Explainer {
         }
 
         // Update Button Text
-        if (this.stepIndex === maxStep) {
+        if (this.stepIndex === lastStep) {
             this.nextBtn.textContent = "Restart";
         } else {
             this.nextBtn.textContent = "Next Step";
@@ -127,7 +126,7 @@ class Explainer {
             Object.entries(step.variables).forEach(([key, value]) => {
                 const div = document.createElement('div');
                 div.className = 'variable-item';
-                div.innerHTML = `<span class="var-name">${key}:</span> <span class="var-value">${value}</span>`;
+                div.innerHTML = `<span class="var-name">${key}:</span> <span class="var-value">${typeof value === 'object' ? JSON.stringify(value) : value}</span>`;
                 this.varsContainer.appendChild(div);
             });
         } else {

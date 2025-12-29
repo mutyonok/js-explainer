@@ -73,7 +73,7 @@ class CodeExplainer extends HTMLElement {
         const html = `
             <article class="example-card">
                 <h2>${title}</h2>
-                ${description ? `<div class="description">${description}</div>` : ''}
+                ${description ? `<p class="description">${description}</p>` : ''}
                 <div class="content-grid">
                     <figure class="code-panel">
                         ${code}
