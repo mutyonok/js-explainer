@@ -75,7 +75,7 @@
         </code-explainer>
 
         <code-explainer id="example-for-loop-array">
-            <h2 slot="title">Iterating Through an Array</h2>
+            <h2 slot="title">Classic <code>for</code> Loop: Iterating Through an Array</h2>
             <p slot="description">
                 This example shows how to use the loop index <code>i</code> to access array
                 elements and perform operations within the loop body.
@@ -118,7 +118,7 @@ for (let i = 0; i < names.length; i++) {
         </code-explainer>
 
         <code-explainer id="example-for-loop-partial">
-            <h2 slot="title">Starting Loop from a Different Index</h2>
+            <h2 slot="title">Classic <code>for</code> Loop: Starting from a Any Index</h2>
             <p slot="description">
                 The loop variable <code>i</code> just matches the array index, and you can start from any valid index.<br>
                 In this example we want to print last three elements of the array, we use <code>numbers.length - 3</code> to calculate the starting index dynamically. This ensures
@@ -145,6 +145,42 @@ for (let i = numbers.length - 3; i < numbers.length; i++) {
     { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <code>i</code> becomes <code>6</code>.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 5 } },
     { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>6 < 6</code> is FALSE. Loop ends.", "variables": { "numbers": "[10, 1, 5, 20, 30, 7]", "i": 6 } },
     { "lines": "5", "description": "Execution continues after the loop." }
+]
+            </script>
+        </code-explainer>
+
+        <code-explainer id="example-for-loop-backwards">
+            <h2 slot="title">Classic <code>for</code> Loop: Iterating Backwards Through an Array</h2>
+            <p slot="description">
+                <code>for</code> loop can iterate in reverse order. Start from the last index (<code>array.length - 1</code>),
+                use <code>i >= 0</code> as the condition, and decrement with <code>i--</code>. This example iterates
+                backwards through an array of 3 strings.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const items = ["first", "second", "third"];
+
+for (let i = items.length - 1; i >= 0; i--) {
+  const item = items[i];
+  console.log(item);
+}</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "description": "Declare variable <code>items</code> and initialize it with an array of 3 strings.", "variables": { "items": "['first', 'second', 'third']" } },
+    { "lines": "3", "range": { "text": "items.length - 1" }, "description": "Calculate starting index: <code>items.length - 1</code> = <code>3 - 1</code> = <code>2</code>. This is the index of the last element of array.", "variables": { "items": "['first', 'second', 'third']" } },
+    { "lines": "3", "range": { "text": "let i = items.length - 1" }, "description": "Loop initialization: <code>i</code> is set to <code>2</code> (the last index).", "variables": { "items": "['first', 'second', 'third']", "i": "undefined" } },
+    { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>2 >= 0</code> is true.", "variables": { "items": "['first', 'second', 'third']", "i": 2 } },
+    { "lines": "4", "variables": { "items": "['first', 'second', 'third']", "i": 2, "item": "'third'" }, "description": "Get array element at index 2 and store it in <code>item</code> variable." },
+    { "lines": "5", "variables": { "items": "['first', 'second', 'third']", "i": 2, "item": "'third'" }, "description": "Log 'third' to console." },
+    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <code>i</code> becomes <code>1</code>.", "variables": { "items": "['first', 'second', 'third']", "i": 2 } },
+    { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>1 >= 0</code> is true.", "variables": { "items": "['first', 'second', 'third']", "i": 1 } },
+    { "lines": "4", "variables": { "items": "['first', 'second', 'third']", "i": 1, "item": "'second'" }, "description": "Get array element at index 1 and store it in <code>item</code> variable." },
+    { "lines": "5", "variables": { "items": "['first', 'second', 'third']", "i": 1, "item": "'second'" }, "description": "Log 'second' to console." },
+    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <code>i</code> becomes <code>0</code>.", "variables": { "items": "['first', 'second', 'third']", "i": 1 } },
+    { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>0 >= 0</code> is true.", "variables": { "items": "['first', 'second', 'third']", "i": 0 } },
+    { "lines": "4", "variables": { "items": "['first', 'second', 'third']", "i": 0, "item": "'first'" }, "description": "Get array element at index 0 and store it in <code>item</code> variable." },
+    { "lines": "5", "variables": { "items": "['first', 'second', 'third']", "i": 0, "item": "'first'" }, "description": "Log 'first' to console." },
+    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <code>i</code> becomes <code>-1</code>.", "variables": { "items": "['first', 'second', 'third']", "i": 0 } },
+    { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>-1 >= 0</code> is FALSE. Loop ends.", "variables": { "items": "['first', 'second', 'third']", "i": -1 } },
+    { "lines": "6", "description": "Execution continues after the loop." }
 ]
             </script>
         </code-explainer>
