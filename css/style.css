@@ -37,7 +37,7 @@
     --btn-hover-text: white;
 }
 
-body.light-theme {
+html.light-theme {
     /* Light Theme Overrides */
     --bg-color: #f8fafc;
     /* Slate 50 */
@@ -212,11 +212,11 @@ h1 {
 }
 
 /* Show Moon in Light Mode */
-body.light-theme .theme-toggle .icon-sun {
+html.light-theme .theme-toggle .icon-sun {
     display: none;
 }
 
-body.light-theme .theme-toggle .icon-moon {
+html.light-theme .theme-toggle .icon-moon {
     display: block;
 }
 

@@ -20,14 +20,14 @@ let currentTheme = savedTheme || (systemPrefersDark ? THEMES.DARK : THEMES.LIGHT
 
 export function applyTheme(theme) {
         currentTheme = theme;
-        const body = document.body;
+        const html = document.documentElement;
         const themeToggleBtn = document.getElementById('theme-toggle');
         const prismLink = document.getElementById('prism-theme');
 
         if (theme === THEMES.LIGHT) {
-            body.classList.add('light-theme');
+            html.classList.add('light-theme');
         } else {
-            body.classList.remove('light-theme');
+            html.classList.remove('light-theme');
         }
 
         if (prismLink && PRISM_THEMES[theme]) {
