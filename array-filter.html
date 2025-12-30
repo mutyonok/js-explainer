@@ -49,7 +49,8 @@
             <p slot="description">
                 The <code>filter()</code> method creates a new array containing only the elements that pass a test.
                 The callback function runs for each element and must return <code>true</code> to keep the element
-                or <code>false</code> to exclude it.
+                or <code>false</code> to exclude it.<br>
+                In this example, we create a new array called <code>evens</code> that contains only the even numbers from the original array. The callback function is arrow function with explicit return.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const numbers = [8, 10, 5, 1, 7, 2];
 const evens = numbers.filter((num) => {
@@ -80,6 +81,7 @@ const evens = numbers.filter((num) => {
                     <li><code>filter()</code> creates a new array — the original array stays unchanged</li>
                     <li>The callback must return <code>true</code> to keep an element, <code>false</code> to exclude it</li>
                     <li>The modulo operator <code>%</code> returns the remainder — if <code>num % 2 === 0</code>, the number is even</li>
+                    <li>Arrow function with explicit return must have <code>return</code> keyword and curly braces</li>
                 </ul>
             </div>
         </code-explainer>
@@ -150,7 +152,7 @@ const adults = people.filter(person => person.age >= 18);</code></pre>
                 <ul>
                     <li><code>filter()</code> works with arrays of objects, not just simple values</li>
                     <li>Use dot notation (e.g., <code>person.age</code>) to access object properties</li>
-                    <li><b>Implicit return</b>: skip <code>{}</code> and <code>return</code> when the callback is a single expression</li>
+                    <li><b>Implicit return</b>: skip curly braces and <code>return</code> keyword when the callback is a single expression</li>
                 </ul>
             </div>
         </code-explainer>
