@@ -76,6 +76,14 @@
     { "lines": "3", "description": "Browser steps out of the loop." }
 ]
             </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Three parts of a for loop</strong>: initialization (<code>let i = 0</code>), condition (<code>i &lt; 5</code>), and update (<code>i++</code>)</li>
+                    <li><strong>Loop runs while condition is true</strong>: the loop stops when the condition becomes false</li>
+                    <li><strong>Counter variable tracks iterations</strong>: <code>i</code> starts at 0 and increases by 1 each time. code>i++</code> means <code>i = i + 1</code></li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-for-loop-array">
@@ -119,6 +127,14 @@ for (let i = 0; i < names.length; i++) {
     { "lines": "7", "description": "Browser steps out of the loop." }
 ]
             </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Use <code>i &lt; array.length</code> for the condition</strong>: the loop runs exactly once for every element in the array</li>
+                    <li><strong>Access elements with index</strong>: <code>names[i]</code> gets the element at position <code>i</code></li>
+                    <li><strong>Index matches array position</strong>: the first element is at index 0, second at index 1, and so on</li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-for-loop-partial">
@@ -151,6 +167,14 @@ for (let i = numbers.length - 3; i < numbers.length; i++) {
     { "lines": "5", "description": "Execution continues after the loop." }
 ]
             </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Start anywhere in the array</strong>: change the initialization to begin at any valid index</li>
+                    <li><strong>Calculate index dynamically</strong>: using <code>array.length - 3</code> adapts automatically if the array size changes</li>
+                    <li><strong>Access only the elements you need</strong>: useful for processing a part of an array</li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-for-loop-backwards">
@@ -187,6 +211,14 @@ for (let i = items.length - 1; i >= 0; i--) {
     { "lines": "6", "description": "Execution continues after the loop." }
 ]
             </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Start from the last index</strong>: use <code>array.length - 1</code> to begin at the end of the array</li>
+                    <li><strong>Decrement instead of increment</strong>: use <code>i--</code> to count backwards. <code>i--</code> means <code>i = i - 1</code></li>
+                    <li><strong>Condition checks for >= 0</strong>: the loop continues until it reaches and processes the first element - element with index 0</li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-for-of-loop">
@@ -226,6 +258,15 @@ for (const result of results) {
     { "lines": "14", "description": "Execution continues after the loop." }
 ]
             </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Simpler syntax than classic for</strong>: no index variable or manual incrementing needed</li>
+                    <li><strong>Direct access to elements</strong>: each iteration gives you the actual array element, not its index</li>
+                    <li><strong>Cannot access the index</strong>: use a classic for loop if you need to know element positions</li>
+                    <li><strong>All elements are processed</strong>: the loop runs exactly once for every element in the array - from first to last</li>
+                </ul>
+            </div>
         </code-explainer>
 
         <code-explainer id="example-for-of-string">
@@ -265,6 +306,14 @@ for (const char of word) {
     { "lines": "8", "description": "Execution continues after the loop." }
 ]
             </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Strings are iterable</strong>: <code>for..of</code> works on strings just like it does on arrays</li>
+                    <li><strong>Each character is processed</strong>: you get one character per iteration</li>
+                    <li><strong>Order is preserved</strong>: always iterates from the first character to the last</li>
+                </ul>
+            </div>
         </code-explainer>
     </main>
 
