@@ -124,11 +124,7 @@ export class Explainer {
         this.varsContainer.innerHTML = '';
         if (step && step.variables && Object.keys(step.variables).length > 0) {
             Object.entries(step.variables).forEach(([key, value]) => {
-                const valueString = typeof value === 'object' ? JSON.stringify(value) : (typeof value === 'string' ? `"${value}"` : value);
-                const div = document.createElement('div');
-                div.className = 'variable-item';
-                div.innerHTML = `<span class="var-name">${key}:</span> <span class="var-value">${valueString}</span>`;
-                this.varsContainer.appendChild(div);
+                this.varsContainer.appendChild(this.createVariableDefinition(key, value));
             });
         } else {
             this.varsContainer.innerHTML = '<div class="empty-state">No active variables</div>';
@@ -163,5 +159,26 @@ export class Explainer {
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
+    }
+
+    createVariableDefinition(varName, varValue) {
+        const valueString = typeof varValue === 'object' 
+            ? JSON.stringify(varValue) 
+            : (typeof varValue === 'string' ? `"${varValue}"` : varValue);
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'variable-item';
+        
+        const dt = document.createElement('dt');
+        dt.className = 'var-name';
+        dt.textContent = varName;
+        
+        const dd = document.createElement('dd');
+        dd.className = 'var-value';
+        dd.textContent = valueString;
+        
+        wrapper.appendChild(dt);
+        wrapper.appendChild(dd);
+        return wrapper;
     }
 }

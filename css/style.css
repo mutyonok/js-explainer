@@ -295,6 +295,9 @@ code {
     font-family: 'IBM Plex Mono', monospace;
     /* Monospace for data */
     font-size: 0.9rem;
+    /* Reset dl defaults */
+    margin: 0;
+    padding: 0;
 }
 
 .empty-state {
@@ -306,15 +309,22 @@ code {
 .variable-item {
     display: flex;
     justify-content: flex-start;
-    /* Align start */
     gap: 0.5rem;
-    /* Gap between name: and value */
     padding: 0.4rem 0;
     border-bottom: 1px solid var(--border-subtle);
 }
 
 .variable-item:last-child {
     border-bottom: none;
+}
+
+.variables-container dt,
+.variables-container dd {
+    margin: 0;
+}
+
+.variables-container dt::after {
+    content: ':';
 }
 
 .var-name {

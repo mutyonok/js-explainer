@@ -71,7 +71,6 @@ class CodeExplainer extends HTMLElement {
         const code = codeSlot ? codeSlot.outerHTML : '';
         const summary = summarySlot ? summarySlot.innerHTML : '';
 
-        // Build the HTML structure
         // NOTE: We don't set an ID on the article to avoid duplicate IDs
         // The Explainer class will use the code-explainer element itself as the root
         const html = `
@@ -84,9 +83,9 @@ class CodeExplainer extends HTMLElement {
                     </figure>
                     <aside class="data-panel" aria-label="Variables Inspector">
                         <h3>Variables</h3>
-                        <div class="variables-container">
+                        <dl class="variables-container">
                             <div class="empty-state">No active variables</div>
-                        </div>
+                        </dl>
                     </aside>
                 </div>
                 <div class="controls">
