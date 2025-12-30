@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array forEach - JS Concept Explainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Prism CSS -->
+    <link id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/theme-init.js"></script>
+    <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/code-explainer.js"></script>
+</head>
+
+<body>
+    <main id="app">
+        <header class="app-header">
+            <div class="header-content">
+                <a href="index.html" class="back-link">← Back to Concepts</a>
+                <h1>Array forEach</h1>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" width="24" height="24">
+                    <use href="assets/moon.svg#icon-moon"></use>
+                </svg>
+                <svg class="icon-sun" width="24" height="24">
+                    <use href="assets/sun.svg#icon-sun"></use>
+                </svg>
+            </button>
+        </header>
+
+        <code-explainer id="example-foreach-basic">
+            <h2 slot="title">Basic <code>forEach</code> with Even/Odd Check</h2>
+            <p slot="description">
+                The <code>forEach</code> method executes a callback function once for each array element - from first to last.
+                Unlike <code>map</code> or <code>filter</code>, it doesn't return anything - i.e. you can't use it to transform the array. 
+                If the function you pass to <code>forEach</code> returns a value, it will be ignored.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const numbers = [5, 8, 4, 1];
+numbers.forEach((num) => {
+  if (num % 2 === 0) {
+    console.log(`${num} is even`);
+  } else {
+    console.log(`${num} is odd`);
+  }
+});</code></pre>
+            <script type="application/json">
+[
+  { "lines": "1", "variables": {}, "description": "1. Define an array of numbers." },
+  { "lines": "2", "variables": { "numbers": [5,8,4,1] }, "description": "2. Call <code>forEach()</code>. The callback function will run once for each element in the array." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 5 }, "description": "3. First iteration. Callback function is called with argument <code>num</code> assigned to 5." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 5 }, "description": "4. Check if 5 is even: <code>5 % 2</code> = 1, so the condition is false." },
+  { "lines": "6", "variables": { "num": 5 }, "description": "5. Execute else block. Log '5 is odd' to console." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 8 }, "description": "6. Second iteration. <code>num</code> is 8." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 8 }, "description": "7. Check if 8 is even: <code>8 % 2</code> = 0, so the condition is true." },
+  { "lines": "4", "variables": { "num": 8 }, "description": "8. Execute if block. Log '8 is even' to console." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 4 }, "description": "9. Third iteration. <code>num</code> is 4." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 4 }, "description": "10. Check if 4 is even: <code>4 % 2</code> = 0, so the condition is true." },
+  { "lines": "4", "variables": { "num": 4 }, "description": "11. Execute if block. Log '4 is even' to console." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 1 }, "description": "12. Fourth iteration. <code>num</code> is 1." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 1 }, "description": "13. Check if 1 is even: <code>1 % 2</code> = 1, so the condition is false." },
+  { "lines": "6", "variables": { "num": 1 }, "description": "14. Execute else block. Log '1 is odd' to console." },
+  { "lines": "8", "variables": {}, "description": "15. <code>forEach</code> finishes. No value is returned (forEach always returns <code>undefined</code>)." }
+]
+        </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><code>forEach()</code> runs a callback for each element in the array - from first to last</li>
+                    <li>It doesn't return anything - you can't use it to transform the array.</li>
+                    <li>If you need to transform the array, use <code>map()</code> instead.</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-foreach-objects">
+            <h2 slot="title"><code>forEach</code> with Array of Objects</h2>
+            <p slot="description">
+                <code>forEach</code> works on arrays of any type of elements: numbers, strings, objects, etc. It always runs the callback function for each element - from first to last.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const students = [
+  { name: "Alice", grade: "A" },
+  { name: "Bob", grade: "B" }
+];
+students.forEach((student) => {
+  console.log(`${student.name} got ${student.grade}`);
+});</code></pre>
+            <script type="application/json">
+[
+  { "lines": "1-4", "variables": {}, "description": "1. Define an array of student objects. Each object has <code>name</code> and <code>grade</code> properties." },
+  { "lines": "5", "variables": { "students": [{"name":"Alice","grade":"A"},{"name":"Bob","grade":"B"}] }, "description": "2. Call <code>forEach()</code> on the students array." },
+  { "lines": "5", "range": { "text": "student" }, "variables": { "student": {"name":"Alice","grade":"A"} }, "description": "3. First iteration. <code>student</code> is the first object in array." },
+  { "lines": "6", "variables": { "student": {"name":"Alice","grade":"A"} }, "description": "4. Access <code>student.name</code> ('Alice') and <code>student.grade</code> ('A'). Log 'Alice got A' to console." },
+  { "lines": "5", "range": { "text": "student" }, "variables": { "student": {"name":"Bob","grade":"B"} }, "description": "5. Second iteration. <code>student</code> is the second object: Bob's record." },
+  { "lines": "6", variables": { "student": {"name":"Bob","grade":"B"} }, "description": "6. Access <code>student.name</code> ('Bob') and <code>student.grade</code> ('B'). Log 'Bob got B' to console." },
+  { "lines": "7", "variables": {}, "description": "7. <code>forEach</code> finishes after processing all elements." }
+]
+        </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li>The callback parameter receives the entire object on each iteration</li>
+                    <li>Use dot notation to access object properties inside the callback</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-foreach-sum">
+            <h2 slot="title"><code>forEach</code> to Calculate a Sum</h2>
+            <p slot="description">
+                We can read and modify variables declared outside the callback function.
+                This pattern is useful for accumulating results like totals or counts.<br>
+                In this example we use <code>let</code> to declare the <code>total</code> variable because it will change.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const prices = [10, 25, 15];
+let total = 0;
+prices.forEach((price) => {
+  total = total + price;
+});
+console.log(total);</code></pre>
+            <script type="application/json">
+[
+  { "lines": "1", "variables": {}, "description": "1. Define an array of prices." },
+  { "lines": "2", "variables": { "prices": [10,25,15], "total": 0 }, "description": "2. Initialize <code>total</code> to 0. We use <code>let</code> because this variable will change." },
+  { "lines": "3", "variables": { "prices": [10,25,15], "total": 0 }, "description": "3. Call <code>forEach()</code> on the <code>prices</code> array." },
+  { "lines": "3", "range": { "text": "price" }, "variables": { "price": 10, "total": 0 }, "description": "4. First iteration. Callback function is called with <code>price</code> equals to 10." },
+  { "lines": "4", "range": { "text": "total = total + price" }, "variables": { "price": 10, "total": 10 }, "description": "5. Variable <code>total</code> is visible because it's declared before the callback function.<br>Add price to total: <code>0 + 10 = 10</code>. Update <code>total</code> to 10." },
+  { "lines": "3", "range": { "text": "price" }, "variables": { "price": 25, "total": 10 }, "description": "6. Second iteration. <code>price</code> is 25." },
+  { "lines": "4", "range": { "text": "total = total + price" }, "variables": { "price": 25, "total": 35 }, "description": "7. Add price to total: <code>10 + 25 = 35</code>. Update <code>total</code> to 35." },
+  { "lines": "3", "range": { "text": "price" }, "variables": { "price": 15, "total": 35 }, "description": "8. Third iteration. <code>price</code> is 15." },
+  { "lines": "4", "range": { "text": "total = total + price" }, "variables": { "price": 15, "total": 50 }, "description": "9. Add price to total: <code>35 + 15 = 50</code>. Update <code>total</code> to 50." },
+  { "lines": "5", "variables": { "total": 50 }, "description": "10. <code>forEach</code> finishes." },
+  { "lines": "6", "variables": { "total": 50 }, "description": "11. Log the final total: 50." }
+]
+        </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><code>forEach</code> can modify variables declared outside the callback function</li>
+                    <li>Use <code>let</code> (not <code>const</code>) for variables that need to change and declare them before the callback function</li>
+                    <li>For summing arrays, <code>reduce()</code> is often a better choice</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-foreach-index">
+            <h2 slot="title"><code>forEach</code> with Index Parameter</h2>
+            <p slot="description">
+                The callback function can receive a second parameter: the index of the current element in the array.
+                This is useful when you need to know the position of the element in the array.<br>
+                In this example we use the index to print the numbered list of tasks.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const tasks = ["buy groceries", "wash dishes", "clean the house"];
+tasks.forEach((task, index) => {
+  console.log(`${index + 1}. ${task}`);
+});</code></pre>
+            <script type="application/json">
+[
+  { "lines": "1", "variables": {}, "description": "1. Define an array of tasks." },
+  { "lines": "2", "variables": { "tasks": ["buy groceries","wash dishes","clean the house"] }, "description": "2. Call <code>forEach()</code> with two parameters: <code>task</code> (the element) and <code>index</code> (the position)." },
+  { "lines": "2", "range": { "text": "task, index" }, "variables": { "task": "buy groceries", "index": 0 }, "description": "3. First iteration. <code>task</code> is 'buy groceries', <code>index</code> is 0." },
+  { "lines": "3", "range": { "text": "index + 1" }, "variables": { "task": "buy groceries", "index": 0 }, "description": "4. Calculate display number: <code>0 + 1 = 1</code>. Log '1. buy groceries' to console." },
+  { "lines": "2", "range": { "text": "task, index" }, "variables": { "task": "wash dishes", "index": 1 }, "description": "5. Second iteration. <code>task</code> is 'wash dishes', <code>index</code> is 1." },
+  { "lines": "3", "range": { "text": "index + 1" }, "variables": { "task": "wash dishes", "index": 1 }, "description": "6. Calculate display number: <code>1 + 1 = 2</code>. Log '2. wash dishes' to console." },
+  { "lines": "2", "range": { "text": "task, index" }, "variables": { "task": "clean the house", "index": 2 }, "description": "7. Third iteration. <code>task</code> is 'clean the house', <code>index</code> is 2." },
+  { "lines": "3", "range": { "text": "index + 1" }, "variables": { "task": "clean the house", "index": 2 }, "description": "8. Calculate display number: <code>2 + 1 = 3</code>. Log '3. clean the house' to console." },
+  { "lines": "4", "variables": {}, "description": "9. <code>forEach</code> finishes after all elements are processed." }
+]
+        </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li>The second parameter gives you the index of the current element in the array</li>
+                    <li>Array index always starts from 0</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-foreach-vs-forof">
+            <h2 slot="title">Comparison: <code>forEach</code> vs <code>for..of</code></h2>
+            <p slot="description">
+                Both <code>forEach</code> and <code>for..of</code> iterate through arrays in the same way: from first to last element.
+                The main difference is that <code>forEach</code> can provide the index of the current element as a second parameter, while <code>for..of</code> does not.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const names = ["Alice", "Bob"];
+names.forEach((name) => {
+  console.log(`Hello, ${name}!`);
+});
+
+for (const name of names) {
+  console.log(`Hello, ${name}!`);
+}</code></pre>
+            <script type="application/json">
+[
+  { "lines": "1", "variables": { "names": ["Alice","Bob"] }, "description": "1. Define an array of names." },
+  { "lines": "2", "variables": { "names": ["Alice","Bob"] }, "description": "2. First approach: using <code>forEach</code>." },
+  { "lines": "2", "range": { "text": "name" }, "variables": { "names": ["Alice","Bob"], "name": "Alice" }, "description": "3. forEach first iteration. <code>name</code> is 'Alice'." },
+  { "lines": "3", "variables": { "names": ["Alice","Bob"], "name": "Alice" }, "description": "4. Log 'Hello, Alice!' to console." },
+  { "lines": "2", "range": { "text": "name" }, "variables": { "names": ["Alice","Bob"], "name": "Bob" }, "description": "5. forEach second iteration. <code>name</code> is 'Bob'." },
+  { "lines": "3", "variables": { "names": ["Alice","Bob"], "name": "Bob" }, "description": "6. Log 'Hello, Bob!' to console." },
+  { "lines": "4", "variables": { "names": ["Alice","Bob"] }, "description": "7. <code>forEach</code> finishes." },
+  { "lines": "6", "variables": { "names": ["Alice","Bob"] }, "description": "8. Second approach: using <code>for..of</code>. Same task, different syntax." },
+  { "lines": "6", "range": { "text": "const name of names" }, "variables": { "names": ["Alice","Bob"], "name": "Alice" }, "description": "9. for..of first iteration. <code>name</code> is 'Alice'." },
+  { "lines": "7", "variables": { "names": ["Alice","Bob"], "name": "Alice" }, "description": "10. Log 'Hello, Alice!' to console." },
+  { "lines": "6", "range": { "text": "const name of names" }, "variables": { "names": ["Alice","Bob"], "name": "Bob" }, "description": "11. for..of second iteration. <code>name</code> is 'Bob'." },
+  { "lines": "7", "variables": { "names": ["Alice","Bob"], "name": "Bob" }, "description": "12. Log 'Hello, Bob!' to console." },
+  { "lines": "8", "variables": { "names": ["Alice","Bob"] }, "description": "13. <code>for..of</code> finishes. Both approaches produced the same output." }
+]
+        </script>
+            <div slot="summary">
+                <h3>Key Differences:</h3>
+                <ul>
+                    <li><code>for..of</code> allows <code>break</code> and <code>continue</code> — <code>forEach</code> does not</li>
+                    <li><code>forEach</code> provides the index easily as a second parameter</li>
+                    <li>Use <code>for..of</code> when you need to exit early; use <code>forEach</code> for simple iterations from first to last element</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+    </main>
+
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+</body>
+
+</html>
+

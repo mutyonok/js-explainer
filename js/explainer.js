@@ -124,9 +124,10 @@ export class Explainer {
         this.varsContainer.innerHTML = '';
         if (step && step.variables && Object.keys(step.variables).length > 0) {
             Object.entries(step.variables).forEach(([key, value]) => {
+                const valueString = typeof value === 'object' ? JSON.stringify(value) : (typeof value === 'string' ? `"${value}"` : value);
                 const div = document.createElement('div');
                 div.className = 'variable-item';
-                div.innerHTML = `<span class="var-name">${key}:</span> <span class="var-value">${typeof value === 'object' ? JSON.stringify(value) : value}</span>`;
+                div.innerHTML = `<span class="var-name">${key}:</span> <span class="var-value">${valueString}</span>`;
                 this.varsContainer.appendChild(div);
             });
         } else {
