@@ -22,16 +22,16 @@
 
     <link rel="stylesheet" href="css/style.css">
     
-    <script src="js/theme-init.js"></script>
-    <script type="module" src="js/theme.js"></script>
-    <script type="module" src="js/code-explainer.js"></script>
+    <script src="js/theme/theme-init.js"></script>
+    <script type="module" src="js/theme/theme.js"></script>
+    <script type="module" src="js/components/code-explainer.js"></script>
 </head>
 
 <body>
     <main id="app">
         <header class="app-header">
             <div class="header-content">
-                <a href="index.html" class="back-link">← Back to Concepts</a>
+                <a href="index.html" class="back-link">&larr; Back to Concepts</a>
                 <h1>Array forEach</h1>
             </div>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -225,7 +225,7 @@ for (const name of names) {
             <div slot="summary">
                 <h3>Key Differences:</h3>
                 <ul>
-                    <li><code>for..of</code> allows <code>break</code> and <code>continue</code> — <code>forEach</code> does not</li>
+                    <li><code>for..of</code> allows <code>break</code> and <code>continue</code> - <code>forEach</code> does not</li>
                     <li><code>forEach</code> provides the index easily as a second parameter</li>
                     <li>Use <code>for..of</code> when you need to exit early; use <code>forEach</code> for simple iterations from first to last element</li>
                 </ul>

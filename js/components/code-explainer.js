@@ -1,4 +1,4 @@
-import { Explainer } from './explainer.js';
+import { Explainer } from '../core/explainer.js';
 
 /**
  * CodeExplainer Web Component

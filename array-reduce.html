@@ -22,16 +22,16 @@
 
     <link rel="stylesheet" href="css/style.css">
     
-    <script src="js/theme-init.js"></script>
-    <script type="module" src="js/theme.js"></script>
-    <script type="module" src="js/code-explainer.js"></script>
+    <script src="js/theme/theme-init.js"></script>
+    <script type="module" src="js/theme/theme.js"></script>
+    <script type="module" src="js/components/code-explainer.js"></script>
 </head>
 
 <body>
     <main id="app">
         <header class="app-header">
             <div class="header-content">
-                <a href="index.html" class="back-link">← Back to Concepts</a>
+                <a href="index.html" class="back-link">&larr; Back to Concepts</a>
                 <h1>Array Reduce</h1>
             </div>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -100,7 +100,7 @@ const sentence = words.reduce(
                 <ul>
                     <li><strong>First element becomes accumulator</strong>: When no initial value is provided, the first array element automatically becomes the starting accumulator value</li>
                     <li><strong>Iteration starts from second element</strong>: Reduce begins processing from index 1, not index 0</li>
-                    <li><strong>Transformation pattern</strong>: Demonstrates how reduce can transform an array into a single accumulated value (strings → sentence)</li>
+                    <li><strong>Transformation pattern</strong>: Demonstrates how reduce can transform an array into a single accumulated value (strings &rarr; sentence)</li>
                     <li><strong>Accumulator updates</strong>: Shows how the accumulator value grows with each iteration</li>
                 </ul>
             </div>
