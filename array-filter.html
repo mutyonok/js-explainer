@@ -78,9 +78,9 @@ const evens = numbers.filter((num) => {
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><code>filter()</code> creates a new array - the original array stays unchanged</li>
+                    <li><code>filter()</code> creates a new array — the original array stays unchanged</li>
                     <li>The callback must return <code>true</code> to keep an element, <code>false</code> to exclude it</li>
-                    <li>The modulo operator <code>%</code> returns the remainder - if <code>num % 2 === 0</code>, the number is even</li>
+                    <li>The modulo operator <code>%</code> returns the remainder — if <code>num % 2 === 0</code>, the number is even</li>
                     <li>Arrow function with explicit return must have <code>return</code> keyword and curly braces</li>
                 </ul>
             </div>
@@ -125,7 +125,7 @@ const longWords = words.filter((word) => {
             <h2 slot="title">Filter Adults (Implicit Return)</h2>
             <p slot="description">
                 We filter an array of person objects to find only adults (age 18 or older).
-                This example uses <b>implicit return</b> - a shorter syntax where we skip the curly braces
+                This example uses <b>implicit return</b> — a shorter syntax where we skip the curly braces
                 and <code>return</code> keyword.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const people = [
@@ -137,7 +137,7 @@ const adults = people.filter(person => person.age >= 18);</code></pre>
             <script type="application/json">
 [
   { "lines": "1-5", "variables": {}, "description": "1. We define an array of 3 person objects. Each person has a name and an age." },
-  { "lines": "6", "variables": { "people": [{"name":"Alice","age":17},{"name":"Bob","age":21},{"name":"Charlie","age":15}] }, "description": "2. Call <code>filter()</code> with implicit return. No curly braces, no return keyword - the expression result is returned automatically." },
+  { "lines": "6", "variables": { "people": [{"name":"Alice","age":17},{"name":"Bob","age":21},{"name":"Charlie","age":15}] }, "description": "2. Call <code>filter()</code> with implicit return. No curly braces, no return keyword — the expression result is returned automatically." },
   { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Alice","age":17} }, "description": "3. First iteration: <code>person</code> is Alice (age 17)." },
   { "lines": "6", "range": { "text": "person.age >= 18" }, "variables": { "person": {"name":"Alice","age":17} }, "description": "4. Test: Is <code>17 >= 18</code>? <b>No</b>. Alice is <b>excluded</b>." },
   { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Bob","age":21} }, "description": "5. Second iteration: <code>person</code> is Bob (age 21)." },
@@ -169,7 +169,7 @@ const cleaned = data.filter((item) => {
 });</code></pre>
             <script type="application/json">
 [
-  { "lines": "1", "variables": { "data": ["apple", "", "banana", null, "cherry"] }, "description": "1. Our array has 5 items, but some are empty or null - we want to remove those." },
+  { "lines": "1", "variables": { "data": ["apple", "", "banana", null, "cherry"] }, "description": "1. Our array has 5 items, but some are empty or null — we want to remove those." },
   { "lines": "2", "variables": { "data": ["apple", "", "banana", null, "cherry"] }, "description": "2. Call <code>filter()</code>. The callback just returns the item itself. JavaScript treats some values as \"falsy\" (they act like false)." },
   { "lines": "2", "range": { "text": "item" }, "variables": { "item": "apple" }, "description": "3. First iteration: <code>item</code> is \"apple\"." },
   { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "apple" }, "description": "4. Return \"apple\". A non-empty string is <b>truthy</b> (acts like true). \"apple\" is <b>kept</b>." },
@@ -226,7 +226,7 @@ const deals = products.filter((product) => {
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li>Use <code>&&</code> (AND) to combine conditions - <b>all</b> must be true to keep the element</li>
+                    <li>Use <code>&&</code> (AND) to combine conditions — <b>all</b> must be true to keep the element</li>
                     <li>Use <code>||</code> (OR) when <b>any one</b> condition being true is enough</li>
                     <li>Real-world filtering often requires checking multiple properties at once</li>
                 </ul>
