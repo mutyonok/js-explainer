@@ -35,6 +35,10 @@
     --btn-text-color: var(--bg-color);
     /* For buttons with accent background */
     --btn-hover-text: white;
+
+    /* Fixed height panel measurements */
+    --var-row-height: 2.2rem;       /* 0.9rem font × 1.5 line-height + 0.8rem padding */
+    --max-var-rows: 3;               /* default, overridden by JS */
 }
 
 html.light-theme {
@@ -265,8 +269,44 @@ code {
     grid-template-columns: 60% 40%;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    align-items: start;
-    /* Fix vertical alignment */
+    align-items: stretch;
+}
+
+code-explainer aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.code-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.code-figure {
+    margin: 0;
+}
+
+.step-description {
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    /* Fixed height for 2 lines: (2 × 1.6rem line-height) + (2 × 0.75rem padding) */
+    height: calc(2 * 1.6rem + 2 * 0.75rem);
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+.step-description::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.step-description-placeholder {
+    font-style: italic;
 }
 
 .data-panel {
@@ -276,6 +316,7 @@ code {
     padding: 1rem;
     display: flex;
     flex-direction: column;
+    gap: 0.75rem;
 }
 
 .data-panel h3 {
@@ -290,13 +331,21 @@ code {
 }
 
 .variables-container {
-    flex-grow: 1;
     font-family: 'IBM Plex Mono', monospace;
-    /* Monospace for data */
     font-size: 0.9rem;
-    /* Reset dl defaults */
     margin: 0;
-    padding: 0;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Fixed height based on max variable rows */
+    height: calc(var(--max-var-rows) * var(--var-row-height));
+    /* Hide scrollbar but keep scroll functionality */
+    scrollbar-width: none; /* Firefox */
+}
+
+.variables-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
 }
 
 .empty-state {
@@ -332,6 +381,7 @@ code {
 
 .var-value {
     color: var(--var-value-color);
+    white-space: nowrap;
 }
 
 /* Controls */
@@ -340,7 +390,6 @@ code {
     justify-content: flex-end;
     gap: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
 }
 
 button {
@@ -447,6 +496,9 @@ mark.custom-highlight {
 @media (max-width: 768px) {
     .content-grid {
         grid-template-columns: 1fr;
+    }
+    .controls {
+        justify-content: flex-start;
     }
     h1 {
         font-size: 2rem;

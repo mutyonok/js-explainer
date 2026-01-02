@@ -78,19 +78,24 @@ class CodeExplainer extends HTMLElement {
                 <h2>${title}</h2>
                 ${description ? `<p class="description">${description}</p>` : ''}
                 <div class="content-grid">
-                    <figure class="code-panel">
-                        ${code}
-                    </figure>
-                    <aside class="data-panel" aria-label="Variables Inspector">
-                        <h3>Variables</h3>
-                        <dl class="variables-container">
-                            <div class="empty-state">No active variables</div>
-                        </dl>
+                    <div class="code-panel" aria-label="Code">
+                        <figure class="code-figure">
+                            ${code}
+                        </figure>
+                        <div class="step-description" aria-live="polite"></div>
+                    </div>
+                    <aside aria-label="Variables Inspector">
+                        <section class="data-panel">
+                            <h3>Variables</h3>
+                            <dl class="variables-container">
+                                <div class="empty-state">No active variables</div>
+                            </dl>
+                        </section>
+                        <div class="controls">
+                            <button class="btn-reset">Reset</button>
+                            <button class="btn-next">Next Step</button>
+                        </div>
                     </aside>
-                </div>
-                <div class="controls">
-                    <button class="btn-reset">Reset</button>
-                    <button class="btn-next">Next Step</button>
                 </div>
                 ${summary ? `<p class="summary-section">${summary}</p>` : ''}
             </article>

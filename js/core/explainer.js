@@ -14,12 +14,17 @@ export class Explainer {
         this.codeEl = this.preEl.querySelector('code');
         this.varsContainer = this.rootElement.querySelector('.variables-container');
         this.descEl = this.rootElement.querySelector('.description');
+        this.stepDescEl = this.rootElement.querySelector('.step-description');
         this.nextBtn = this.rootElement.querySelector('.btn-next');
         this.resetBtn = this.rootElement.querySelector('.btn-reset');
 
         // Cache raw code and description
         this.originalCode = this.codeEl.textContent;
-        this.originalDescription = this.descEl.innerHTML;
+        this.originalDescription = this.descEl ? this.descEl.innerHTML : '';
+        this.originalStepDescription = this.stepDescEl ? this.stepDescEl.innerHTML : '';
+
+        // Calculate and apply fixed heights before first render
+        this.calculateFixedHeights();
 
         // Bind events
         this.nextBtn.addEventListener('click', () => this.next());
@@ -33,7 +38,8 @@ export class Explainer {
         this.stepIndex = -1;
         this.render();
         // Scroll to top of the card or description for better visibility
-        this.descEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const scrollTarget = this.stepDescEl || this.descEl || this.rootElement;
+        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     next() {
@@ -52,10 +58,22 @@ export class Explainer {
         const lastStep = this.config.steps.length - 1;
 
         // 1. Update Description & Button Text
-        if (step) {
-            this.descEl.innerHTML = step.description;
-        } else {
-            this.descEl.innerHTML = this.originalDescription;
+        // Keep the example description (slot="description") static.
+        // Step-specific text goes into `.step-description` (below the code panel).
+        // Fallback to `.description` only if `.step-description` does not exist.
+        if (this.stepDescEl) {
+            if (step && typeof step.description === 'string') {
+                this.stepDescEl.innerHTML = step.description;
+            } else {
+                // Show placeholder text when not started
+                this.stepDescEl.innerHTML = '<span class="step-description-placeholder">Click Next Step to begin.</span>';
+            }
+        } else if (this.descEl) {
+            if (step && typeof step.description === 'string') {
+                this.descEl.innerHTML = step.description;
+            } else {
+                this.descEl.innerHTML = this.originalDescription;
+            }
         }
 
         // Update Button Text
@@ -180,5 +198,24 @@ export class Explainer {
         wrapper.appendChild(dt);
         wrapper.appendChild(dd);
         return wrapper;
+    }
+
+    /**
+     * Calculate and apply fixed heights for panels based on step configuration.
+     * Sets CSS custom properties that CSS calc() uses for panel heights.
+     */
+    calculateFixedHeights() {
+        const steps = this.config.steps;
+
+        // Calculate max variable count across all steps
+        const maxVarCount = Math.max(
+            1, // minimum 1 row for empty state
+            ...steps.map(step =>
+                step.variables ? Object.keys(step.variables).length : 0
+            )
+        );
+
+        // Set CSS custom property on component root
+        this.rootElement.style.setProperty('--max-var-rows', maxVarCount);
     }
 }
