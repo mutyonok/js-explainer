@@ -23,60 +23,25 @@ class CodeExplainer extends HTMLElement {
      * Initialize the Explainer instance for this component
      */
     initializeExplainer() {
-        const steps = this.getSteps();
-        this.createExplainer(steps);
-    }
-
-    /**
-     * Create the Explainer instance
-     * @param {Array} steps - Array of step configurations
-     */
-    createExplainer(steps) {
-        if (steps && steps.length > 0) {
-            this.explainer = new Explainer(this.id, { id: this.id, steps });
-        } else {
-            console.warn(`No configuration found for ${this.id}`);
-        }
-    }
-
-    /**
-     * Get the step configuration from the JSON script tag
-     * @returns {Array|null} Array of step objects or null if not found
-     */
-    getSteps() {
         const scriptTag = this.querySelector('script[type="application/json"]');
-        if (!scriptTag) {
-            return null;
-        }
-
-        try {
-            return JSON.parse(scriptTag.textContent);
-        } catch (error) {
-            console.error(`Error parsing JSON configuration for ${this.id}:`, error);
-            return null;
-        }
+        const steps = JSON.parse(scriptTag.textContent);
+        this.explainer = new Explainer(this.id, { id: this.id, steps });
     }
 
     render() {
         // Get slotted content
-        const titleSlot = this.querySelector('[slot="title"]');
-        const descriptionSlot = this.querySelector('[slot="description"]');
-        const codeSlot = this.querySelector('[slot="code"]');
-        const summarySlot = this.querySelector('[slot="summary"]');
+        const title = this.querySelector('[slot="title"]').innerHTML;
+        const description = this.querySelector('[slot="description"]').innerHTML;
+        const code = this.querySelector('[slot="code"]').outerHTML;
+        const summary = this.querySelector('[slot="summary"]').innerHTML;
         const scriptTag = this.querySelector('script[type="application/json"]');
-
-        // Extract content from slots
-        const title = titleSlot ? titleSlot.innerHTML : 'Example';
-        const description = descriptionSlot ? descriptionSlot.innerHTML : '';
-        const code = codeSlot ? codeSlot.outerHTML : '';
-        const summary = summarySlot ? summarySlot.innerHTML : '';
 
         // NOTE: We don't set an ID on the article to avoid duplicate IDs
         // The Explainer class will use the code-explainer element itself as the root
-        const html = `
+        this.innerHTML = `
             <article class="example-card">
                 <h2>${title}</h2>
-                ${description ? `<p class="description">${description}</p>` : ''}
+                <p class="description">${description}</p>
                 <div class="content-grid">
                     <div class="code-panel" aria-label="Code">
                         <figure class="code-figure">
@@ -97,22 +62,15 @@ class CodeExplainer extends HTMLElement {
                         </div>
                     </aside>
                 </div>
-                ${summary ? `<p class="summary-section">${summary}</p>` : ''}
+                <p class="summary-section">${summary}</p>
             </article>
         `;
 
-        // Replace the component's content with the rendered HTML
-        this.innerHTML = html;
+        // Re-append the script tag (preserve configuration)
+        this.appendChild(scriptTag);
 
-        // Re-append the script tag if it exists (preserve configuration)
-        if (scriptTag) {
-            this.appendChild(scriptTag);
-        }
-
-        // Trigger Prism highlighting if available
-        if (window.Prism) {
-            window.Prism.highlightAllUnder(this);
-        }
+        // Trigger Prism highlighting
+        Prism.highlightAllUnder(this);
     }
 }
 

@@ -20,8 +20,8 @@ export class Explainer {
 
         // Cache raw code and description
         this.originalCode = this.codeEl.textContent;
-        this.originalDescription = this.descEl ? this.descEl.innerHTML : '';
-        this.originalStepDescription = this.stepDescEl ? this.stepDescEl.innerHTML : '';
+        this.originalDescription = this.descEl.innerHTML;
+        this.originalStepDescription = this.stepDescEl.innerHTML;
 
         // Calculate and apply fixed heights before first render
         this.calculateFixedHeights();
@@ -37,9 +37,8 @@ export class Explainer {
     reset() {
         this.stepIndex = -1;
         this.render();
-        // Scroll to top of the card or description for better visibility
-        const scrollTarget = this.stepDescEl || this.descEl || this.rootElement;
-        scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Scroll to top of the card for better visibility
+        this.stepDescEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     next() {
@@ -57,23 +56,11 @@ export class Explainer {
 
         const lastStep = this.config.steps.length - 1;
 
-        // 1. Update Description & Button Text
-        // Keep the example description (slot="description") static.
-        // Step-specific text goes into `.step-description` (below the code panel).
-        // Fallback to `.description` only if `.step-description` does not exist.
-        if (this.stepDescEl) {
-            if (step && typeof step.description === 'string') {
-                this.stepDescEl.innerHTML = step.description;
-            } else {
-                // Show placeholder text when not started
-                this.stepDescEl.innerHTML = '<span class="step-description-placeholder">Click Next Step to begin.</span>';
-            }
-        } else if (this.descEl) {
-            if (step && typeof step.description === 'string') {
-                this.descEl.innerHTML = step.description;
-            } else {
-                this.descEl.innerHTML = this.originalDescription;
-            }
+        // 1. Update Step Description & Button Text
+        if (step) {
+            this.stepDescEl.innerHTML = step.description;
+        } else {
+            this.stepDescEl.innerHTML = '<span class="step-description-placeholder">Click Next Step to begin.</span>';
         }
 
         // Update Button Text
@@ -140,8 +127,9 @@ export class Explainer {
 
         // 3. Update Variables
         this.varsContainer.innerHTML = '';
-        if (step && step.variables && Object.keys(step.variables).length > 0) {
-            Object.entries(step.variables).forEach(([key, value]) => {
+        const variables = step?.variables;
+        if (variables && Object.keys(variables).length > 0) {
+            Object.entries(variables).forEach(([key, value]) => {
                 this.varsContainer.appendChild(this.createVariableDefinition(key, value));
             });
         } else {
@@ -150,19 +138,14 @@ export class Explainer {
     }
 
     parseLineNumbers(linesString) {
-        if (!linesString) return [];
         // Handle "1" or "1,3" or "1-3"
-        const result = [];
-        const parts = linesString.split(',');
-        parts.forEach(part => {
+        return linesString.split(',').flatMap(part => {
             if (part.includes('-')) {
                 const [start, end] = part.split('-').map(Number);
-                for (let i = start; i <= end; i++) result.push(i);
-            } else {
-                result.push(Number(part));
+                return Array.from({ length: end - start + 1 }, (_, i) => start + i);
             }
+            return Number(part);
         });
-        return result;
     }
 
     escapeRegExp(string) {
@@ -170,7 +153,6 @@ export class Explainer {
     }
 
     escapeHtml(text) {
-        if (!text) return text;
         return text
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
@@ -205,12 +187,10 @@ export class Explainer {
      * Sets CSS custom properties that CSS calc() uses for panel heights.
      */
     calculateFixedHeights() {
-        const steps = this.config.steps;
-
         // Calculate max variable count across all steps
         const maxVarCount = Math.max(
             1, // minimum 1 row for empty state
-            ...steps.map(step =>
+            ...this.config.steps.map(step =>
                 step.variables ? Object.keys(step.variables).length : 0
             )
         );
