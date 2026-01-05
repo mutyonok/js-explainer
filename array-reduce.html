@@ -60,38 +60,38 @@ const sentence = words.reduce(
 );</code></pre>
             <script type="application/json">
     [
-            { "lines": "1", "variables": { "words": ["I", "love", "JS"] }, "description": Declare variable <code>words</code>." },
+            { "lines": "1", "variables": { "words": ["I", "love", "JS"] }, "description": "Declare variable <code>words</code>." },
             {
                 "lines": "2-5",
                 "variables": { "words": ["I", "love", "JS"] },
-                "description": Call <code>reduce()</code> with NO initial value. <code>accumulator</code> will start with the first element of the array (<code>\"I\"</code>)."
+                "description": "Call <code>reduce()</code> with NO initial value. <code>accumulator</code> will start with the first element of the array (<code>\"I\"</code>)."
             },
             {
                 "lines": "3",
                 "range": { "text": "accumulator, word" },
                 "variables": { "accumulator": "I", "word": "love" },
-                "description": First iteration: <code>accumulator</code> = <code>\"I\"</code>, <code>word</code> = <code>\"love\"</code> (the second element)."
+                "description": "First iteration: <code>accumulator</code> = <code>\"I\"</code>, <code>word</code> = <code>\"love\"</code> (the second element)."
             },
             {
                 "lines": "4",
                 "variables": { "accumulator": "I", "word": "love" },
-                "description": Return <code>\"I love\"</code>. (New accumulator becomes <code>\"I love\"</code>)"
+                "description": "Return <code>\"I love\"</code>. (New accumulator becomes <code>\"I love\"</code>)"
             },
             {
                 "lines": "3",
                 "range": { "text": "accumulator, word" },
                 "variables": { "accumulator": "I love", "word": "JS" },
-                "description": Second iteration: <code>accumulator</code> = <code>\"I love\"</code>, <code>word</code> = <code>\"JS\"</code>."
+                "description": "Second iteration: <code>accumulator</code> = <code>\"I love\"</code>, <code>word</code> = <code>\"JS\"</code>."
             },
             {
                 "lines": "4",
                 "variables": { "accumulator": "I love", "word": "JS" },
-                "description": Return <code>\"I love JS\"</code>. (New accumulator becomes <code>\"I love JS\"</code>)"
+                "description": "Return <code>\"I love JS\"</code>. (New accumulator becomes <code>\"I love JS\"</code>)"
             },
             {
                 "lines": "2",
                 "variables": { "sentence": "I love JS" },
-                "description": <code>reduce()</code> finishes and returns the final accumulator value. We store it in <code>sentence</code> variable."
+                "description": "<code>reduce()</code> finishes and returns the final accumulator value. We store it in <code>sentence</code> variable."
             }
         ]
 </script>
@@ -131,38 +131,39 @@ const evenCount = numbers.reduce(
 );</code></pre>
             <script type="application/json">
                 [
-            { "lines": "1", "variables": { "numbers": "[2, 5, 10, 7, 2]" }, "description": Define source array <code>numbers</code>." },
-            { "lines": "2-11", "variables": { "numbers": "[2, 5, 10, 7, 2]", "count": 0 }, "description": Call <code>reduce()</code> with initial value <code>0</code>. <code>count</code> starts at <code>0</code>." },
+            { "lines": "1", "variables": { "numbers": "[2, 5, 10, 7, 2]" }, "description": "Define source array <code>numbers</code>." },
+            { "lines": "2-11", "variables": { "numbers": "[2, 5, 10, 7, 2]", "count": 0 }, "description": "Call <code>reduce()</code> with initial value <code>0</code>. <code>count</code> starts at <code>0</code>." },
 
    
-            { "lines": "3", "range": {  "text": "count, num" }, "variables": { "count": 0, "num": 2 }, "description": First iteration: <code>count</code> (accumulator) is <code>0</code>, <code>num</code> is <code>2</code>." },
-            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 0, "num": 2 }, "description": Check condition: <code>2 % 2 === 0</code> is <code>true</code>." },
-            { "lines": "5", "range": { "text": "return count + 1" }, "variables": { "count": 0, "num": 2 }, "description": Return <code>count + 1</code>. We have an even number so we want accumulator to count it. New accumulator value is <code>1</code> (<code>0 + 1</code>)." },
+            { "lines": "3", "range": {  "text": "count, num" }, "variables": { "count": 0, "num": 2 }, "description": "First iteration: <code>count</code> (accumulator) is <code>0</code>, <code>num</code> is <code>2</code>." },
+            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 0, "num": 2 }, "description": "Check condition: <code>2 % 2 === 0</code> is <code>true</code>." },
+            { "lines": "5", "range": { "text": "return count + 1" }, "variables": { "count": 0, "num": 2 }, "description": "Return <code>count + 1</code>. We have an even number so we want accumulator to count it. New accumulator value is <code>1</code> (<code>0 + 1</code>)." },
 
-            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 1, "num": 5 }, "description": Second iteration: <code>count</code> is now <code>1</code>, <code>num</code> is <code>5</code>." },
-            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 1, "num": 5 }, "description": Check condition: <code>5 % 2 === 0</code> is <code>false</code>." },
-            { "lines": "7", "range": { "text": "return count" }, "variables": { "count": 1, "num": 5 }, "description": Return current <code>count</code> (<code>1</code>). We do not have an even number so we return the current accumulator value." },
+            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 1, "num": 5 }, "description": "Second iteration: <code>count</code> is now <code>1</code>, <code>num</code> is <code>5</code>." },
+            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 1, "num": 5 }, "description": "Check condition: <code>5 % 2 === 0</code> is <code>false</code>." },
+            { "lines": "7", "range": { "text": "return count" }, "variables": { "count": 1, "num": 5 }, "description": "Return current <code>count</code> (<code>1</code>). We do not have an even number so we return the current accumulator value." },
 
-            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 1, "num": 10 }, "description": Third iteration: <code>count</code> is <code>1</code>, <code>num</code> is <code>10</code>." },
-            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 1, "num": 10 }, "description": Check condition: <code>10 % 2 === 0</code> is <code>true</code>." },
-            { "lines": "5", "range": { "text": "return count + 1" }, "variables": { "count": 1, "num": 10 }, "description": Return <code>count + 1</code> (<code>2</code>). We have an even number so we want accumulator to count it. New accumulator value is <code>2</code> (<code>1 + 1</code>)." },
+            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 1, "num": 10 }, "description": "Third iteration: <code>count</code> is <code>1</code>, <code>num</code> is <code>10</code>." },
+            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 1, "num": 10 }, "description": "Check condition: <code>10 % 2 === 0</code> is <code>true</code>." },
+            { "lines": "5", "range": { "text": "return count + 1" }, "variables": { "count": 1, "num": 10 }, "description": "Return <code>count + 1</code> (<code>2</code>). We have an even number so we want accumulator to count it. New accumulator value is <code>2</code> (<code>1 + 1</code>)." },
 
-            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 2, "num": 7 }, "description": Fourth iteration: <code>count</code> is <code>2</code>, <code>num</code> is <code>7</code>." },
-            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 2, "num": 7 }, "description": Check condition: <code>7 % 2 === 0</code> is <code>false</code>." },
-            { "lines": "7", "range": { "text": "return count" }, "variables": { "count": 2, "num": 7 }, "description": Return current <code>count</code> (<code>2</code>). We do not have an even number so we return the current accumulator value." },
+            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 2, "num": 7 }, "description": "Fourth iteration: <code>count</code> is <code>2</code>, <code>num</code> is <code>7</code>." },
+            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 2, "num": 7 }, "description": "Check condition: <code>7 % 2 === 0</code> is <code>false</code>." },
+            { "lines": "7", "range": { "text": "return count" }, "variables": { "count": 2, "num": 7 }, "description": "Return current <code>count</code> (<code>2</code>). We do not have an even number so we return the current accumulator value." },
 
-            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 2, "num": 2 }, "description": Fifth iteration: <code>count</code> is <code>2</code>, <code>num</code> is <code>2</code>." },
-            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 2, "num": 2 }, "description": Check condition: <code>2 % 2 === 0</code> is <code>true</code>." },
-            { "lines": "5", "range": { "text": "return count + 1" }, "variables": { "count": 2, "num": 2 }, "description": Return <code>count + 1</code> (<code>3</code>). We have an even number so we want accumulator to count it. New accumulator value is <code>3</code> (<code>2 + 1</code>)." },
+            { "lines": "3", "range": { "text": "count, num" }, "variables": { "count": 2, "num": 2 }, "description": "Fifth iteration: <code>count</code> is <code>2</code>, <code>num</code> is <code>2</code>." },
+            { "lines": "4", "range": { "text": "num % 2 === 0" }, "variables": { "count": 2, "num": 2 }, "description": "Check condition: <code>2 % 2 === 0</code> is <code>true</code>." },
+            { "lines": "5", "range": { "text": "return count + 1" }, "variables": { "count": 2, "num": 2 }, "description": "Return <code>count + 1</code> (<code>3</code>). We have an even number so we want accumulator to count it. New accumulator value is <code>3</code> (<code>2 + 1</code>)." },
 
-            { "lines": "2", "variables": { "evenCount": 3 }, "description": <code>reduce()</code> finishes. Final accumulator value is <code>3</code> and we store it in <code>evenCount</code> variable." }
+            { "lines": "2", "variables": { "evenCount": 3 }, "description": "<code>reduce()</code> finishes. Final accumulator value is <code>3</code> and we store it in <code>evenCount</code> variable." }
         ]
             </script>
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
                     <li><strong>Explicit initial value</strong>: When an initial value is provided (e.g.,
-                        <code>0</code>), the accumulator starts with that value</li>
+                        <code>0</code>), the accumulator starts with that value
+                    </li>
                     <li><strong>Iteration starts from first element</strong>: Reduce processes all elements starting
                         from index 0</li>
                     <li><strong>Conditional accumulator updates</strong>: Demonstrates using <code>if/else</code> logic
