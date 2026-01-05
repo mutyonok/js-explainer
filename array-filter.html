@@ -21,7 +21,7 @@
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script src="js/theme/theme-init.js"></script>
     <script type="module" src="js/theme/theme.js"></script>
     <script type="module" src="js/components/code-explainer.js"></script>
@@ -50,7 +50,8 @@
                 The <code>filter()</code> method creates a new array containing only the elements that pass a test.
                 The callback function runs for each element and must return <code>true</code> to keep the element
                 or <code>false</code> to exclude it.<br>
-                In this example, we create a new array called <code>evens</code> that contains only the even numbers from the original array. The callback function is arrow function with explicit return.
+                In this example, we create a new array called <code>evens</code> that contains only the even numbers
+                from the original array. The callback function is arrow function with explicit return.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const numbers = [8, 10, 5, 1, 7, 2];
 const evens = numbers.filter((num) => {
@@ -58,29 +59,31 @@ const evens = numbers.filter((num) => {
 });</code></pre>
             <script type="application/json">
 [
-  { "lines": "1", "variables": { "numbers": [8, 10, 5, 1, 7, 2] }, "description": "1. We start with an array of <code>6</code> numbers. Some are even, some are odd." },
-  { "lines": "2", "variables": { "numbers": [8, 10, 5, 1, 7, 2] }, "description": "2. Call <code>filter()</code>. It will test each element and build a new array with only the elements that pass." },
-  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 8 }, "description": "3. First iteration: <code>num</code> is <code>8</code>." },
-  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 8 }, "description": "4. Test: Is <code>8</code> even? <code>8 % 2 === 0</code> is <code>true</code>. Return <code>true</code>, so <code>8</code> is kept." },
-  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 10 }, "description": "5. Second iteration: <code>num</code> is <code>10</code>." },
-  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 10 }, "description": "6. Test: Is <code>10</code> even? <code>10 % 2 === 0</code> is <code>true</code>. Return <code>true</code>, so <code>10</code> is kept." },
-  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 5 }, "description": "7. Third iteration: <code>num</code> is <code>5</code>." },
-  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 5 }, "description": "8. Test: Is <code>5</code> even? <code>5 % 2 === 0</code> is <code>false</code>. Return <code>false</code>, so <code>5</code> is excluded." },
-  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 1 }, "description": "9. Fourth iteration: <code>num</code> is <code>1</code>." },
-  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 1 }, "description": "10. Test: Is <code>1</code> even? <code>1 % 2 === 0</code> is <code>false</code>. Return <code>false</code>, so <code>1</code> is excluded." },
-  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 7 }, "description": "11. Fifth iteration: <code>num</code> is <code>7</code>." },
-  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 7 }, "description": "12. Test: Is <code>7</code> even? <code>7 % 2 === 0</code> is <code>false</code>. Return <code>false</code>, so <code>7</code> is excluded." },
-  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 2 }, "description": "13. Sixth iteration: <code>num</code> is <code>2</code>." },
-  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 2 }, "description": "14. Test: Is <code>2</code> even? <code>2 % 2 === 0</code> is <code>true</code>. Return <code>true</code>, so <code>2</code> is kept." },
-  { "lines": "2", "variables": { "evens": [8, 10, 2] }, "description": "15. <code>filter()</code> finishes. Only elements that returned <code>true</code> are in the new array." }
+  { "lines": "1", "variables": { "numbers": [8, 10, 5, 1, 7, 2] }, "description": We start with an array of <code>6</code> numbers. Some are even, some are odd." },
+  { "lines": "2", "variables": { "numbers": [8, 10, 5, 1, 7, 2] }, "description": Call <code>filter()</code>. It will test each element and build a new array with only the elements that pass." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 8 }, "description": First iteration: <code>num</code> is <code>8</code>." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 8 }, "description": Test: Is <code>8</code> even? <code>8 % 2 === 0</code> is <code>true</code>. Return <code>true</code>, so <code>8</code> is kept." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 10 }, "description": Second iteration: <code>num</code> is <code>10</code>." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 10 }, "description": Test: Is <code>10</code> even? <code>10 % 2 === 0</code> is <code>true</code>. Return <code>true</code>, so <code>10</code> is kept." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 5 }, "description": Third iteration: <code>num</code> is <code>5</code>." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 5 }, "description": Test: Is <code>5</code> even? <code>5 % 2 === 0</code> is <code>false</code>. Return <code>false</code>, so <code>5</code> is excluded." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 1 }, "description": Fourth iteration: <code>num</code> is <code>1</code>." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 1 }, "description": Test: Is <code>1</code> even? <code>1 % 2 === 0</code> is <code>false</code>. Return <code>false</code>, so <code>1</code> is excluded." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 7 }, "description": Fifth iteration: <code>num</code> is <code>7</code>." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 7 }, "description": Test: Is <code>7</code> even? <code>7 % 2 === 0</code> is <code>false</code>. Return <code>false</code>, so <code>7</code> is excluded." },
+  { "lines": "2", "range": { "text": "num" }, "variables": { "num": 2 }, "description": Sixth iteration: <code>num</code> is <code>2</code>." },
+  { "lines": "3", "range": { "text": "num % 2 === 0" }, "variables": { "num": 2 }, "description": Test: Is <code>2</code> even? <code>2 % 2 === 0</code> is <code>true</code>. Return <code>true</code>, so <code>2</code> is kept." },
+  { "lines": "2", "variables": { "evens": [8, 10, 2] }, "description": <code>filter()</code> finishes. Only elements that returned <code>true</code> are in the new array." }
 ]
         </script>
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
                     <li><code>filter()</code> creates a new array — the original array stays unchanged</li>
-                    <li>The callback must return <code>true</code> to keep an element, <code>false</code> to exclude it</li>
-                    <li>The modulo operator <code>%</code> returns the remainder — if <code>num % 2 === 0</code>, the number is even</li>
+                    <li>The callback must return <code>true</code> to keep an element, <code>false</code> to exclude it
+                    </li>
+                    <li>The modulo operator <code>%</code> returns the remainder — if <code>num % 2 === 0</code>, the
+                        number is even</li>
                     <li>Arrow function with explicit return must have <code>return</code> keyword and curly braces</li>
                 </ul>
             </div>
@@ -98,24 +101,25 @@ const longWords = words.filter((word) => {
 });</code></pre>
             <script type="application/json">
 [
-  { "lines": "1", "variables": { "words": ["hi", "hello", "hey", "welcome"] }, "description": "1. We have an array of <code>4</code> words with different lengths." },
-  { "lines": "2", "variables": { "words": ["hi", "hello", "hey", "welcome"] }, "description": "2. Call <code>filter()</code>. We want to keep only words longer than <code>3</code> characters." },
-  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "hi" }, "description": "3. First iteration: <code>word</code> is <code>\"hi\"</code>." },
-  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "hi", "word.length": 2 }, "description": "4. Test: <code>\"hi\"</code> has length <code>2</code>. Is <code>2 &gt; 3</code>? <code>false</code>. Return <code>false</code>, so <code>\"hi\"</code> is excluded." },
-  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "hello" }, "description": "5. Second iteration: <code>word</code> is <code>\"hello\"</code>." },
-  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "hello", "word.length": 5 }, "description": "6. Test: <code>\"hello\"</code> has length <code>5</code>. Is <code>5 &gt; 3</code>? <code>true</code>. Return <code>true</code>, so <code>\"hello\"</code> is kept." },
-  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "hey" }, "description": "7. Third iteration: <code>word</code> is <code>\"hey\"</code>." },
-  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "hey", "word.length": 3 }, "description": "8. Test: <code>\"hey\"</code> has length <code>3</code>. Is <code>3 &gt; 3</code>? <code>false</code> (<code>3</code> is not greater than <code>3</code>). Return <code>false</code>, so <code>\"hey\"</code> is excluded." },
-  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "welcome" }, "description": "9. Fourth iteration: <code>word</code> is <code>\"welcome\"</code>." },
-  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "welcome", "word.length": 7 }, "description": "10. Test: <code>\"welcome\"</code> has length <code>7</code>. Is <code>7 &gt; 3</code>? <code>true</code>. Return <code>true</code>, so <code>\"welcome\"</code> is kept." },
-  { "lines": "2", "variables": { "longWords": ["hello", "welcome"] }, "description": "11. <code>filter()</code> finishes. Only <code>\"hello\"</code> and <code>\"welcome\"</code> passed the length test." }
+  { "lines": "1", "variables": { "words": ["hi", "hello", "hey", "welcome"] }, "description": We have an array of <code>4</code> words with different lengths." },
+  { "lines": "2", "variables": { "words": ["hi", "hello", "hey", "welcome"] }, "description": Call <code>filter()</code>. We want to keep only words longer than <code>3</code> characters." },
+  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "hi" }, "description": First iteration: <code>word</code> is <code>\"hi\"</code>." },
+  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "hi", "word.length": 2 }, "description": Test: <code>\"hi\"</code> has length <code>2</code>. Is <code>2 &gt; 3</code>? <code>false</code>. Return <code>false</code>, so <code>\"hi\"</code> is excluded." },
+  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "hello" }, "description": Second iteration: <code>word</code> is <code>\"hello\"</code>." },
+  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "hello", "word.length": 5 }, "description": Test: <code>\"hello\"</code> has length <code>5</code>. Is <code>5 &gt; 3</code>? <code>true</code>. Return <code>true</code>, so <code>\"hello\"</code> is kept." },
+  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "hey" }, "description": Third iteration: <code>word</code> is <code>\"hey\"</code>." },
+  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "hey", "word.length": 3 }, "description": Test: <code>\"hey\"</code> has length <code>3</code>. Is <code>3 &gt; 3</code>? <code>false</code> (<code>3</code> is not greater than <code>3</code>). Return <code>false</code>, so <code>\"hey\"</code> is excluded." },
+  { "lines": "2", "range": { "text": "word" }, "variables": { "word": "welcome" }, "description": Fourth iteration: <code>word</code> is <code>\"welcome\"</code>." },
+  { "lines": "3", "range": { "text": "word.length > 3" }, "variables": { "word": "welcome", "word.length": 7 }, "description": Test: <code>\"welcome\"</code> has length <code>7</code>. Is <code>7 &gt; 3</code>? <code>true</code>. Return <code>true</code>, so <code>\"welcome\"</code> is kept." },
+  { "lines": "2", "variables": { "longWords": ["hello", "welcome"] }, "description": <code>filter()</code> finishes. Only <code>\"hello\"</code> and <code>\"welcome\"</code> passed the length test." }
 ]
         </script>
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
                     <li>You can access properties like <code>.length</code> inside the callback to make decisions</li>
-                    <li>Comparison operators (<code>></code>, <code><</code>, <code>>=</code>, <code><=</code>) return <code>true</code> or <code>false</code></li>
+                    <li>Comparison operators (<code>></code>, <code><</code>, <code>>=</code>, <code><=</code>) return
+                        <code>true</code> or <code>false</code></li>
                     <li>Filter is great for searching or narrowing down lists based on criteria</li>
                 </ul>
             </div>
@@ -136,15 +140,15 @@ const longWords = words.filter((word) => {
 const adults = people.filter(person => person.age >= 18);</code></pre>
             <script type="application/json">
 [
-  { "lines": "1-5", "variables": {}, "description": "1. We define an array of <code>3</code> person objects. Each person has a name and an age." },
-  { "lines": "6", "variables": { "people": [{"name":"Alice","age":17},{"name":"Bob","age":21},{"name":"Charlie","age":15}] }, "description": "2. Call <code>filter()</code> with implicit return. No curly braces <code>{}</code>, no <code>return</code> keyword — the expression result is returned automatically." },
-  { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Alice","age":17} }, "description": "3. First iteration: <code>person</code> is <code>\"Alice\"</code> (age <code>17</code>)." },
-  { "lines": "6", "range": { "text": "person.age >= 18" }, "variables": { "person": {"name":"Alice","age":17} }, "description": "4. Test: Is <code>17 &gt;= 18</code>? <code>false</code>. <code>\"Alice\"</code> is excluded." },
-  { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Bob","age":21} }, "description": "5. Second iteration: <code>person</code> is <code>\"Bob\"</code> (age <code>21</code>)." },
-  { "lines": "6", "range": { "text": "person.age >= 18" }, "variables": { "person": {"name":"Bob","age":21} }, "description": "6. Test: Is <code>21 &gt;= 18</code>? <code>true</code>. <code>\"Bob\"</code> is kept." },
-  { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Charlie","age":15} }, "description": "7. Third iteration: <code>person</code> is <code>\"Charlie\"</code> (age <code>15</code>)." },
-  { "lines": "6", "range": { "text": "person.age >= 18" }, "variables": { "person": {"name":"Charlie","age":15} }, "description": "8. Test: Is <code>15 &gt;= 18</code>? <code>false</code>. <code>\"Charlie\"</code> is excluded." },
-  { "lines": "6", "variables": { "adults": [{"name":"Bob","age":21}] }, "description": "9. <code>filter()</code> finishes. Only <code>\"Bob\"</code> passed the age test." }
+  { "lines": "1-5", "variables": {}, "description": We define an array of <code>3</code> person objects. Each person has a name and an age." },
+  { "lines": "6", "variables": { "people": [{"name":"Alice","age":17},{"name":"Bob","age":21},{"name":"Charlie","age":15}] }, "description": Call <code>filter()</code> with implicit return. No curly braces <code>{}</code>, no <code>return</code> keyword — the expression result is returned automatically." },
+  { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Alice","age":17} }, "description": First iteration: <code>person</code> is <code>\"Alice\"</code> (age <code>17</code>)." },
+  { "lines": "6", "range": { "text": "person.age >= 18" }, "variables": { "person": {"name":"Alice","age":17} }, "description": Test: Is <code>17 &gt;= 18</code>? <code>false</code>. <code>\"Alice\"</code> is excluded." },
+  { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Bob","age":21} }, "description": Second iteration: <code>person</code> is <code>\"Bob\"</code> (age <code>21</code>)." },
+  { "lines": "6", "range": { "text": "person.age >= 18" }, "variables": { "person": {"name":"Bob","age":21} }, "description": Test: Is <code>21 &gt;= 18</code>? <code>true</code>. <code>\"Bob\"</code> is kept." },
+  { "lines": "6", "range": { "text": "person" }, "variables": { "person": {"name":"Charlie","age":15} }, "description": Third iteration: <code>person</code> is <code>\"Charlie\"</code> (age <code>15</code>)." },
+  { "lines": "6", "range": { "text": "person.age >= 18" }, "variables": { "person": {"name":"Charlie","age":15} }, "description": Test: Is <code>15 &gt;= 18</code>? <code>false</code>. <code>\"Charlie\"</code> is excluded." },
+  { "lines": "6", "variables": { "adults": [{"name":"Bob","age":21}] }, "description": <code>filter()</code> finishes. Only <code>\"Bob\"</code> passed the age test." }
 ]
         </script>
             <div slot="summary">
@@ -152,7 +156,8 @@ const adults = people.filter(person => person.age >= 18);</code></pre>
                 <ul>
                     <li><code>filter()</code> works with arrays of objects, not just simple values</li>
                     <li>Use dot notation (e.g., <code>person.age</code>) to access object properties</li>
-                    <li><b>Implicit return</b>: skip curly braces and <code>return</code> keyword when the callback is a single expression</li>
+                    <li><b>Implicit return</b>: skip curly braces and <code>return</code> keyword when the callback is a
+                        single expression</li>
                 </ul>
             </div>
         </code-explainer>
@@ -160,7 +165,8 @@ const adults = people.filter(person => person.age >= 18);</code></pre>
         <code-explainer id="example-filter-falsy">
             <h2 slot="title">Remove Empty Values</h2>
             <p slot="description">
-                Arrays sometimes contain empty or missing values like <code>""</code> (empty string) or <code>null</code>.
+                Arrays sometimes contain empty or missing values like <code>""</code> (empty string) or
+                <code>null</code>.
                 We can use <code>filter()</code> to clean up an array by removing these "falsy" values.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const data = ["apple", "", "banana", null, "cherry"];
@@ -169,26 +175,28 @@ const cleaned = data.filter((item) => {
 });</code></pre>
             <script type="application/json">
 [
-  { "lines": "1", "variables": { "data": ["apple", "", "banana", null, "cherry"] }, "description": "1. Our array has <code>5</code> items, but some are empty or <code>null</code> — we want to remove those." },
-  { "lines": "2", "variables": { "data": ["apple", "", "banana", null, "cherry"] }, "description": "2. Call <code>filter()</code>. The callback just returns the item itself. JavaScript treats some values as <code>\"falsy\"</code> (they act like <code>false</code>)." },
-  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "apple" }, "description": "3. First iteration: <code>item</code> is <code>\"apple\"</code>." },
-  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "apple" }, "description": "4. Return <code>\"apple\"</code>. A non-empty string is truthy (acts like <code>true</code>). <code>\"apple\"</code> is kept." },
-  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "" }, "description": "5. Second iteration: <code>item</code> is <code>\"\"</code> (empty string)." },
-  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "" }, "description": "6. Return <code>\"\"</code>. An empty string is falsy (acts like <code>false</code>). <code>\"\"</code> is excluded." },
-  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "banana" }, "description": "7. Third iteration: <code>item</code> is <code>\"banana\"</code>." },
-  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "banana" }, "description": "8. Return <code>\"banana\"</code>. Non-empty string is truthy. <code>\"banana\"</code> is kept." },
-  { "lines": "2", "range": { "text": "item" }, "variables": { "item": null }, "description": "9. Fourth iteration: <code>item</code> is <code>null</code>." },
-  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": null }, "description": "10. Return <code>null</code>. <code>null</code> is falsy. <code>null</code> is excluded." },
-  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "cherry" }, "description": "11. Fifth iteration: <code>item</code> is <code>\"cherry\"</code>." },
-  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "cherry" }, "description": "12. Return <code>\"cherry\"</code>. Non-empty string is truthy. <code>\"cherry\"</code> is kept." },
-  { "lines": "2", "variables": { "cleaned": ["apple", "banana", "cherry"] }, "description": "13. <code>filter()</code> finishes. All falsy values (<code>\"\"</code> and <code>null</code>) have been removed." }
+  { "lines": "1", "variables": { "data": ["apple", "", "banana", null, "cherry"] }, "description": Our array has <code>5</code> items, but some are empty or <code>null</code> — we want to remove those." },
+  { "lines": "2", "variables": { "data": ["apple", "", "banana", null, "cherry"] }, "description": Call <code>filter()</code>. The callback just returns the item itself. JavaScript treats some values as <code>\"falsy\"</code> (they act like <code>false</code>)." },
+  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "apple" }, "description": First iteration: <code>item</code> is <code>\"apple\"</code>." },
+  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "apple" }, "description": Return <code>\"apple\"</code>. A non-empty string is truthy (acts like <code>true</code>). <code>\"apple\"</code> is kept." },
+  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "" }, "description": Second iteration: <code>item</code> is <code>\"\"</code> (empty string)." },
+  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "" }, "description": Return <code>\"\"</code>. An empty string is falsy (acts like <code>false</code>). <code>\"\"</code> is excluded." },
+  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "banana" }, "description": Third iteration: <code>item</code> is <code>\"banana\"</code>." },
+  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "banana" }, "description": Return <code>\"banana\"</code>. Non-empty string is truthy. <code>\"banana\"</code> is kept." },
+  { "lines": "2", "range": { "text": "item" }, "variables": { "item": null }, "description": Fourth iteration: <code>item</code> is <code>null</code>." },
+  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": null }, "description": Return <code>null</code>. <code>null</code> is falsy. <code>null</code> is excluded." },
+  { "lines": "2", "range": { "text": "item" }, "variables": { "item": "cherry" }, "description": Fifth iteration: <code>item</code> is <code>\"cherry\"</code>." },
+  { "lines": "3", "range": { "text": "return item" }, "variables": { "item": "cherry" }, "description": Return <code>\"cherry\"</code>. Non-empty string is truthy. <code>\"cherry\"</code> is kept." },
+  { "lines": "2", "variables": { "cleaned": ["apple", "banana", "cherry"] }, "description": <code>filter()</code> finishes. All falsy values (<code>\"\"</code> and <code>null</code>) have been removed." }
 ]
         </script>
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><b>Falsy values</b> in JavaScript: <code>""</code>, <code>null</code>, <code>undefined</code>, <code>0</code>, <code>false</code>, <code>NaN</code></li>
-                    <li><b>Truthy values</b>: everything else (non-empty strings, non-zero numbers, objects, arrays)</li>
+                    <li><b>Falsy values</b> in JavaScript: <code>""</code>, <code>null</code>, <code>undefined</code>,
+                        <code>0</code>, <code>false</code>, <code>NaN</code></li>
+                    <li><b>Truthy values</b>: everything else (non-empty strings, non-zero numbers, objects, arrays)
+                    </li>
                     <li>This pattern is commonly used to clean up arrays with missing or empty data</li>
                 </ul>
             </div>
@@ -210,23 +218,24 @@ const deals = products.filter((product) => {
 });</code></pre>
             <script type="application/json">
 [
-  { "lines": "1-5", "variables": {}, "description": "1. We have an array of <code>3</code> products. Each has a name, price, and whether it's in stock." },
-  { "lines": "6-8", "variables": { "products": [{"name":"Laptop","price":999,"inStock":true},{"name":"Phone","price":699,"inStock":false},{"name":"Tablet","price":299,"inStock":true}] }, "description": "2. Call <code>filter()</code>. We want products that are BOTH in stock AND cost less than <code>500</code>." },
-  { "lines": "6", "range": { "text": "product" }, "variables": { "product": {"name":"Laptop","price":999,"inStock":true} }, "description": "3. First iteration: <code>product</code> is <code>\"Laptop\"</code> (<code>999</code>, in stock)." },
-  { "lines": "7", "range": { "text": "product.inStock" }, "variables": { "product": {"name":"Laptop","price":999,"inStock":true} }, "description": "4. Check first condition: <code>product.inStock</code> is <code>true</code>. <code>\"Laptop\"</code> is in stock." },
-  { "lines": "7", "range": { "text": "product.price < 500" }, "variables": { "product": {"name":"Laptop","price":999,"inStock":true} }, "description": "5. Check second condition: Is <code>999 &lt; 500</code>? <code>false</code>. <code>\"Laptop\"</code> is too expensive. Since one condition failed, <code>\"Laptop\"</code> is excluded." },
-  { "lines": "6", "range": { "text": "product" }, "variables": { "product": {"name":"Phone","price":699,"inStock":false} }, "description": "6. Second iteration: <code>product</code> is <code>\"Phone\"</code> (<code>699</code>, not in stock)." },
-  { "lines": "7", "range": { "text": "product.inStock" }, "variables": { "product": {"name":"Phone","price":699,"inStock":false} }, "description": "7. Check first condition: <code>product.inStock</code> is <code>false</code>. <code>\"Phone\"</code> is out of stock. Since the first condition failed, <code>\"Phone\"</code> is excluded." },
-  { "lines": "6", "range": { "text": "product" }, "variables": { "product": {"name":"Tablet","price":299,"inStock":true} }, "description": "8. Third iteration: <code>product</code> is <code>\"Tablet\"</code> (<code>299</code>, in stock)." },
-  { "lines": "7", "range": { "text": "product.inStock" }, "variables": { "product": {"name":"Tablet","price":299,"inStock":true} }, "description": "9. Check first condition: <code>product.inStock</code> is <code>true</code>. <code>\"Tablet\"</code> is in stock." },
-  { "lines": "7", "range": { "text": "product.price < 500" }, "variables": { "product": {"name":"Tablet","price":299,"inStock":true} }, "description": "10. Check second condition: Is <code>299 &lt; 500</code>? <code>true</code>. Both conditions are true, so <code>\"Tablet\"</code> is kept." },
-  { "lines": "6", "variables": { "deals": [{"name":"Tablet","price":299,"inStock":true}] }, "description": "11. <code>filter()</code> finishes. Only <code>\"Tablet\"</code> met both conditions." }
+  { "lines": "1-5", "variables": {}, "description": We have an array of <code>3</code> products. Each has a name, price, and whether it's in stock." },
+  { "lines": "6-8", "variables": { "products": [{"name":"Laptop","price":999,"inStock":true},{"name":"Phone","price":699,"inStock":false},{"name":"Tablet","price":299,"inStock":true}] }, "description": Call <code>filter()</code>. We want products that are BOTH in stock AND cost less than <code>500</code>." },
+  { "lines": "6", "range": { "text": "product" }, "variables": { "product": {"name":"Laptop","price":999,"inStock":true} }, "description": First iteration: <code>product</code> is <code>\"Laptop\"</code> (<code>999</code>, in stock)." },
+  { "lines": "7", "range": { "text": "product.inStock" }, "variables": { "product": {"name":"Laptop","price":999,"inStock":true} }, "description": Check first condition: <code>product.inStock</code> is <code>true</code>. <code>\"Laptop\"</code> is in stock." },
+  { "lines": "7", "range": { "text": "product.price < 500" }, "variables": { "product": {"name":"Laptop","price":999,"inStock":true} }, "description": Check second condition: Is <code>999 &lt; 500</code>? <code>false</code>. <code>\"Laptop\"</code> is too expensive. Since one condition failed, <code>\"Laptop\"</code> is excluded." },
+  { "lines": "6", "range": { "text": "product" }, "variables": { "product": {"name":"Phone","price":699,"inStock":false} }, "description": Second iteration: <code>product</code> is <code>\"Phone\"</code> (<code>699</code>, not in stock)." },
+  { "lines": "7", "range": { "text": "product.inStock" }, "variables": { "product": {"name":"Phone","price":699,"inStock":false} }, "description": Check first condition: <code>product.inStock</code> is <code>false</code>. <code>\"Phone\"</code> is out of stock. Since the first condition failed, <code>\"Phone\"</code> is excluded." },
+  { "lines": "6", "range": { "text": "product" }, "variables": { "product": {"name":"Tablet","price":299,"inStock":true} }, "description": Third iteration: <code>product</code> is <code>\"Tablet\"</code> (<code>299</code>, in stock)." },
+  { "lines": "7", "range": { "text": "product.inStock" }, "variables": { "product": {"name":"Tablet","price":299,"inStock":true} }, "description": Check first condition: <code>product.inStock</code> is <code>true</code>. <code>\"Tablet\"</code> is in stock." },
+  { "lines": "7", "range": { "text": "product.price < 500" }, "variables": { "product": {"name":"Tablet","price":299,"inStock":true} }, "description": Check second condition: Is <code>299 &lt; 500</code>? <code>true</code>. Both conditions are true, so <code>\"Tablet\"</code> is kept." },
+  { "lines": "6", "variables": { "deals": [{"name":"Tablet","price":299,"inStock":true}] }, "description": <code>filter()</code> finishes. Only <code>\"Tablet\"</code> met both conditions." }
 ]
         </script>
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li>Use <code>&&</code> (AND) to combine conditions — <b>all</b> must be true to keep the element</li>
+                    <li>Use <code>&&</code> (AND) to combine conditions — <b>all</b> must be true to keep the element
+                    </li>
                     <li>Use <code>||</code> (OR) when <b>any one</b> condition being true is enough</li>
                     <li>Real-world filtering often requires checking multiple properties at once</li>
                 </ul>

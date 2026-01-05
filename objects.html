@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects - JS Concept Explainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Prism CSS -->
+    <link id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/theme/theme-init.js"></script>
+    <script type="module" src="js/theme/theme.js"></script>
+    <script type="module" src="js/components/code-explainer.js"></script>
+</head>
+
+<body>
+    <main id="app">
+        <header class="app-header">
+            <div class="header-content">
+                <a href="index.html" class="back-link">&larr; Back to Concepts</a>
+                <h1>Objects</h1>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" width="24" height="24">
+                    <use href="assets/moon.svg#icon-moon"></use>
+                </svg>
+                <svg class="icon-sun" width="24" height="24">
+                    <use href="assets/sun.svg#icon-sun"></use>
+                </svg>
+            </button>
+        </header>
+
+        <code-explainer id="example-objects-create-update">
+            <h2 slot="title">Object Literal Syntax &amp; Basic Creation</h2>
+            <p slot="description">
+                An object is a collection of <b>properties</b>. Each property has a <b>key</b> (a string) and a
+                <b>value</b>. Property values can be <b>any type</b>: strings, numbers, arrays, booleans, even other
+                objects. Here we create an object with properties first, then an empty object.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const student = {
+  name: "Sarah",
+  age: 24,
+  courses: ["Web Development", "JavaScript"],
+  isEnrolled: true
+};
+
+console.log(student);
+
+const emptyBox = {};
+</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1-6", "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Create an object literal with properties. Each property is <code>key: value</code>." },
+    { "lines": "2", "range": { "text": "name" }, "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Property with key <code>name</code> is a string value: <code>\"Sarah\"</code>." },
+    { "lines": "3", "range": { "text": "age" }, "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Property with key <code>age</code> is a number value: <code>24</code>." },
+    { "lines": "4", "range": { "text": "courses" }, "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Property with key <code>courses</code> is an array value (a list of strings)." },
+    { "lines": "5", "range": { "text": "isEnrolled" }, "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Property with key <code>isEnrolled</code> is a boolean value: <code>true</code>." },
+    { "lines": "8", "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Log the <code>student</code> object. You will see all its properties and their values." },
+    { "lines": "10", "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true }, "emptyBox": {} }, "description": "Create an empty object using curly braces <code>{}</code>. It has no properties yet. We assign it to the variable <code>emptyBox</code>." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li>Objects store related data together using properties</li>
+                    <li>Each property is a <code>key: value</code> pair</li>
+                    <li>Property keys are always strings. Property values can be any type: string, number, array,
+                        boolean, object, etc.</li>
+                    <li>Use curly braces <code>{}</code> to create an object</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-objects-dynamic-key">
+            <h2 slot="title">Accessing Properties: Dot vs Brackets</h2>
+            <p slot="description">
+                You can read object properties with dot notation or bracket notation. Most of the time dot notation is
+                simplest, but brackets are required for keys with spaces/special characters and for dynamic access using
+                a variable.<br>
+                In this example, we create an object <code>car</code> with four properties. Then we get the value of
+                properties <code>brand</code> and <code>model</code> using dot notation.
+                Then we get the value of properties <code>year</code> and <code>fuel type</code> using bracket notation.
+                The last property access (<code>car.owner</code>) will return <code>undefined</code> because the
+                property doesn't exist.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const car = {
+    brand: "Toyota",
+    model: "Camry",
+    year: 2022,
+    "fuel type": "hybrid"
+};
+
+const carBrand = car.brand;
+console.log(carBrand);
+console.log(car.model);
+
+console.log(car["year"]);
+console.log(car["fuel type"]);
+
+const propertyName = "model";
+console.log(car[propertyName]);
+
+console.log(car.owner);</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1-6", "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" } }, "description": "Create object <code>car</code> with four properties (one key has a space)." },
+    { "lines": "8", "range": { "text": "car.brand" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Dot notation reads a property by its key. <code>car.brand</code> is <code>\"Toyota\"</code>, so <code>carBrand</code> becomes <code>\"Toyota\"</code>." },
+    { "lines": "9", "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Log <code>carBrand</code>." },
+    { "lines": "10", "range": { "text": "car.model" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Dot notation also works here. <code>car.model</code> is <code>\"Camry\"</code>." },
+    { "lines": "12", "range": { "text": "car[\"year\"]" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Bracket notation does the same lookup using a string key. <code>car[\"year\"]</code> is <code>2022</code>." },
+    { "lines": "13", "range": { "text": "car[\"fuel type\"]" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Keys with spaces (like <code>\"fuel type\"</code>) require bracket notation." },
+    { "lines": "15", "range": { "text": "propertyName" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota", "propertyName": "model" }, "description": "Store a key in a variable: <code>propertyName</code> is <code>\"model\"</code>." },
+    { "lines": "16", "range": { "text": "car[propertyName]" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota", "propertyName": "model" }, "description": "Use the variable key with brackets. <code>car[propertyName]</code> reads <code>car[\"model\"]</code>, which is <code>\"Camry\"</code>." },
+    { "lines": "18", "range": { "text": "car.owner" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota", "propertyName": "model" }, "description": "Missing property access returns <code>undefined</code> (it is not an error)." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li>Dot notation (<code>obj.property</code>) is simpler and used most often</li>
+                    <li>Bracket notation (<code>obj["property"]</code>) is required when property names have spaces or
+                        special characters (for example: <code>"fuel type"</code>, <code>"user-name"</code>,
+                        <code>"@id"</code>)
+                    </li>
+                    <li>Bracket notation allows you to use variables to access properties dynamically</li>
+                    <li>Both notations do the same thing - they retrieve the value stored at that property</li>
+                    <li>If you try to access a property that doesn't exist, you get <code>undefined</code> (not an
+                        error)</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-objects-change-properties">
+            <h2 slot="title">Changing Objects: Adding, Modifying, and Deleting Properties</h2>
+            <p slot="description">
+                You can change an object after you create it: add new
+                properties, modify existing ones, or delete properties.
+                It's called <strong>mutability</strong>.<br>
+                In this example, we create an object <code>person</code> with two properties: <code>firstName</code> and
+                <code>age</code>.
+                We then show how to add new properties, modify existing ones, and delete properties.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const person = {
+    firstName: "John",
+    age: 30
+};
+
+console.log(person);
+
+person.lastName = "Doe";
+person.city = "New York";
+
+console.log(person);
+
+person.age = 31;
+
+console.log(person.age);
+
+delete person.city;
+
+console.log(person);
+
+person["email"] = "john@example.com";
+person["age"] = 32;
+
+console.log(person);</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1-4", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Create an object called <code>person</code> with two properties: <code>firstName</code> and <code>age</code>." },
+    { "lines": "6", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Log the object. You see the current properties and their values." },
+    { "lines": "8", "range": { "text": "person.lastName" }, "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe" } }, "description": "Add a new property. JavaScript checks if <code>person</code> has a key <code>lastName</code>. It doesn't, so it adds it and sets the value to <code>\"Doe\"</code>." },
+    { "lines": "9", "range": { "text": "person.city" }, "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe", "city": "New York" } }, "description": "Add another new property. <code>city</code> didn't exist, so it's added and set to <code>\"New York\"</code>." },
+    { "lines": "11", "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe", "city": "New York" } }, "description": "Log the object again. It now includes <code>lastName</code> and <code>city</code>." },
+    { "lines": "13", "range": { "text": "person.age" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "city": "New York" } }, "description": "Modify an existing property. <code>age</code> already exists, so JavaScript overwrites <code>30</code> with <code>31</code>." },
+    { "lines": "15", "range": { "text": "person.age" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "city": "New York" } }, "description": "Read and log <code>person.age</code>. The value is now <code>31</code>." },
+    { "lines": "17", "range": { "text": "delete person.city" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe" } }, "description": "Delete a property. <code>delete</code> removes the key <code>city</code> and its value from the object." },
+    { "lines": "19", "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe" } }, "description": "Log the object. The <code>city</code> property is gone." },
+    { "lines": "21", "range": { "text": "person[\"email\"]" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "email": "john@example.com" } }, "description": "Add a property using bracket notation. This creates the key <code>\"email\"</code> and sets its value." },
+    { "lines": "22", "range": { "text": "person[\"age\"]" }, "variables": { "person": { "firstName": "John", "age": 32, "lastName": "Doe", "email": "john@example.com" } }, "description": "Modify a property using bracket notation. It updates the existing key <code>age</code> to <code>32</code>." },
+    { "lines": "24", "variables": { "person": { "firstName": "John", "age": 32, "lastName": "Doe", "email": "john@example.com" } }, "description": "Log the final object. It shows all changes you made to the same object." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li>Assigning to a new key adds a new property: <code>person.lastName = "Doe"</code></li>
+                    <li>Assigning to an existing key overwrites its value: <code>person.age = 31</code></li>
+                    <li><code>delete person.city</code> removes a property with key <code>"city"</code> from object</li>
+                    <li>You can add, modify and delete properties with dot notation or bracket notation</li>
+                    <li>If a property is missing, reading it gives <code>undefined</code></li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-objects-iterate-properties">
+            <h2 slot="title">Iterating Over Object Properties</h2>
+            <p slot="description">
+                Sometimes you want to look at every property in an object. One common pattern is: get a key, then use
+                the key to read the value.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const product = {
+    name: "Laptop",
+    price: 999,
+    inStock: true
+};
+
+// Method 1: for...in loop
+for (const propertyKey in product) {
+    const propertyValue = product[propertyKey];
+    console.log("Key " + propertyKey + " has value " + propertyValue);
+}
+
+// Method 2: Object.keys() with for...of loop
+const keys = Object.keys(product);
+
+for (const propertyKey of keys) {
+    console.log(`Key ${propertyKey} has value ${product[propertyKey]}`);
+}</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1-6", "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" } }, "description": "Create an object with four properties and assign it to variable <code>product</code>." },
+    { "lines": "8", "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" } }, "description": "<code>for...in</code> loop will go through each property of the object and on each iteration assigns property key to loop variable <code>propertyKey</code>. In our case, there are four iterations because our object has four properties." },
+    { "lines": "8", "range": { "text": "propertyKey in product" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "name" }, 
+        "description": "The loop goes over keys in the order they are defined in the object. It starts with property <code>\"name\"</code>, so <code>propertyKey</code> variable has value <code>\"name\"</code>" },
+    { "lines": "9", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "name" }, 
+        "description": "Because the property key is in a variable, we must use the bracket notation to read the property value. <code>product[propertyKey]</code> reads <code>product[\"name\"]</code> which is <code>\"Laptop\"</code>. We assign it to <code>propertyValue</code> variable." },
+    { "lines": "10", "variables": { "propertyKey": "name", "propertyValue": "Laptop" }, "description": "We use <strong>string concatenation operator</strong> <code>+</code> to create a log message about the current property. We log <code>\"Key name has value Laptop\"</code> to console." },
+    
+    { "lines": "8", "range": { "text": "propertyKey in product" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "price" }, 
+        "description": "Next property is <code>\"price\"</code>, so <code>propertyKey</code> variable has value <code>\"price\"</code>" },
+    { "lines": "9", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "price" }, 
+        "description": "<code>product[propertyKey]</code> reads <code>product[\"price\"]</code> which is <code>999</code>. We assign it to <code>propertyValue</code> variable." },
+    { "lines": "10", "variables": { "propertyKey": "price", "propertyValue": "999" }, "description": "We log <code>\"Key price has value 999\"</code> to console." },
+
+    { "lines": "8", "range": { "text": "propertyKey in product" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "brand" }, "description": "Next property is <code>\"brand\"</code>, so <code>propertyKey</code> variable has value <code>\"brand\"</code>" },
+    { "lines": "9", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "brand" }, "description": "<code>product[propertyKey]</code> reads <code>product[\"brand\"]</code> which is <code>\"Dell\"</code>." },
+    { "lines": "10", "variables": { "propertyKey": "brand", "propertyValue": "Dell" }, "description": "We log <code>\"Key brand has value Dell\"</code> to console." },
+
+    { "lines": "11", "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" } }, "description": "There are no more keys in the object, so the loop ends." },
+    
+    { "lines": "14", "range": { "text": "Object.keys(product)" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "keys": ["name", "price", "brand"] }, "description": "<code>Object.keys(product)</code> creates an array of the object's keys. We assign it to <code>keys</code> variable." },
+    { "lines": "16", "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "keys": ["name", "price", "brand"], "propertyKey": "name" }, "description": "We use <code>for...of</code> loop to iterate over the array <code>keys</code>. On each iteration, loop assigns the next property key to loop variable <code>propertyKey</code>" },
+    
+    { "lines": "16", "range": { "text": "propertyKey of keys" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "keys": ["name", "price", "brand"], "propertyKey": "name" }, "description": "On the first iteration, <code>propertyKey</code> becomes <code>\"name\"</code>." },
+    { "lines": "17", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "name", "propertyValue": "Laptop" }, "description": "Because the property key is in a variable, we use the bracket notation to read the property value. <code>product[propertyKey]</code> reads <code>product[\"name\"]</code>, which is <code>\"Laptop\"</code>. We assign it to <code>propertyValue</code> variable." },
+    { "lines": "17", "variables": { "propertyKey": "name", "propertyValue": "Laptop" }, "description": "We use <strong>string template</strong> <code>``</code> to create a log message about the current property pair. We log <code>\"Key name has value Laptop\"</code> to console." },
+    
+    { "lines": "16", "range": { "text": "propertyKey of keys" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "keys": ["name", "price", "brand"], "propertyKey": "price" }, "description": "Next iteration, <code>propertyKey</code> becomes <code>\"price\"</code>." },
+    { "lines": "17", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "price", "propertyValue": 999 }, "description": "<code>product[propertyKey]</code> reads <code>product[\"price\"]</code>, which is <code>999</code>." },
+    { "lines": "17", "variables": { "propertyKey": "price", "propertyValue": 999 }, "description": "We log <code>\"Key price has value 999\"</code> to console." },
+
+    { "lines": "16", "range": { "text": "propertyKey of keys" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "keys": ["name", "price", "brand"], "propertyKey": "brand" }, "description": "Next iteration, <code>propertyKey</code> becomes <code>\"brand\"</code>." },
+    { "lines": "17", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "brand", "propertyValue": "Dell" }, "description": "<code>product[propertyKey]</code> reads <code>product[\"brand\"]</code>, which is <code>\"Dell\"</code>." },
+    { "lines": "17", "variables": { "propertyKey": "brand", "propertyValue": "Dell" }, "description": "We log <code>\"Key brand has value Dell\"</code> to console." },
+
+    { "lines": "16", "range": { "text": "propertyKey of keys" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "keys": ["name", "price", "brand"], "propertyKey": "inStock" }, "description": "Next iteration, <code>propertyKey</code> becomes <code>\"inStock\"</code>." },
+    { "lines": "17", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "brand": "Dell" }, "propertyKey": "inStock", "propertyValue": true }, "description": "<code>product[propertyKey]</code> reads <code>product[\"inStock\"]</code>, which is <code>true</code>." },
+    { "lines": "17", "variables": { "propertyKey": "inStock", "propertyValue": true }, "description": "We log <code>\"Key inStock has value true\"</code> to console." },
+
+    { "lines": "18", "variables": { }, "description": "There are no more elements in the array <code>keys</code>, so the loop ends." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><code>for...in</code> gives you one property key at a time</li>
+                    <li>When the property key is dynamic (in a variable), you use brackets to get the value:
+                        <code>product[propertyKey]</code>
+                    </li>
+                    <li><code>Object.keys(obj)</code> makes an array of keys you can loop with <code>for...of</code>
+                    </li>
+                    <li>Both methods follow the same idea: get a property key, then read its value with
+                        <code>obj[propertyKey]</code>
+                    </li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-objects-destructuring">
+            <h2 slot="title">Reading Object Properties with Destructuring</h2>
+            <p slot="description">
+                It's common to read value of object property and assign it to variable with the same name.<br>
+                Destructuring is a feature that allows you to read values from objects and assign them to variables.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const user = { name: "Mina", age: 19, isStudent: true, score: 90 };
+
+const { name } = user;
+const { age: userAge } = user;
+const { score, isStudent } = user;
+console.log(`${name} is ${userAge} years old and ${isStudent ? "is" : "is not"} a student.`);
+</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 } }, "description": "Create object <code>user</code> with 4 properties." },
+    { "lines": "3", "range": { "text": "{ name }" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina" }, "description": "Shorthand destructuring. Read key <code>\"name\"</code> and assign it to variable with the same name: <code>name</code>. It is the same as <code>const name = user.name;</code>." },
+    { "lines": "4", "range": { "text": "age: userAge" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "userAge": 19 }, "description": "Rename during destructuring. Key is <code>age</code>, variable name is <code>userAge</code>." },
+    { "lines": "5", "range": { "text": "{ isStudent, score }" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "userAge": 19, "isStudent": true, "score": 90 }, "description": "Destructuring multiple properties in one go. The order of properties in the object does not matter. Value of <code>\"isStudent\"</code> property is assigned to variable <code>isStudent</code> and value of <code>\"score\"</code> property is assigned to variable <code>score</code>." },
+    { "lines": "6", "range": { "text": "isStudent ? \"is\" : \"is not\"" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "isStudent": true, "score": 90 }, "description": "<strong>Ternary operator</strong> is used in template string. <code>isStudent</code> has value <code>true</code>, so we use <code>\"is\"</code> in the log message." },
+    { "lines": "6", "variables": { "name": "Mina", "userAge": 19, "isStudent": true, "score": 90 }, "description": "Log <code>\"Mina is 19 years old and is a student.\"</code> to console." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li>Destructuring allow you to read one or more properties from an object and assign them to
+                        variables</li>
+                    <li><code>const { name } = user;</code> is shorthand for <code>const name = user.name;</code></li>
+                    <li><code>key: variableName</code> lets you read a property and assign it to a variable with a
+                        different name</li>
+                    <li>Destructuring creates variables; it does not change the original object</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+    </main>
+
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+</body>
+
+</html>
