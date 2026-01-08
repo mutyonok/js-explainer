@@ -163,15 +163,12 @@ console.log(person);
 
 person.lastName = "Doe";
 person.city = "New York";
-
 console.log(person);
 
 person.age = 31;
-
 console.log(person.age);
 
 delete person.city;
-
 console.log(person);
 
 person["email"] = "john@example.com";
@@ -181,17 +178,17 @@ console.log(person);</code></pre>
             <script type="application/json">
 [
     { "lines": "1-4", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Create an object called <code>person</code> with two properties: <code>firstName</code> and <code>age</code>." },
-    { "lines": "6", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Log the object. You see the current properties and their values." },
+    { "lines": "6", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Log the object. You see the all properties and their values." },
     { "lines": "8", "range": { "text": "person.lastName" }, "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe" } }, "description": "Add a new property. JavaScript checks if <code>person</code> has a key <code>lastName</code>. It doesn't, so it adds it and sets the value to <code>\"Doe\"</code>." },
     { "lines": "9", "range": { "text": "person.city" }, "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe", "city": "New York" } }, "description": "Add another new property. <code>city</code> didn't exist, so it's added and set to <code>\"New York\"</code>." },
-    { "lines": "11", "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe", "city": "New York" } }, "description": "Log the object again. It now includes <code>lastName</code> and <code>city</code>." },
-    { "lines": "13", "range": { "text": "person.age" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "city": "New York" } }, "description": "Modify an existing property. <code>age</code> already exists, so JavaScript overwrites <code>30</code> with <code>31</code>." },
-    { "lines": "15", "range": { "text": "person.age" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "city": "New York" } }, "description": "Read and log <code>person.age</code>. The value is now <code>31</code>." },
-    { "lines": "17", "range": { "text": "delete person.city" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe" } }, "description": "Delete a property. <code>delete</code> removes the key <code>city</code> and its value from the object." },
-    { "lines": "19", "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe" } }, "description": "Log the object. The <code>city</code> property is gone." },
-    { "lines": "21", "range": { "text": "person[\"email\"]" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "email": "john@example.com" } }, "description": "Add a property using bracket notation. This creates the key <code>\"email\"</code> and sets its value." },
-    { "lines": "22", "range": { "text": "person[\"age\"]" }, "variables": { "person": { "firstName": "John", "age": 32, "lastName": "Doe", "email": "john@example.com" } }, "description": "Modify a property using bracket notation. It updates the existing key <code>age</code> to <code>32</code>." },
-    { "lines": "24", "variables": { "person": { "firstName": "John", "age": 32, "lastName": "Doe", "email": "john@example.com" } }, "description": "Log the final object. It shows all changes you made to the same object." }
+    { "lines": "10", "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe", "city": "New York" } }, "description": "Log the object again. It now includes <code>lastName</code> and <code>city</code>." },
+    { "lines": "12", "range": { "text": "person.age" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "city": "New York" } }, "description": "Modify an existing property. <code>age</code> already exists, so JavaScript overwrites <code>30</code> with <code>31</code>." },
+    { "lines": "13", "range": { "text": "person.age" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "city": "New York" } }, "description": "Read and log <code>person.age</code>. The value is now <code>31</code>." },
+    { "lines": "15", "range": { "text": "delete person.city" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe" } }, "description": "Delete a property. <code>delete</code> removes the key <code>city</code> and its value from the object." },
+    { "lines": "16", "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe" } }, "description": "Log the object. The <code>city</code> property is gone." },
+    { "lines": "18", "range": { "text": "person[\"email\"]" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "email": "john@example.com" } }, "description": "Add a property using bracket notation. This creates the key <code>\"email\"</code> and sets its value." },
+    { "lines": "19", "range": { "text": "person[\"age\"]" }, "variables": { "person": { "firstName": "John", "age": 32, "lastName": "Doe", "email": "john@example.com" } }, "description": "Modify a property using bracket notation. It updates the existing key <code>age</code> to <code>32</code>." },
+    { "lines": "21", "variables": { "person": { "firstName": "John", "age": 32, "lastName": "Doe", "email": "john@example.com" } }, "description": "Log the final object. It shows all changes you made to the same object." }
 ]
             </script>
             <div slot="summary">

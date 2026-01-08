@@ -240,6 +240,96 @@ const domain = url.slice(lastDotIndex + 1);</code></pre>
             </div>
         </code-explainer>
 
+        <code-explainer id="example-strings-split">
+            <h2 slot="title">Splitting a String into Parts: <code>split()</code></h2>
+            <p slot="description">
+                Method <code>split()</code> breaks one string into smaller pieces and returns them as an
+                <strong>array</strong> of strings.<br>
+                You choose where to cut by providing a <strong>separator</strong> (for example: a space
+                <code>' '</code>, a dash <code>'-'</code>, or a comma <code>','</code>). The separator itself is removed
+                from the result.<br>
+                If you use an <strong>empty string</strong> <code>''</code> as the separator, you get an array of
+                characters.<br>
+                <code>split()</code> does not change the original string — it creates a new array.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const fullName = "John Doe";
+const nameParts = fullName.split(' ');
+
+const word = "Hello";
+const characters = word.split('');
+
+let date = '2024-03-15';
+let parts = date.split('-');
+const formatted = `${parts[1]}/${parts[2]}/${parts[0]}`;
+console.log(formatted);</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "variables": { "fullName": "John Doe" }, "description": "Start with a full name stored as one string." },
+    { "lines": "2", "range": { "text": "fullName.split(' ')" }, "variables": { "fullName": "John Doe", "nameParts": ["John", "Doe"] }, "description": "Call <code>split(' ')</code> with a single space as the separator. The string is cut at the space and we get an array of parts." },
+
+    { "lines": "4", "variables": { "word": "Hello" }, "description": "Now we have a single word." },
+    { "lines": "5", "range": { "text": "word.split('')" }, "variables": { "word": "Hello", "characters": ["H", "e", "l", "l", "o"] }, "description": "Using <code>split('')</code> (empty string) splits between every character, so we get an array of letters." },
+
+    { "lines": "7", "variables": { "date": "2024-03-15" }, "description": "This date string uses <code>-</code> between year, month, and day." },
+    { "lines": "8", "range": { "text": "date.split('-')" }, "variables": { "date": "2024-03-15", "parts": ["2024", "03", "15"] }, "description": "Split by <code>'-'</code> to get an array: <code>[year, month, day]</code>." },
+    { "lines": "9", "range": { "text": "`${parts[1]}/${parts[2]}/${parts[0]}`" }, "variables": { "parts": ["2024", "03", "15"], "formatted": "03/15/2024" }, "description": "Build a new string by reordering the pieces: <code>parts[1]</code> is the month, <code>parts[2]</code> is the day, and <code>parts[0]</code> is the year." },
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><code>split(separator)</code> returns an <strong>array</strong> of pieces; the original string
+                        stays the same</li>
+                    <li>Pick a separator that matches your data (space for words, <code>-</code> for dates,
+                        <code>,</code> for comma-separated values)
+                    </li>
+                    <li><code>split('')</code> is a quick way to turn text into characters (useful for counting letters
+                        or checking each character)</li>
+                    <li><strong>Common use case:</strong> parse user input and reformat text (names, dates, tags, simple
+                        CSV)</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-strings-join">
+            <h2 slot="title">Creating a String from an Array: <code>join()</code></h2>
+            <p slot="description">
+                Method <code>join()</code> takes an array and combines its elements into one string.<br>
+                You can choose what goes between the items by providing a <strong>separator</strong>, like
+                <code>', '</code> for a readable list.<br>
+                If you use <code>''</code> (empty string) as the separator, the elements are glued together with
+                nothing between them.<br>
+                <code>join()</code> does not change the array — it returns a new string.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const fruits = ['apple', 'banana', 'orange'];
+const fruitsTogether = fruits.join(', ');
+console.log(`I like ${fruitsTogether}`);
+
+const chars = ['H', 'i', '!'];
+const greeting = chars.join('');</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "variables": { "fruits": ["apple", "banana", "orange"] }, "description": "We start with an array of fruit names (each element is a separate string)." },
+    { "lines": "2", "range": { "text": "fruits.join(', ')" }, "variables": { "fruits": ["apple", "banana", "orange"], "fruitsTogether": "apple, banana, orange" }, "description": "Call <code>join(', ')</code> to combine the array into one string with <code>,&nbsp;</code> between items." },
+    { "lines": "3", "variables": { "fruitsTogether": "apple, banana, orange" }, "description": "Use a template literal to build a sentence and log it: <code>I like apple, banana, orange</code>." },
+
+    { "lines": "5", "variables": { "chars": ["H", "i", "!"] }, "description": "Now we have an array of single characters." },
+    { "lines": "6", "range": { "text": "chars.join('')" }, "variables": { "chars": ["H", "i", "!"], "greeting": "Hi!" }, "description": "Call <code>join('')</code> with an empty separator to glue the characters together into one word: <code>Hi!</code>." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><code>join(separator)</code> turns an array into one string; it does not change the original
+                        array</li>
+                    <li>Use a readable separator like <code>', '</code> to display lists (names, tags, items)</li>
+                    <li><code>join('')</code> glues pieces together with no gaps (characters, chunks of text)</li>
+                    <li><strong>Common use case:</strong> format data for UI and messages (lists, sentences, simple
+                        CSV lines)</li>
+                </ul>
+            </div>
+        </code-explainer>
+
         <code-explainer id="example-strings-case-conversion">
             <h2 slot="title">Case Conversion: <code>toLowerCase()</code> and <code>toUpperCase()</code></h2>
             <p slot="description">
