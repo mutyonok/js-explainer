@@ -481,6 +481,18 @@ button:hover {
     border: 1px solid var(--prism-border);
 }
 
+.step-description var,
+.example-card p var,
+.summary-section var {
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: normal;
+    background: var(--prism-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid var(--prism-border);
+}
+
 /* Custom Highlight styles (fallback or addition to Prism) */
 /* Note: Prism Line Highlight uses .line-highlight class */
 .line-highlight {

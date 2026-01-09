@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects - JS Concept Explainer</title>
+    <title>JavaScript Objects, Step by Step | JS Concept Explainer</title>
+    <meta name="description"
+        content="Learn JavaScript objects step by step: create objects, read/update properties, use dynamic keys, loop over properties, and practice destructuring with beginner-friendly examples.">
+    <link rel="canonical" href="objects.html">
+
+    <meta property="og:site_name" content="JS Concept Explainer">
+    <meta property="og:title" content="JavaScript Objects, Step by Step">
+    <meta property="og:description"
+        content="Create objects, access and update properties, use dynamic keys, loop over properties, and learn destructuring with examples.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mutyonok.github.io/js-explainer/objects.html">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JavaScript Objects, Step by Step">
+    <meta name="twitter:description"
+        content="Create objects, access and update properties, use dynamic keys, loop over properties, and learn destructuring with examples.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -28,6 +43,17 @@
     <script src="js/theme/theme-init.js"></script>
     <script type="module" src="js/theme/theme.js"></script>
     <script type="module" src="js/components/code-explainer.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "JavaScript Objects, Step by Step",
+      "description": "Learn JavaScript objects step by step: create objects, read/update properties, use dynamic keys, loop over properties, and practice destructuring with beginner-friendly examples.",
+      "articleSection": "Programming",
+      "keywords": "JavaScript, Objects"
+    }
+    </script>
 </head>
 
 <body>
@@ -72,8 +98,8 @@ const emptyBox = {};
     { "lines": "3", "range": { "text": "age" }, "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Property with key <code>age</code> is a number value: <code>24</code>." },
     { "lines": "4", "range": { "text": "courses" }, "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Property with key <code>courses</code> is an array value (a list of strings)." },
     { "lines": "5", "range": { "text": "isEnrolled" }, "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Property with key <code>isEnrolled</code> is a boolean value: <code>true</code>." },
-    { "lines": "8", "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Log the <code>student</code> object. You will see all its properties and their values." },
-    { "lines": "10", "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true }, "emptyBox": {} }, "description": "Create an empty object using curly braces <code>{}</code>. It has no properties yet. We assign it to the variable <code>emptyBox</code>." }
+    { "lines": "8", "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true } }, "description": "Log the <var>student</var> object. You will see all its properties and their values." },
+    { "lines": "10", "variables": { "student": { "name": "Sarah", "age": 24, "courses": ["Web Development", "JavaScript"], "isEnrolled": true }, "emptyBox": {} }, "description": "Create an empty object using curly braces <code>{}</code>. It has no properties yet. We assign it to the variable <var>emptyBox</var>." }
 ]
             </script>
             <div slot="summary">
@@ -94,7 +120,7 @@ const emptyBox = {};
                 You can read object properties with dot notation or bracket notation. Most of the time dot notation is
                 simplest, but brackets are required for keys with spaces/special characters and for dynamic access using
                 a variable.<br>
-                In this example, we create an object <code>car</code> with four properties. Then we get the value of
+                In this example, we create an object <var>car</var> with four properties. Then we get the value of
                 properties <code>brand</code> and <code>model</code> using dot notation.
                 Then we get the value of properties <code>year</code> and <code>fuel type</code> using bracket notation.
                 The last property access (<code>car.owner</code>) will return <code>undefined</code> because the
@@ -120,13 +146,13 @@ console.log(car[propertyName]);
 console.log(car.owner);</code></pre>
             <script type="application/json">
 [
-    { "lines": "1-6", "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" } }, "description": "Create object <code>car</code> with four properties (one key has a space)." },
-    { "lines": "8", "range": { "text": "car.brand" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Dot notation reads a property by its key. <code>car.brand</code> is <code>\"Toyota\"</code>, so <code>carBrand</code> becomes <code>\"Toyota\"</code>." },
-    { "lines": "9", "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Log <code>carBrand</code>." },
+    { "lines": "1-6", "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" } }, "description": "Create object <var>car</var> with four properties (one key has a space)." },
+    { "lines": "8", "range": { "text": "car.brand" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Dot notation reads a property by its key. <code>car.brand</code> is <code>\"Toyota\"</code>, so <var>carBrand</var> becomes <code>\"Toyota\"</code>." },
+    { "lines": "9", "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Log <var>carBrand</var>." },
     { "lines": "10", "range": { "text": "car.model" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Dot notation also works here. <code>car.model</code> is <code>\"Camry\"</code>." },
     { "lines": "12", "range": { "text": "car[\"year\"]" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Bracket notation does the same lookup using a string key. <code>car[\"year\"]</code> is <code>2022</code>." },
     { "lines": "13", "range": { "text": "car[\"fuel type\"]" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota" }, "description": "Keys with spaces (like <code>\"fuel type\"</code>) require bracket notation." },
-    { "lines": "15", "range": { "text": "propertyName" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota", "propertyName": "model" }, "description": "Store a key in a variable: <code>propertyName</code> is <code>\"model\"</code>." },
+    { "lines": "15", "range": { "text": "propertyName" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota", "propertyName": "model" }, "description": "Store a key in a variable: <var>propertyName</var> is <code>\"model\"</code>." },
     { "lines": "16", "range": { "text": "car[propertyName]" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota", "propertyName": "model" }, "description": "Use the variable key with brackets. <code>car[propertyName]</code> reads <code>car[\"model\"]</code>, which is <code>\"Camry\"</code>." },
     { "lines": "18", "range": { "text": "car.owner" }, "variables": { "car": { "brand": "Toyota", "model": "Camry", "year": 2022, "fuel type": "hybrid" }, "carBrand": "Toyota", "propertyName": "model" }, "description": "Missing property access returns <code>undefined</code> (it is not an error)." }
 ]
@@ -153,7 +179,7 @@ console.log(car.owner);</code></pre>
                 You can change an object after you create it: add new
                 properties, modify existing ones, or delete properties.
                 It's called <strong>mutability</strong>.<br>
-                In this example, we create an object <code>person</code> with two properties: <code>firstName</code> and
+                In this example, we create an object <var>person</var> with two properties: <code>firstName</code> and
                 <code>age</code>.
                 We then show how to add new properties, modify existing ones, and delete properties.
             </p>
@@ -180,9 +206,9 @@ person["age"] = 32;
 console.log(person);</code></pre>
             <script type="application/json">
 [
-    { "lines": "1-4", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Create an object called <code>person</code> with two properties: <code>firstName</code> and <code>age</code>." },
+    { "lines": "1-4", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Create an object called <var>person</var> with two properties: <code>firstName</code> and <code>age</code>." },
     { "lines": "6", "variables": { "person": { "firstName": "John", "age": 30 } }, "description": "Log the object. You see the all properties and their values." },
-    { "lines": "8", "range": { "text": "person.lastName" }, "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe" } }, "description": "Add a new property. JavaScript checks if <code>person</code> has a key <code>lastName</code>. It doesn't, so it adds it and sets the value to <code>\"Doe\"</code>." },
+    { "lines": "8", "range": { "text": "person.lastName" }, "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe" } }, "description": "Add a new property. JavaScript checks if <var>person</var> has a key <code>lastName</code>. It doesn't, so it adds it and sets the value to <code>\"Doe\"</code>." },
     { "lines": "9", "range": { "text": "person.city" }, "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe", "city": "New York" } }, "description": "Add another new property. <code>city</code> didn't exist, so it's added and set to <code>\"New York\"</code>." },
     { "lines": "10", "variables": { "person": { "firstName": "John", "age": 30, "lastName": "Doe", "city": "New York" } }, "description": "Log the object again. It now includes <code>lastName</code> and <code>city</code>." },
     { "lines": "12", "range": { "text": "person.age" }, "variables": { "person": { "firstName": "John", "age": 31, "lastName": "Doe", "city": "New York" } }, "description": "Modify an existing property. <code>age</code> already exists, so JavaScript overwrites <code>30</code> with <code>31</code>." },
@@ -225,13 +251,13 @@ for (const propertyKey in product) {
 </code></pre>
             <script type="application/json">
 [
-    { "lines": "1-5", "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true } }, "description": "Create an object and store it in <code>product</code>." },
+    { "lines": "1-5", "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true } }, "description": "Create an object and store it in <var>product</var>." },
 
-    { "lines": "7", "range": { "text": "propertyKey in product" }, "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "name" }, "description": "Start <code>for...in</code>. First key is <code>\"name\"</code>, so <code>propertyKey</code> is <code>\"name\"</code>." },
+    { "lines": "7", "range": { "text": "propertyKey in product" }, "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "name" }, "description": "Start <code>for...in</code>. First key is <code>\"name\"</code>, so <var>propertyKey</var> is <code>\"name\"</code>." },
     { "lines": "8", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "name", "propertyValue": "Laptop" }, "description": "Use bracket notation to read the value: <code>product[propertyKey]</code> is <code>\"Laptop\"</code>." },
     { "lines": "9", "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "name", "propertyValue": "Laptop" }, "description": "Log: <code>\"Key name has value Laptop\"</code>." },
 
-    { "lines": "7", "range": { "text": "propertyKey in product" }, "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "price" }, "description": "Next key is <code>\"price\"</code>, so <code>propertyKey</code> becomes <code>\"price\"</code>." },
+    { "lines": "7", "range": { "text": "propertyKey in product" }, "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "price" }, "description": "Next key is <code>\"price\"</code>, so <var>propertyKey</var> becomes <code>\"price\"</code>." },
     { "lines": "8", "range": { "text": "product[propertyKey]" }, "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "price", "propertyValue": 999 }, "description": "Read the value for <code>\"price\"</code>. <code>product[propertyKey]</code> is <code>999</code>." },
     { "lines": "9", "variables": { "product": { "name": "Laptop", "price": 999, "inStock": true }, "propertyKey": "price", "propertyValue": 999 }, "description": "Log: <code>\"Key price has value 999\"</code>." },
 
@@ -273,14 +299,14 @@ for (const key of keys) {
 </code></pre>
             <script type="application/json">
 [
-    { "lines": "1-4", "variables": { "student": { "name": "Ava", "grade": "A" } }, "description": "Create an object called <code>student</code> with two properties." },
-    { "lines": "6", "range": { "text": "Object.keys(student)" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "keys": ["name", "grade"] }, "description": "<code>Object.keys(student)</code> returns an array of the object's keys. We store it in <code>keys</code>." },
+    { "lines": "1-4", "variables": { "student": { "name": "Ava", "grade": "A" } }, "description": "Create an object called <var>student</var> with two properties." },
+    { "lines": "6", "range": { "text": "Object.keys(student)" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "keys": ["name", "grade"] }, "description": "<code>Object.keys(student)</code> returns an array of the object's keys. We store it in <var>keys</var>." },
 
-    { "lines": "8", "range": { "text": "const key of keys" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "keys": ["name", "grade"], "key": "name" }, "description": "Start <code>for...of</code>. First array element is <code>\"name\"</code>, so <code>key</code> is <code>\"name\"</code>." },
+    { "lines": "8", "range": { "text": "const key of keys" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "keys": ["name", "grade"], "key": "name" }, "description": "Start <code>for...of</code>. First array element is <code>\"name\"</code>, so <var>key</var> is <code>\"name\"</code>." },
     { "lines": "9", "range": { "text": "student[key]" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "key": "name", "value": "Ava" }, "description": "Use the key to read the value: <code>student[key]</code> is <code>\"Ava\"</code>." },
     { "lines": "10", "variables": { "key": "name", "value": "Ava" }, "description": "Log: <code>\"name: Ava\"</code>." },
 
-    { "lines": "8", "range": { "text": "const key of keys" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "keys": ["name", "grade"], "key": "grade" }, "description": "Next element is <code>\"grade\"</code>, so <code>key</code> becomes <code>\"grade\"</code>." },
+    { "lines": "8", "range": { "text": "const key of keys" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "keys": ["name", "grade"], "key": "grade" }, "description": "Next element is <code>\"grade\"</code>, so <var>key</var> becomes <code>\"grade\"</code>." },
     { "lines": "9", "range": { "text": "student[key]" }, "variables": { "student": { "name": "Ava", "grade": "A" }, "key": "grade", "value": "A" }, "description": "Read the value for <code>\"grade\"</code>. <code>student[key]</code> is <code>\"A\"</code>." },
     { "lines": "10", "variables": { "key": "grade", "value": "A" }, "description": "Log: <code>\"grade: A\"</code>." },
 
@@ -291,8 +317,8 @@ for (const key of keys) {
                 <h3>Key Points:</h3>
                 <ul>
                     <li><code>Object.keys(obj)</code> creates an array of keys</li>
-                    <li><code>for...of</code> iterates over arrays (like the <code>keys</code> array)</li>
-                    <li>To get the value, use <code>obj[key]</code> because <code>key</code> is a variable</li>
+                    <li><code>for...of</code> iterates over arrays (like the <var>keys</var> array)</li>
+                    <li>To get the value, use <code>obj[key]</code> because <var>key</var> is a variable</li>
                 </ul>
             </div>
         </code-explainer>
@@ -312,11 +338,11 @@ console.log(`${name} is ${userAge} years old and ${isStudent ? "is" : "is not"} 
 </code></pre>
             <script type="application/json">
 [
-    { "lines": "1", "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 } }, "description": "Create object <code>user</code> with 4 properties." },
-    { "lines": "3", "range": { "text": "{ name }" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina" }, "description": "Shorthand destructuring. Read key <code>\"name\"</code> and assign it to variable with the same name: <code>name</code>. It is the same as <code>const name = user.name;</code>." },
-    { "lines": "4", "range": { "text": "age: userAge" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "userAge": 19 }, "description": "Rename during destructuring. Key is <code>age</code>, variable name is <code>userAge</code>." },
-    { "lines": "5", "range": { "text": "{ isStudent, score }" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "userAge": 19, "isStudent": true, "score": 90 }, "description": "Destructuring multiple properties in one go. The order of properties in the object does not matter. Value of <code>\"isStudent\"</code> property is assigned to variable <code>isStudent</code> and value of <code>\"score\"</code> property is assigned to variable <code>score</code>." },
-    { "lines": "6", "range": { "text": "isStudent ? \"is\" : \"is not\"" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "isStudent": true, "score": 90 }, "description": "<strong>Ternary operator</strong> is used in template string. <code>isStudent</code> has value <code>true</code>, so we use <code>\"is\"</code> in the log message." },
+    { "lines": "1", "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 } }, "description": "Create object <var>user</var> with 4 properties." },
+    { "lines": "3", "range": { "text": "{ name }" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina" }, "description": "Shorthand destructuring. Read key <code>\"name\"</code> and assign it to variable with the same name: <var>name</var>. It is the same as <code>const name = user.name;</code>." },
+    { "lines": "4", "range": { "text": "age: userAge" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "userAge": 19 }, "description": "Rename during destructuring. Key is <code>age</code>, variable name is <var>userAge</var>." },
+    { "lines": "5", "range": { "text": "{ isStudent, score }" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "userAge": 19, "isStudent": true, "score": 90 }, "description": "Destructuring multiple properties in one go. The order of properties in the object does not matter. Value of <code>\"isStudent\"</code> property is assigned to variable <var>isStudent</var> and value of <code>\"score\"</code> property is assigned to variable <var>score</var>." },
+    { "lines": "6", "range": { "text": "isStudent ? \"is\" : \"is not\"" }, "variables": { "user": { "name": "Mina", "age": 19, "isStudent": true, "score": 90 }, "name": "Mina", "isStudent": true, "score": 90 }, "description": "<strong>Ternary operator</strong> is used in template string. <var>isStudent</var> has value <code>true</code>, so we use <code>\"is\"</code> in the log message." },
     { "lines": "6", "variables": { "name": "Mina", "userAge": 19, "isStudent": true, "score": 90 }, "description": "Log <code>\"Mina is 19 years old and is a student.\"</code> to console." }
 ]
             </script>
@@ -343,8 +369,7 @@ console.log(`${name} is ${userAge} years old and ${isStudent ? "is" : "is not"} 
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 </body>

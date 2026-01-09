@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strings - JS Concept Explainer</title>
+    <title>JavaScript Strings, Step by Step | JS Concept Explainer</title>
+    <meta name="description"
+        content="Learn JavaScript strings step by step: create strings, use template literals, access characters by index, loop through text, and use common string methods.">
+    <link rel="canonical" href="strings.html">
+
+    <meta property="og:site_name" content="JS Concept Explainer">
+    <meta property="og:title" content="JavaScript Strings, Step by Step">
+    <meta property="og:description"
+        content="Create strings, use template literals, index characters, loop through text, and practice common string methods with examples.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mutyonok.github.io/js-explainer/strings.html">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JavaScript Strings, Step by Step">
+    <meta name="twitter:description"
+        content="Create strings, use template literals, index characters, loop through text, and practice common string methods with examples.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -28,6 +43,17 @@
     <script src="js/theme/theme-init.js"></script>
     <script type="module" src="js/theme/theme.js"></script>
     <script type="module" src="js/components/code-explainer.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "JavaScript Strings, Step by Step",
+      "description": "Learn JavaScript strings step by step: create strings, use template literals, access characters by index, loop through text, and use common string methods.",
+      "articleSection": "Programming",
+      "keywords": "JavaScript, Strings"
+    }
+    </script>
 </head>
 
 <body>
@@ -73,9 +99,9 @@ result += ' Congratulation!';</code></pre>
 [
     { "lines": "1-3", "variables": { "singleQuote": "Hello, World!", "doubleQuote": "Hello, World!", "templateLiteral": "Hello, World!" }, "description": "Create the same text using three quote styles - single, double, and backticks (template literals)." },
     { "lines": "5-7", "variables": { "product": "Laptop", "price": 999, "discount": 99 }, "description": "Sometimes we need to use variables inside a string. We can do it with template literals using <code>${}</code>." },
-    { "lines": "8", "range": { "text": "${product}" }, "variables": { "product": "Laptop", "price": 999, "discount": 99 }, "description": "First, JavaScript gets the value of <code>product</code> variable and puts it inside the string. You must use <code>${}</code> to insert variables. This only works with template literals (backticks)." },
+    { "lines": "8", "range": { "text": "${product}" }, "variables": { "product": "Laptop", "price": 999, "discount": 99 }, "description": "First, JavaScript gets the value of <var>product</var> variable and puts it inside the string. You must use <code>${}</code> to insert variables. This only works with template literals (backticks)." },
     { "lines": "8", "range": { "text": "${price - discount}" }, "variables": { "product": "Laptop", "price": 999, "discount": 99 }, "description": "You can put math and other expressions inside <code>${}</code>. Here JavaScript calculates <code>999 - 99</code> and puts <code>900</code> inside the string." },
-    { "lines": "8", "variables": { "total": "Total price of Laptop is 900GBP" }, "description": "The final sentence is <code>Total price of Laptop is 900GBP</code>, saved in <code>total</code> variable." },
+    { "lines": "8", "variables": { "total": "Total price of Laptop is 900GBP" }, "description": "The final sentence is <code>Total price of Laptop is 900GBP</code>, saved in <var>total</var> variable." },
     { "lines": "10", "variables": { "score": 100 }, "description": "Store a score number." },
     { "lines": "11", "range": { "text": "'Your score is: ' + score + '.'" }, "variables": { "score": 100, "result": "Your score is: 100." }, "description": "Another way to join text parts to create a string is to use <code>+</code> operator - concatenation. It works with any data type." },
     { "lines": "12", "range": { "text": "result += ' Congratulation!'" }, "variables": { "result": "Your score is: 100. Congratulation!" }, "description": "Use <code>+=</code> to add more text to the end of the string. This works only if you use <code>let</code> to create variable and is the same as writing <code>result = result + ' Congratulation!'</code>." }
@@ -110,7 +136,7 @@ let lastChar = word[word.length - 1];</code></pre>
 [
     { "lines": "1", "variables": { "word": "Bingo" }, "description": "Store the string in a variable." },
     { "lines": "3", "range": { "text": "word.length" }, "variables": { "word": "Bingo", "wordLength": 5 }, "description": "Use <code>.length</code> to get the length of the string. It has 5 characters." },
-    { "lines": "5", "range": { "text": "word[0] + word[1] + word[3]" }, "variables": { "word": "Bingo", "wordLength": 5, "big": "Big" }, "description": "Every character has a position in the string - index. Index starts from 0. Use <code>[]</code> to get the character at a specific index. Characters at index 0, 1, and 3 are <code>\"B\"</code>, <code>\"i\"</code>, and <code>\"g\"</code>. Combine them to build <code>\"Big\"</code> and store it in <code>big</code> variable." },
+    { "lines": "5", "range": { "text": "word[0] + word[1] + word[3]" }, "variables": { "word": "Bingo", "wordLength": 5, "big": "Big" }, "description": "Every character has a position in the string - index. Index starts from 0. Use <code>[]</code> to get the character at a specific index. Characters at index 0, 1, and 3 are <code>\"B\"</code>, <code>\"i\"</code>, and <code>\"g\"</code>. Combine them to build <code>\"Big\"</code> and store it in <var>big</var> variable." },
     { "lines": "7", "range": { "text": "word[word.length - 1]" }, "variables": { "word": "Bingo", "wordLength": 5, "big": "Big", "lastChar": "o" }, "description": "Last character is always at index <code>string.length - 1</code>" }
 ]
             </script>
@@ -146,27 +172,27 @@ for (let char of big) {
             <script type="application/json">
 [
     { "lines": "4-6", "variables": { "big": "Big" }, "description": "We can use a <code>for</code> loop to iterate over indexes of each character in the string and get each character by that index" },
-    { "lines": "4", "range": { "text": "let i = 0" }, "variables": { "big": "Big", "i": 0 }, "description": "When we want to go from first to last character, we start loop from index 0. We use loop variable <code>i</code> to keep track of the current index." },
+    { "lines": "4", "range": { "text": "let i = 0" }, "variables": { "big": "Big", "i": 0 }, "description": "When we want to go from first to last character, we start loop from index 0. We use loop variable <var>i</var> to keep track of the current index." },
     { "lines": "5", "range": { "text": "${i}" }, "variables": { "big": "Big", "i": 0 }, "description": "Inside the template literal, <code>${i}</code> inserts the current index (<code>0</code>)." },
     { "lines": "5", "range": { "text": "${big[i]}" }, "variables": { "big": "Big", "i": 0 }, "description": "The second <code>${}</code> inserts the letter at index <code>0</code>, which is <code>\"B\"</code>." },
     { "lines": "5", "variables": { "big": "Big", "i": 0 }, "description": "We log <code>Index 0: B</code> to the console." },
     
-    { "lines": "4", "range": { "text": "i++" }, "variables": { "big": "Big", "i": 1 }, "description": "We increment <code>i</code> by 1 because we want to move to the next character." },
-    { "lines": "4", "range": { "text": "i < big.length" }, "variables": { "big": "Big", "i": 1 }, "description": "The condition <code>i < big.length</code> checks if we have reached the last character index. The loop continues because <code>i</code> is less than <code>3</code>." },
+    { "lines": "4", "range": { "text": "i++" }, "variables": { "big": "Big", "i": 1 }, "description": "We increment <var>i</var> by 1 because we want to move to the next character." },
+    { "lines": "4", "range": { "text": "i < big.length" }, "variables": { "big": "Big", "i": 1 }, "description": "The condition <code>i < big.length</code> checks if we have reached the last character index. The loop continues because <var>i</var> is less than <code>3</code>." },
     { "lines": "5", "variables": { "big": "Big", "i": 1 }, "description": "We log <code>Index 1: i</code> to the console." },
 
-    { "lines": "4", "range": { "text": "i < big.length; i++" }, "variables": { "big": "Big", "i": 2 }, "description": "<code>i</code> becomes 2. Then loop checks the condition <code>i < big.length</code> and the loop continues because <code>2 < 3</code> is true." },
+    { "lines": "4", "range": { "text": "i < big.length; i++" }, "variables": { "big": "Big", "i": 2 }, "description": "<var>i</var> becomes 2. Then loop checks the condition <code>i < big.length</code> and the loop continues because <code>2 < 3</code> is true." },
     { "lines": "5", "variables": { "big": "Big", "i": 2 }, "description": "We log <code>Index 2: g</code> to the console." },
 
-    { "lines": "4", "range": { "text": "i < big.length; i++" }, "variables": { "big": "Big", "i": 3 }, "description": "<code>i</code> becomes 3. Then loop checks the condition <code>i < big.length</code> and the loop stops because <code>3 < 3</code> is false." },
+    { "lines": "4", "range": { "text": "i < big.length; i++" }, "variables": { "big": "Big", "i": 3 }, "description": "<var>i</var> becomes 3. Then loop checks the condition <code>i < big.length</code> and the loop stops because <code>3 < 3</code> is false." },
 
     { "lines": "9-11", "variables": { "big": "Big", "char": "B" }, "description": "If we don't need the index, we can use a <code>for..of</code> loop and get each character directly." },
 
-    { "lines": "9", "range": { "text": "let char of big" }, "variables": { "big": "Big", "char": "B" }, "description": "Loop variable <code>char</code> gets each character in the string <code>big</code> one by one." },
+    { "lines": "9", "range": { "text": "let char of big" }, "variables": { "big": "Big", "char": "B" }, "description": "Loop variable <var>char</var> gets each character in the string <var>big</var> one by one." },
     { "lines": "10", "range": { "text": "console.log(char)" }, "variables": { "big": "Big", "char": "B" }, "description": "Log <code>B</code> to the console." },
-    { "lines": "9", "range": { "text": "char of big" }, "variables": { "big": "Big", "char": "i" }, "description": "Next iteration <code>char</code> gets second character <code>i</code>." },
+    { "lines": "9", "range": { "text": "char of big" }, "variables": { "big": "Big", "char": "i" }, "description": "Next iteration <var>char</var> gets second character <code>i</code>." },
     { "lines": "10", "range": { "text": "console.log(char)" }, "variables": { "big": "Big", "char": "i" }, "description": "Log <code>i</code> to the console." },
-    { "lines": "9", "range": { "text": "char of big" }, "variables": { "big": "Big", "char": "g" }, "description": "Next iteration <code>char</code> gets second character <code>g</code>." },
+    { "lines": "9", "range": { "text": "char of big" }, "variables": { "big": "Big", "char": "g" }, "description": "Next iteration <var>char</var> gets second character <code>g</code>." },
     { "lines": "10", "range": { "text": "console.log(char)" }, "variables": { "big": "Big", "char": "g" }, "description": "Log <code>g</code> to the console." },
     { "lines": "11", "variables": { "big": "Big" }, "description": "There are no more characters to loop over, so the loop ends." }
 ]
@@ -212,7 +238,7 @@ const domain = url.slice(lastDotIndex + 1);</code></pre>
     { "lines": "3", "range": { "text": "fullName.slice(4)" }, "variables": { "fullName": "Bob Marley", "firstName": "Bob", "lastName": "Marley" }, "description": "Method <code>slice(start)</code> takes substring from index <code>start</code> to the end of the string. Index <code>4</code> is character <code>M</code>, so it returns <code>\"Marley\"</code>." },
 
     { "lines": "5", "variables": { "email": "bob.marley@gmail.com" }, "description": "Now we have an email address. Task: Extract the username and domain name from email address." },
-    { "lines": "7", "range": { "text": "email.indexOf(\"@\")" }, "variables": { "email": "bob.marley@gmail.com", "atIndex": 10 }, "description": "Method <code>indexOf(\"@\")</code> returns the index of the first occurrence of <code>\"@\"</code> in the variable <code>email</code>. It starts searching from the start of the string." },
+    { "lines": "7", "range": { "text": "email.indexOf(\"@\")" }, "variables": { "email": "bob.marley@gmail.com", "atIndex": 10 }, "description": "Method <code>indexOf(\"@\")</code> returns the index of the first occurrence of <code>\"@\"</code> in the variable <var>email</var>. It starts searching from the start of the string." },
     { "lines": "8", "range": { "text": "email.slice(0, atIndex)" }, "variables": { "email": "bob.marley@gmail.com", "atIndex": 10, "userName": "bob.marley" }, "description": "Slice from the start to the index of <code>@</code> to get the username. It will not include <code>@</code> in the result." },
     { "lines": "9", "range": { "text": "email.slice(atIndex + 1)" }, "variables": { "email": "bob.marley@gmail.com", "atIndex": 10, "userName": "bob.marley", "domainName": "gmail.com" }, "description": "To get domain part of email we slice from the next index after <code>@</code>." },
 
@@ -359,8 +385,8 @@ if (email1.toLowerCase() === email2.toLowerCase()) {
     { "lines": "3", "range": { "text": "userInput.toUpperCase()" }, "variables": { "userInput": "JoHn@EmAiL.CoM", "lower": "john@email.com", "upper": "JOHN@EMAIL.COM" }, "description": "Call <code>toUpperCase()</code> to create an uppercase version." },
 
     { "lines": "5-6", "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com" }, "description": "Now we have the same email written with different letter case. Task: compare them ignoring case." },
-    { "lines": "8", "range": { "text": "email1.toLowerCase()" }, "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com" }, "description": "Convert <code>email1</code> to lowercase to normalize it. It becomes <code>jane.doe@mail.com</code>." },
-    { "lines": "8", "range": { "text": "email2.toLowerCase()" }, "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com" }, "description": "Convert <code>email2</code> to lowercase too: <code>jane.doe@mail.com</code>. Now both values look the same." },
+    { "lines": "8", "range": { "text": "email1.toLowerCase()" }, "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com" }, "description": "Convert <var>email1</var> to lowercase to normalize it. It becomes <code>jane.doe@mail.com</code>." },
+    { "lines": "8", "range": { "text": "email2.toLowerCase()" }, "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com" }, "description": "Convert <var>email2</var> to lowercase too: <code>jane.doe@mail.com</code>. Now both values look the same." },
     { "lines": "8", "range": { "text": "email1.toLowerCase() === email2.toLowerCase()" }, "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com" }, "description": "Because the lowercase versions match, the condition is <code>true</code> and the <code>if</code> block runs." },
     { "lines": "9", "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com"}, "description": "We log <code>Emails match!</code> to the console." },
     { "lines": "10", "variables": { "email1": "Jane.Doe@mail.com", "email2": "jane.doe@mail.com" }, "description": "The <code>if</code> block ends." }
@@ -413,10 +439,10 @@ console.log(normalized.endsWith(".jpg")); // true</code></pre>
     { "lines": "3", "range": { "text": "email.includes('gmail.com')" }, "variables": { "email": "sarah@example.com", "hasAtSymbol": true, "isGmail": false }, "description": "Check for a specific domain. It returns <code>false</code> because this email doesn't have <code>gmail.com</code> in it." },
 
     { "lines": "5", "variables": { "url": "https://google.com" }, "description": "Now we have a URL string." },
-    { "lines": "6", "range": { "text": "url.startsWith(\"https://\")" }, "variables": { "url": "https://google.com", "isSecure": true }, "description": "<code>startsWith()</code> checks the beginning of a string. Here, it returns <code>true</code> as <code>url</code> starts with string <code>https://</code>." },
+    { "lines": "6", "range": { "text": "url.startsWith(\"https://\")" }, "variables": { "url": "https://google.com", "isSecure": true }, "description": "<code>startsWith()</code> checks the beginning of a string. Here, it returns <code>true</code> as <var>url</var> starts with string <code>https://</code>." },
 
     { "lines": "8", "variables": { "file": "report.pdf" }, "description": "Now we have a filename string. We want that it ends with <code>.pdf</code>." },
-    { "lines": "9", "range": { "text": "file.endsWith(\".pdf\")" }, "variables": { "file": "report.pdf", "isPdf": true }, "description": "<code>endsWith()</code> checks the end of a string. Here it returns <code>true</code> as <code>file</code> ends with string <code>.pdf</code>." },
+    { "lines": "9", "range": { "text": "file.endsWith(\".pdf\")" }, "variables": { "file": "report.pdf", "isPdf": true }, "description": "<code>endsWith()</code> checks the end of a string. Here it returns <code>true</code> as <var>file</var> ends with string <code>.pdf</code>." },
 
     { "lines": "11", "variables": { "upload": "IMAGE.JPG" }, "description": "We have another filename string, but it uses uppercase letters. We want to check it's a <code>.jpg</code> file." },
     { "lines": "12", "range": { "text": "upload.endsWith(\".jpg\")" }, "variables": { "upload": "IMAGE.JPG" }, "description": "This returns <code>false</code> because the check is <strong>case-sensitive</strong>: <code>.JPG</code> is not the same as <code>.jpg</code>." },
@@ -450,8 +476,7 @@ console.log(normalized.endsWith(".jpg")); // true</code></pre>
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 </body>

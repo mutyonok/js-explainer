@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays - JS Concept Explainer</title>
+    <title>JavaScript Arrays, Step by Step | JS Concept Explainer</title>
+    <meta name="description"
+        content="Learn JavaScript arrays step by step: create arrays, read and update items, add/remove with push/pop/shift/unshift, and avoid common reference mistakes.">
+    <link rel="canonical" href="arrays.html">
+
+    <meta property="og:site_name" content="JS Concept Explainer">
+    <meta property="og:title" content="JavaScript Arrays, Step by Step">
+    <meta property="og:description"
+        content="Create arrays, access and update items, add/remove elements, and understand copying vs shared references with beginner-friendly examples.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mutyonok.github.io/js-explainer/arrays.html">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JavaScript Arrays, Step by Step">
+    <meta name="twitter:description"
+        content="Create arrays, access and update items, add/remove elements, and understand copying vs shared references with beginner-friendly examples.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -28,6 +43,17 @@
     <script src="js/theme/theme-init.js"></script>
     <script type="module" src="js/theme/theme.js"></script>
     <script type="module" src="js/components/code-explainer.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "JavaScript Arrays, Step by Step",
+      "description": "Learn JavaScript arrays step by step: create arrays, read and update items, add/remove with push/pop/shift/unshift, and avoid common reference mistakes.",
+      "articleSection": "Programming",
+      "keywords": "JavaScript, Arrays"
+    }
+    </script>
 </head>
 
 <body>
@@ -67,9 +93,9 @@ const cars = [myCar, dadsCar];</code></pre>
 [
     { "lines": "1", "range": { "text": "[]" }, "variables": { "shoppingList": [] }, "description": "Create an empty array using <code>[]</code>. This is useful when you want a list to fill later (for example, add shopping items one by one)." },
     { "lines": "3", "range": { "text": "[88, 92, 76, 100]" }, "variables": { "shoppingList": [], "scores": [88, 92, 76, 100] }, "description": "Create an array with 4 elements. Here every element is a number (scores), which is the most common way to use arrays: one type repeated in a list." },
-    { "lines": "5-6", "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota" }, "description": "You can also use existing variables when you create an array. Family cars are stored in variables <code>myCar</code> and <code>dadsCar</code>." },
-    { "lines": "7", "range": { "text": "[myCar, dadsCar]" }, "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota" }, "description": "JavaScript reads the values of <code>myCar</code> and <code>dadsCar</code> and puts them into the new array." },
-    { "lines": "7", "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota", "cars": ["Mazda", "Toyota"] }, "description": "Now <code>cars</code> is an array with two elements: <code>\"Mazda\"</code> and <code>\"Toyota\"</code>." }
+    { "lines": "5-6", "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota" }, "description": "You can also use existing variables when you create an array. Family cars are stored in variables <var>myCar</var> and <var>dadsCar</var>." },
+    { "lines": "7", "range": { "text": "[myCar, dadsCar]" }, "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota" }, "description": "JavaScript reads the values of <var>myCar</var> and <var>dadsCar</var> and puts them into the new array." },
+    { "lines": "7", "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota", "cars": ["Mazda", "Toyota"] }, "description": "Now <var>cars</var> is an array with two elements: <code>\"Mazda\"</code> and <code>\"Toyota\"</code>." }
 ]
             </script>
             <div slot="summary">
@@ -175,23 +201,23 @@ for (let i = 0; i <= 4; i += 2) {
             <script type="application/json">
 [
     { "lines": "1", "range": { "text": "[]" }, "variables": { "todoList": [] }, "description": "Start with an empty list. We will add items to it later." },
-    { "lines": "2", "variables": { "todoList": ["Buy milk"] }, "description": "Add the first task. <code>todoList</code> now has one element." },
+    { "lines": "2", "variables": { "todoList": ["Buy milk"] }, "description": "Add the first task. <var>todoList</var> now has one element." },
     { "lines": "3", "variables": { "todoList": ["Buy milk", "Walk dog", "Homework"] }, "description": "We can use <code>push</code> to add multiple items at once. Here we add two more items; they go after the first one. Now array has three elements." },
 
     { "lines": "5", "variables": { "todoList": ["Buy milk", "Walk dog", "Homework"], "emergencyTask": "Call doctor" }, "description": "Add an emergency task to the beginning of the list using <code>unshift()</code>." },
-    { "lines": "6", "variables": { "todoList": ["Call doctor", "Buy milk", "Walk dog", "Homework"], "emergencyTask": "Call doctor" }, "description": "Now <code>todoList</code> has four elements. <code>unshift()</code> adds items to the beginning." },
+    { "lines": "6", "variables": { "todoList": ["Call doctor", "Buy milk", "Walk dog", "Homework"], "emergencyTask": "Call doctor" }, "description": "Now <var>todoList</var> has four elements. <code>unshift()</code> adds items to the beginning." },
 
     { "lines": "7", "variables": { "evenNumbers": [] }, "description": "<strong>Task:</strong> Create array of even numbers from 0 to 4.<br> <strong>Idea:</strong> Start with empty array and add numbers one by one in a loop." },
-    { "lines": "8", "variables": { "evenNumbers": [], "i": 0 }, "description": "Start loop from 0. Loop until 4. Increase <code>i</code> by 2 on each iteration. This way we will get even numbers from 0 to 4." },
+    { "lines": "8", "variables": { "evenNumbers": [], "i": 0 }, "description": "Start loop from 0. Loop until 4. Increase <var>i</var> by 2 on each iteration. This way we will get even numbers from 0 to 4." },
     { "lines": "9", "range": { "text": "evenNumbers.push(i)" }, "variables": { "evenNumbers": [0], "i": 0 }, "description": "Current event number is 0. Push it to array." },
     
-    { "lines": "8", "range": { "text": "i += 2" }, "variables": { "evenNumbers": [0], "i": 2 }, "description": "Increase <code>i</code> by 2. Next event number is 2." },
+    { "lines": "8", "range": { "text": "i += 2" }, "variables": { "evenNumbers": [0], "i": 2 }, "description": "Increase <var>i</var> by 2. Next event number is 2." },
     { "lines": "9", "variables": { "evenNumbers": [0, 2], "i": 2 }, "description": "Push adds <code>2</code> to the end of an array." },
 
-    { "lines": "8", "range": { "text": "i += 2" }, "variables": { "evenNumbers": [0, 2], "i": 4 }, "description": "Increase <code>i</code> by 2. Next event number is 4." },
+    { "lines": "8", "range": { "text": "i += 2" }, "variables": { "evenNumbers": [0, 2], "i": 4 }, "description": "Increase <var>i</var> by 2. Next event number is 4." },
     { "lines": "9", "range": { "text": "evenNumbers.push(i)" }, "variables": { "evenNumbers": [0, 2, 4], "i": 4 }, "description": "Push adds <code>4</code> to the end of an array." },
 
-    { "lines": "8", "range": { "text": "i <= 4" }, "variables": { "evenNumbers": [0, 2, 4], "i": 6 }, "description": "Increase <code>i</code> by 2. Next event number is 6. But now <code>i &lt;= 4</code> is false, so loop stops." },
+    { "lines": "8", "range": { "text": "i <= 4" }, "variables": { "evenNumbers": [0, 2, 4], "i": 6 }, "description": "Increase <var>i</var> by 2. Next event number is 6. But now <code>i &lt;= 4</code> is false, so loop stops." },
     
     { "lines": "10", "variables": { "evenNumbers": [0, 2, 4] }, "description": "Array is now filled with even numbers from 0 to 4." }
     
@@ -228,9 +254,9 @@ console.log(empty.pop()); // undefined
             <script type="application/json">
 [
     { "lines": "1", "variables": { "watchList": ["Avatar", "Matrix", "Titanic"] }, "description": "Our watch list has three movies. We always want to watch the last added movie first." },
-    { "lines": "2", "range": { "text": "watchList.pop()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic" }, "description": "Remove the last element from array and store it in <code>lastMovie</code>." },
+    { "lines": "2", "range": { "text": "watchList.pop()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic" }, "description": "Remove the last element from array and store it in <var>lastMovie</var>." },
     { "lines": "4", "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Call doctor", "Walk dog", "Homework"] }, "description": "When we have a task list, we always want to do the first added task first." },
-    { "lines": "5", "range": { "text": "tasks.shift()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Walk dog", "Homework"], "firstTask": "Call doctor" }, "description": "Remove the first element from array and store it in <code>firstTask</code>." },
+    { "lines": "5", "range": { "text": "tasks.shift()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Walk dog", "Homework"], "firstTask": "Call doctor" }, "description": "Remove the first element from array and store it in <var>firstTask</var>." },
     { "lines": "7", "range": { "text": "const empty = []" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Walk dog", "Homework"], "firstTask": "Call doctor", "empty": [] }, "description": "What happens if we try to remove elements from empty array?" },
     { "lines": "8", "range": { "text": "empty.pop()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Walk dog", "Homework"], "firstTask": "Call doctor", "empty": [] }, "description": "Using <code>pop()</code> on an empty array gives <code>undefined</code>. Same for <code>shift()</code>." }
 ]
@@ -257,8 +283,7 @@ console.log(empty.pop()); // undefined
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 </body>

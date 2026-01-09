@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Loop - JS Concept Explainer</title>
+    <title>JavaScript for Loops, Step by Step | JS Concept Explainer</title>
+    <meta name="description"
+        content="Learn JavaScript for loops step by step: classic for loops, looping over arrays and strings, and common patterns like break, continue, and counting.">
+    <link rel="canonical" href="for-loop.html">
+
+    <meta property="og:site_name" content="JS Concept Explainer">
+    <meta property="og:title" content="JavaScript for Loops, Step by Step">
+    <meta property="og:description"
+        content="Classic for loops, loops over arrays/strings, and beginner-friendly loop patterns explained step by step.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mutyonok.github.io/js-explainer/for-loop.html">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JavaScript for Loops, Step by Step">
+    <meta name="twitter:description"
+        content="Classic for loops, loops over arrays/strings, and beginner-friendly loop patterns explained step by step.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -24,10 +39,21 @@
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css">
-    
+
     <script src="js/theme/theme-init.js"></script>
     <script type="module" src="js/theme/theme.js"></script>
     <script type="module" src="js/components/code-explainer.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "JavaScript for Loops, Step by Step",
+      "description": "Learn JavaScript for loops step by step: classic for loops, looping over arrays and strings, and common patterns like break, continue, and counting.",
+      "articleSection": "Programming",
+      "keywords": "JavaScript, For Loop, Loops"
+    }
+    </script>
 </head>
 
 <body>
@@ -50,8 +76,8 @@
         <code-explainer id="example-for-loop-classic">
             <h2 slot="title">Classic <code>for</code> Loop</h2>
             <p slot="description">
-                Print numbers from 0 to 4. The loop uses <code>i</code> as a counter variable,
-                starting at 0. The condition <code>i < 5</code> ensures the loop continues to execute as long as the
+                Print numbers from 0 to 4. The loop uses <var>i</var> as a counter variable,
+                starting at 0. The condition <code>i &lt; 5</code> ensures the loop continues to execute as long as the
                 counter is less than 5, resulting in exactly 5 iterations (from 0 to 4).
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">for (let i = 0; i < 5; i++) {
@@ -62,19 +88,19 @@
     { "lines": "1", "range": { "text": "let i = 0" }, "variables": { "i": 0 }, "description": "Loop initialization: <code>let i = 0</code>." },
     { "lines": "1", "range": { "text": "i < 5" }, "variables": { "i": 0 }, "description": "Condition check: <code>0 &lt; 5</code> is <code>true</code>." },
     { "lines": "2", "variables": { "i": 0 }, "description": "Loop body executes. Print <code>0</code> to console." },
-    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 0 }, "description": "Increment: <code>i</code> becomes <code>1</code>." },
+    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 0 }, "description": "Increment: <var>i</var> becomes <code>1</code>." },
     { "lines": "1", "range": { "text": "i < 5" }, "variables": { "i": 1 }, "description": "Condition check: <code>1 &lt; 5</code> is <code>true</code>." },
     { "lines": "2", "variables": { "i": 1 }, "description": "Loop body executes. Print <code>1</code> to console." },
-    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 1 }, "description": "Increment: <code>i</code> becomes <code>2</code>." },
+    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 1 }, "description": "Increment: <var>i</var> becomes <code>2</code>." },
     { "lines": "1", "range": { "text": "i < 5" }, "variables": { "i": 2 }, "description": "Condition check: <code>2 &lt; 5</code> is <code>true</code>." },
     { "lines": "2", "variables": { "i": 2 }, "description": "Loop body executes. Print <code>2</code> to console." },
-    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 2 }, "description": "Increment: <code>i</code> becomes <code>3</code>." },
+    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 2 }, "description": "Increment: <var>i</var> becomes <code>3</code>." },
     { "lines": "1", "range": { "text": "i < 5" }, "variables": { "i": 3 }, "description": "Condition check: <code>3 &lt; 5</code> is <code>true</code>." },
     { "lines": "2", "variables": { "i": 3 }, "description": "Loop body executes. Print <code>3</code> to console." },
-    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 3 }, "description": "Increment: <code>i</code> becomes <code>4</code>." },
+    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 3 }, "description": "Increment: <var>i</var> becomes <code>4</code>." },
     { "lines": "1", "range": { "text": "i < 5" }, "variables": { "i": 4 }, "description": "Condition check: <code>4 &lt; 5</code> is <code>true</code>." },
     { "lines": "2", "variables": { "i": 4 }, "description": "Loop body executes. Print <code>4</code> to console." },
-    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 4 }, "description": "Increment: <code>i</code> becomes <code>5</code>." },
+    { "lines": "1", "range": { "text": "i++" }, "variables": { "i": 4 }, "description": "Increment: <var>i</var> becomes <code>5</code>." },
     { "lines": "1", "range": { "text": "i < 5" }, "variables": { "i": 5 }, "description": "Condition check: <code>5 &lt; 5</code> is <code>false</code>. Loop ends." },
     { "lines": "3", "description": "Browser steps out of the loop." }
 ]
@@ -82,9 +108,12 @@
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><strong>Three parts of a for loop</strong>: initialization (<code>let i = 0</code>), condition (<code>i &lt; 5</code>), and update (<code>i++</code>)</li>
-                    <li><strong>Loop runs while condition is true</strong>: the loop stops when the condition becomes false</li>
-                    <li><strong>Counter variable tracks iterations</strong>: <code>i</code> starts at 0 and increases by 1 each time. code>i++</code> means <code>i = i + 1</code></li>
+                    <li><strong>Three parts of a for loop</strong>: initialization (<code>let i = 0</code>), condition
+                        (<code>i &lt; 5</code>), and update (<code>i++</code>)</li>
+                    <li><strong>Loop runs while condition is true</strong>: the loop stops when the condition becomes
+                        false</li>
+                    <li><strong>Counter variable tracks iterations</strong>: <var>i</var> starts at 0 and increases by 1
+                        each time. <code>i++</code> means <code>i = i + 1</code></li>
                 </ul>
             </div>
         </code-explainer>
@@ -92,7 +121,7 @@
         <code-explainer id="example-for-loop-array">
             <h2 slot="title">Classic <code>for</code> Loop: Iterating Through an Array</h2>
             <p slot="description">
-                This example shows how to use the loop index <code>i</code> to access array
+                This example shows how to use the loop index <var>i</var> to access array
                 elements and perform operations within the loop body.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const names = ["Alice", "Bob", "Charlie", "David"];
@@ -104,28 +133,28 @@ for (let i = 0; i < names.length; i++) {
 }</code></pre>
             <script type="application/json">
 [
-    { "lines": "1", "description": "Declare variable <code>names</code> and initialize it with an array of <code>4</code> strings", "variables": { "names": ["Alice", "Bob", "Charlie", "David"] } },
+    { "lines": "1", "description": "Declare variable <var>names</var> and initialize it with an array of <code>4</code> strings", "variables": { "names": ["Alice", "Bob", "Charlie", "David"] } },
     { "lines": "3", "range": { "text": "let i = 0" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": "undefined" }, "description": "Loop initialization: <code>let i = 0</code>" },
     { "lines": "3", "range": { "text": "i < names.length" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 0 }, "description": "Condition check: <code>0 &lt; 4</code> is <code>true</code>." },
-    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 0, "name": "Alice" }, "description": "Get array element at index <code>0</code> and store it in <code>name</code> variable." },
+    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 0, "name": "Alice" }, "description": "Get array element at index <code>0</code> and store it in <var>name</var> variable." },
     { "lines": "5", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 0, "name": "Alice", "greetings": "Hello, Alice" }, "description": "Create greeting string using template literal." },
     { "lines": "6", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 0, "name": "Alice", "greetings": "Hello, Alice" }, "description": "Log <code>\"Hello, Alice\"</code> to console." },
-    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 0 }, "description": "Increment: <code>i</code> becomes <code>1</code>." },
+    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 0 }, "description": "Increment: <var>i</var> becomes <code>1</code>." },
     { "lines": "3", "range": { "text": "i < names.length" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 1 }, "description": "Condition check: <code>1 &lt; 4</code> is <code>true</code>." },
-    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 1, "name": "Bob" }, "description": "Get array element at index <code>1</code> and store it in <code>name</code> variable." },
+    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 1, "name": "Bob" }, "description": "Get array element at index <code>1</code> and store it in <var>name</var> variable." },
     { "lines": "5", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 1, "name": "Bob", "greetings": "Hello, Bob" }, "description": "Create greeting string using template literal." },
     { "lines": "6", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 1, "name": "Bob", "greetings": "Hello, Bob" }, "description": "Log <code>\"Hello, Bob\"</code> to console." },
-    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 1 }, "description": "Increment: <code>i</code> becomes <code>2</code>." },
+    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 1 }, "description": "Increment: <var>i</var> becomes <code>2</code>." },
     { "lines": "3", "range": { "text": "i < names.length" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 2 }, "description": "Condition check: <code>2 &lt; 4</code> is <code>true</code>." },
-    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 2, "name": "Charlie" }, "description": "Get array element at index <code>2</code> and store it in <code>name</code> variable." },
+    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 2, "name": "Charlie" }, "description": "Get array element at index <code>2</code> and store it in <var>name</var> variable." },
     { "lines": "5", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 2, "name": "Charlie", "greetings": "Hello, Charlie" }, "description": "Create greeting string using template literal." },
     { "lines": "6", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 2, "name": "Charlie", "greetings": "Hello, Charlie" }, "description": "Log <code>\"Hello, Charlie\"</code> to console." },
-    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 2 }, "description": "Increment: <code>i</code> becomes <code>3</code>." },
+    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 2 }, "description": "Increment: <var>i</var> becomes <code>3</code>." },
     { "lines": "3", "range": { "text": "i < names.length" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 3 }, "description": "Condition check: <code>3 &lt; 4</code> is <code>true</code>." },
-    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 3, "name": "David" }, "description": "Get array element at index <code>3</code> and store it in <code>name</code> variable." },
+    { "lines": "4", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 3, "name": "David" }, "description": "Get array element at index <code>3</code> and store it in <var>name</var> variable." },
     { "lines": "5", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 3, "name": "David", "greetings": "Hello, David" }, "description": "Create greeting string using template literal." },
     { "lines": "6", "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 3, "name": "David", "greetings": "Hello, David" }, "description": "Log <code>\"Hello, David\"</code> to console." },
-    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 3 }, "description": "Increment: <code>i</code> becomes <code>4</code>." },
+    { "lines": "3", "range": { "text": "i++" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 3 }, "description": "Increment: <var>i</var> becomes <code>4</code>." },
     { "lines": "3", "range": { "text": "i < names.length" }, "variables": { "names": ["Alice", "Bob", "Charlie", "David"], "i": 4 }, "description": "Condition check: <code>4 &lt; 4</code> is <code>false</code>. Loop ends." },
     { "lines": "7", "description": "Browser steps out of the loop." }
 ]
@@ -133,9 +162,12 @@ for (let i = 0; i < names.length; i++) {
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><strong>Use <code>i &lt; array.length</code> for the condition</strong>: the loop runs exactly once for every element in the array</li>
-                    <li><strong>Access elements with index</strong>: <code>names[i]</code> gets the element at position <code>i</code></li>
-                    <li><strong>Index matches array position</strong>: the first element is at index 0, second at index 1, and so on</li>
+                    <li><strong>Use <code>i &lt; array.length</code> for the condition</strong>: the loop runs exactly
+                        once for every element in the array</li>
+                    <li><strong>Access elements with index</strong>: <code>names[i]</code> gets the element at position
+                        <var>i</var></li>
+                    <li><strong>Index matches array position</strong>: the first element is at index 0, second at index
+                        1, and so on</li>
                 </ul>
             </div>
         </code-explainer>
@@ -143,8 +175,9 @@ for (let i = 0; i < names.length; i++) {
         <code-explainer id="example-for-loop-partial">
             <h2 slot="title">Classic <code>for</code> Loop: Starting from any Index</h2>
             <p slot="description">
-                The loop variable <code>i</code> just matches the array index, and you can start from any valid index.<br>
-                In this example we want to print last three elements of the array, we use <code>numbers.length - 3</code> to calculate the starting index dynamically. This ensures
+                The loop variable <var>i</var> just matches the array index, and you can start from any valid index.<br>
+                In this example we want to print last three elements of the array, we use
+                <code>numbers.length - 3</code> to calculate the starting index dynamically. This ensures
                 we always access the last 3 elements, even if you change the array and add more numbers.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const numbers = [10, 1, 5, 20, 30, 7];
@@ -154,18 +187,18 @@ for (let i = numbers.length - 3; i < numbers.length; i++) {
 }</code></pre>
             <script type="application/json">
 [
-    { "lines": "1", "description": "Declare variable <code>numbers</code> and initialize it with an array of <code>6</code> numbers.", "variables": { "numbers": [10, 1, 5, 20, 30, 7] } },
+    { "lines": "1", "description": "Declare variable <var>numbers</var> and initialize it with an array of <code>6</code> numbers.", "variables": { "numbers": [10, 1, 5, 20, 30, 7] } },
     { "lines": "3", "range": { "text": "numbers.length - 3" }, "description": "Calculate starting index: <code>numbers.length - 3</code> = <code>6 - 3</code> = <code>3</code>. This dynamically determines where to start the loop.", "variables": { "numbers": [10, 1, 5, 20, 30, 7] } },
-    { "lines": "3", "range": { "text": "let i = numbers.length - 3" }, "description": "Loop initialization: <code>i</code> is set to <code>3</code> (calculated from <code>numbers.length - 3</code>, not hardcoded).", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": "undefined" } },
+    { "lines": "3", "range": { "text": "let i = numbers.length - 3" }, "description": "Loop initialization: <var>i</var> is set to <code>3</code> (calculated from <code>numbers.length - 3</code>, not hardcoded).", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": "undefined" } },
     { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>3 &lt; 6</code> is <code>true</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 3 } },
     { "lines": "4", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 3 }, "description": "Access array element at index <code>3</code> and log it to console: <code>20</code>." },
-    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <code>i</code> becomes <code>4</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 3 } },
+    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <var>i</var> becomes <code>4</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 3 } },
     { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>4 &lt; 6</code> is <code>true</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 4 } },
     { "lines": "4", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 4 }, "description": "Access array element at index <code>4</code> and log it to console: <code>30</code>." },
-    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <code>i</code> becomes <code>5</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 4 } },
+    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <var>i</var> becomes <code>5</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 4 } },
     { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>5 &lt; 6</code> is <code>true</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 5 } },
     { "lines": "4", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 5 }, "description": "Access array element at index <code>5</code> and log it to console: <code>7</code>." },
-    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <code>i</code> becomes <code>6</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 5 } },
+    { "lines": "3", "range": { "text": "i++" }, "description": "Increment: <var>i</var> becomes <code>6</code>.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 5 } },
     { "lines": "3", "range": { "text": "i < numbers.length" }, "description": "Condition check: <code>6 &lt; 6</code> is <code>false</code>. Loop ends.", "variables": { "numbers": [10, 1, 5, 20, 30, 7], "i": 6 } },
     { "lines": "5", "description": "Execution continues after the loop." }
 ]
@@ -173,9 +206,12 @@ for (let i = numbers.length - 3; i < numbers.length; i++) {
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><strong>Start anywhere in the array</strong>: change the initialization to begin at any valid index</li>
-                    <li><strong>Calculate index dynamically</strong>: using <code>array.length - 3</code> adapts automatically if the array size changes</li>
-                    <li><strong>Access only the elements you need</strong>: useful for processing a part of an array</li>
+                    <li><strong>Start anywhere in the array</strong>: change the initialization to begin at any valid
+                        index</li>
+                    <li><strong>Calculate index dynamically</strong>: using <code>array.length - 3</code> adapts
+                        automatically if the array size changes</li>
+                    <li><strong>Access only the elements you need</strong>: useful for processing a part of an array
+                    </li>
                 </ul>
             </div>
         </code-explainer>
@@ -183,8 +219,10 @@ for (let i = numbers.length - 3; i < numbers.length; i++) {
         <code-explainer id="example-for-loop-backwards">
             <h2 slot="title">Classic <code>for</code> Loop: Iterating Backwards Through an Array</h2>
             <p slot="description">
-                <code>for</code> loop can iterate in reverse order - from last to first element. Start from the last index (<code>array.length - 1</code>),
-                use <code>i >= 0</code> as the condition (loop to the first index) , and decrement with <code>i--</code>.<br>
+                <code>for</code> loop can iterate in reverse order - from last to first element. Start from the last
+                index (<code>array.length - 1</code>),
+                use <code>i >= 0</code> as the condition (loop to the first index) , and decrement with
+                <code>i--</code>.<br>
                 This example iterates backwards through an array of 3 strings.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const items = ["first", "second", "third"];
@@ -195,21 +233,21 @@ for (let i = items.length - 1; i >= 0; i--) {
 }</code></pre>
             <script type="application/json">
 [
-    { "lines": "1", "description": "Declare variable <code>items</code> and initialize it with an array of <code>3</code> strings.", "variables": { "items": ["first", "second", "third"] } },
+    { "lines": "1", "description": "Declare variable <var>items</var> and initialize it with an array of <code>3</code> strings.", "variables": { "items": ["first", "second", "third"] } },
     { "lines": "3", "range": { "text": "items.length - 1" }, "description": "Calculate starting index: <code>items.length - 1</code> = <code>3 - 1</code> = <code>2</code>. This is the index of the last element of array.", "variables": { "items": ["first", "second", "third"] } },
-    { "lines": "3", "range": { "text": "let i = items.length - 1" }, "description": "Loop initialization: <code>i</code> is set to <code>2</code> (the last index).", "variables": { "items": ["first", "second", "third"], "i": "undefined" } },
+    { "lines": "3", "range": { "text": "let i = items.length - 1" }, "description": "Loop initialization: <var>i</var> is set to <code>2</code> (the last index).", "variables": { "items": ["first", "second", "third"], "i": "undefined" } },
     { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>2 &gt;= 0</code> is <code>true</code>.", "variables": { "items": ["first", "second", "third"], "i": 2 } },
-    { "lines": "4", "variables": { "items": ["first", "second", "third"], "i": 2, "item": "third" }, "description": "Get array element at index <code>2</code> and store it in <code>item</code> variable." },
+    { "lines": "4", "variables": { "items": ["first", "second", "third"], "i": 2, "item": "third" }, "description": "Get array element at index <code>2</code> and store it in <var>item</var> variable." },
     { "lines": "5", "variables": { "items": ["first", "second", "third"], "i": 2, "item": "third" }, "description": "Log <code>\"third\"</code> to console." },
-    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <code>i</code> becomes <code>1</code>.", "variables": { "items": ["first", "second", "third"], "i": 2 } },
+    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <var>i</var> becomes <code>1</code>.", "variables": { "items": ["first", "second", "third"], "i": 2 } },
     { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>1 &gt;= 0</code> is <code>true</code>.", "variables": { "items": ["first", "second", "third"], "i": 1 } },
-    { "lines": "4", "variables": { "items": ["first", "second", "third"], "i": 1, "item": "second" }, "description": "Get array element at index <code>1</code> and store it in <code>item</code> variable." },
+    { "lines": "4", "variables": { "items": ["first", "second", "third"], "i": 1, "item": "second" }, "description": "Get array element at index <code>1</code> and store it in <var>item</var> variable." },
     { "lines": "5", "variables": { "items": ["first", "second", "third"], "i": 1, "item": "second" }, "description": "Log <code>\"second\"</code> to console." },
-    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <code>i</code> becomes <code>0</code>.", "variables": { "items": ["first", "second", "third"], "i": 1 } },
+    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <var>i</var> becomes <code>0</code>.", "variables": { "items": ["first", "second", "third"], "i": 1 } },
     { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>0 &gt;= 0</code> is <code>true</code>.", "variables": { "items": ["first", "second", "third"], "i": 0 } },
-    { "lines": "4", "variables": { "items": ["first", "second", "third"], "i": 0, "item": "first" }, "description": "Get array element at index <code>0</code> and store it in <code>item</code> variable." },
+    { "lines": "4", "variables": { "items": ["first", "second", "third"], "i": 0, "item": "first" }, "description": "Get array element at index <code>0</code> and store it in <var>item</var> variable." },
     { "lines": "5", "variables": { "items": ["first", "second", "third"], "i": 0, "item": "first" }, "description": "Log <code>\"first\"</code> to console." },
-    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <code>i</code> becomes <code>-1</code>.", "variables": { "items": ["first", "second", "third"], "i": 0 } },
+    { "lines": "3", "range": { "text": "i--" }, "description": "Decrement: <var>i</var> becomes <code>-1</code>.", "variables": { "items": ["first", "second", "third"], "i": 0 } },
     { "lines": "3", "range": { "text": "i >= 0" }, "description": "Condition check: <code>-1 &gt;= 0</code> is <code>false</code>. Loop ends.", "variables": { "items": ["first", "second", "third"], "i": -1 } },
     { "lines": "6", "description": "Execution continues after the loop." }
 ]
@@ -217,9 +255,12 @@ for (let i = items.length - 1; i >= 0; i--) {
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><strong>Start from the last index</strong>: use <code>array.length - 1</code> to begin at the end of the array</li>
-                    <li><strong>Decrement instead of increment</strong>: use <code>i--</code> to count backwards. <code>i--</code> means <code>i = i - 1</code></li>
-                    <li><strong>Condition checks for >= 0</strong>: the loop continues until it reaches and processes the first element - element with index 0</li>
+                    <li><strong>Start from the last index</strong>: use <code>array.length - 1</code> to begin at the
+                        end of the array</li>
+                    <li><strong>Decrement instead of increment</strong>: use <code>i--</code> to count backwards.
+                        <code>i--</code> means <code>i = i - 1</code></li>
+                    <li><strong>Condition checks for >= 0</strong>: the loop continues until it reaches and processes
+                        the first element - element with index 0</li>
                 </ul>
             </div>
         </code-explainer>
@@ -245,29 +286,33 @@ for (const result of results) {
 }</code></pre>
             <script type="application/json">
 [
-    { "lines": "1-5", "description": "Initialize <code>results</code> array with <code>3</code> test result objects.", "variables": { "results": [{"name": "Alice", "score": 85}, {"name": "Bob", "score": 70}, {"name": "Charlie", "score": 92}] } },
-    { "lines": "6", "description": "Initialize an empty array <code>passed</code> to store names of students who passed.", "variables": { "results": [{"name": "Alice", "score": 85}, {"name": "Bob", "score": 70}, {"name": "Charlie", "score": 92}], "passed": [] } },
-    { "lines": "8", "range": { "text": "const result of results" }, "description": "Loop begins. <code>result</code> is assigned the first element: <code>\"Alice\"</code>'s object.", "variables": { "results": "[...]", "passed": [], "result": {"name": "Alice", "score": 85} } },
+    { "lines": "1-5", "description": "Initialize <var>results</var> array with <code>3</code> test result objects.", "variables": { "results": [{"name": "Alice", "score": 85}, {"name": "Bob", "score": 70}, {"name": "Charlie", "score": 92}] } },
+    { "lines": "6", "description": "Initialize an empty array <var>passed</var> to store names of students who passed.", "variables": { "results": [{"name": "Alice", "score": 85}, {"name": "Bob", "score": 70}, {"name": "Charlie", "score": 92}], "passed": [] } },
+    { "lines": "8", "range": { "text": "const result of results" }, "description": "Loop begins. <var>result</var> is assigned the first element: <code>\"Alice\"</code>'s object.", "variables": { "results": "[...]", "passed": [], "result": {"name": "Alice", "score": 85} } },
     { "lines": "9", "range": { "text": "result.score > 80" }, "description": "Check condition: <code>85 &gt; 80</code> is <code>true</code>.", "variables": { "results": "[...]", "passed": [], "result": {"name": "Alice", "score": 85} } },
-    { "lines": "10", "range": { "text": "const studentName = result.name" }, "description": "Get value of <code>name</code> property from <code>result</code> object and store it in <code>studentName</code> variable.", "variables": { "results": "[...]", "passed": [], "result": {"name": "Alice", "score": 85}, "studentName": "Alice" } },
-    { "lines": "11", "range": { "text": "passed.push(studentName)" }, "description": "Push <code>studentName</code> to the <code>passed</code> array.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Alice", "score": 85}, "studentName": "Alice" } },
-    { "lines": "8", "range": { "text": "const result of results" }, "description": "Next iteration. <code>result</code> is assigned the second element: <code>\"Bob\"</code>'s object.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Bob", "score": 70} } },
+    { "lines": "10", "range": { "text": "const studentName = result.name" }, "description": "Get value of <code>name</code> property from <var>result</var> object and store it in <var>studentName</var> variable.", "variables": { "results": "[...]", "passed": [], "result": {"name": "Alice", "score": 85}, "studentName": "Alice" } },
+    { "lines": "11", "range": { "text": "passed.push(studentName)" }, "description": "Push <var>studentName</var> to the <var>passed</var> array.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Alice", "score": 85}, "studentName": "Alice" } },
+    { "lines": "8", "range": { "text": "const result of results" }, "description": "Next iteration. <var>result</var> is assigned the second element: <code>\"Bob\"</code>'s object.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Bob", "score": 70} } },
     { "lines": "9", "range": { "text": "result.score > 80" }, "description": "Check condition: <code>70 &gt; 80</code> is <code>false</code>.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Bob", "score": 70} } },
-    { "lines": "8", "range": { "text": "const result of results" }, "description": "Next iteration. <code>result</code> is assigned the third element: <code>\"Charlie\"</code>'s object.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Charlie", "score": 92} } },
+    { "lines": "8", "range": { "text": "const result of results" }, "description": "Next iteration. <var>result</var> is assigned the third element: <code>\"Charlie\"</code>'s object.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Charlie", "score": 92} } },
     { "lines": "9", "range": { "text": "result.score > 80" }, "description": "Check condition: <code>92 &gt; 80</code> is <code>true</code>.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Charlie", "score": 92} } },
-    { "lines": "10", "range": { "text": "const studentName = result.name" }, "description": "Get value of <code>name</code> property from <code>result</code> object and store it in <code>studentName</code> variable.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Charlie", "score": 92}, "studentName": "Charlie" } },
-    { "lines": "11", "range": { "text": "passed.push(studentName)" }, "description": "Push <code>studentName</code> to the <code>passed</code> array.", "variables": { "results": "[...]", "passed": ["Alice", "Charlie"], "result": {"name": "Charlie", "score": 92}, "studentName": "Charlie" } },
-    { "lines": "8", "range": { "text": "const result of results" }, "description": "No more elements in <code>results</code>. The loop finishes.", "variables": { "results": "[...]", "passed": ["Alice", "Charlie"] } },
+    { "lines": "10", "range": { "text": "const studentName = result.name" }, "description": "Get value of <code>name</code> property from <var>result</var> object and store it in <var>studentName</var> variable.", "variables": { "results": "[...]", "passed": ["Alice"], "result": {"name": "Charlie", "score": 92}, "studentName": "Charlie" } },
+    { "lines": "11", "range": { "text": "passed.push(studentName)" }, "description": "Push <var>studentName</var> to the <var>passed</var> array.", "variables": { "results": "[...]", "passed": ["Alice", "Charlie"], "result": {"name": "Charlie", "score": 92}, "studentName": "Charlie" } },
+    { "lines": "8", "range": { "text": "const result of results" }, "description": "No more elements in <var>results</var>. The loop finishes.", "variables": { "results": "[...]", "passed": ["Alice", "Charlie"] } },
     { "lines": "14", "description": "Execution continues after the loop." }
 ]
             </script>
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><strong>Simpler syntax than classic for</strong>: no index variable or manual incrementing needed</li>
-                    <li><strong>Direct access to elements</strong>: each iteration gives you the actual array element, not its index</li>
-                    <li><strong>Cannot access the index</strong>: use a classic for loop if you need to know element positions</li>
-                    <li><strong>All elements are processed</strong>: the loop runs exactly once for every element in the array - from first to last</li>
+                    <li><strong>Simpler syntax than classic for</strong>: no index variable or manual incrementing
+                        needed</li>
+                    <li><strong>Direct access to elements</strong>: each iteration gives you the actual array element,
+                        not its index</li>
+                    <li><strong>Cannot access the index</strong>: use a classic for loop if you need to know element
+                        positions</li>
+                    <li><strong>All elements are processed</strong>: the loop runs exactly once for every element in the
+                        array - from first to last</li>
                 </ul>
             </div>
         </code-explainer>
@@ -276,7 +321,8 @@ for (const result of results) {
             <h2 slot="title">The <code>for..of</code> Loop: strings</h2>
             <p slot="description">
                 The <code>for..of</code> loop can also iterate over strings, giving you access to each character
-                one at a time - always from first to last character. This example checks whether each character in "hello" is a vowel or consonant.
+                one at a time - always from first to last character. This example checks whether each character in
+                "hello" is a vowel or consonant.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const word = "hello";
 
@@ -289,30 +335,31 @@ for (const char of word) {
 }</code></pre>
             <script type="application/json">
 [
-    { "lines": "1", "description": "Declare variable <code>word</code> and initialize it with the string <code>\"hello\"</code>.", "variables": { "word": "hello" } },
-    { "lines": "3", "range": { "text": "const char of word" }, "description": "Loop begins. <code>char</code> is assigned the first character: <code>\"h\"</code>.", "variables": { "word": "hello", "char": "h" } },
+    { "lines": "1", "description": "Declare variable <var>word</var> and initialize it with the string <code>\"hello\"</code>.", "variables": { "word": "hello" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Loop begins. <var>char</var> is assigned the first character: <code>\"h\"</code>.", "variables": { "word": "hello", "char": "h" } },
     { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is <code>\"h\"</code> in <code>\"aeiouAEIOU\"</code>? <code>false</code>.", "variables": { "word": "hello", "char": "h" } },
     { "lines": "7", "range": { "text": "console.log(`${char} is a consonant`)" }, "description": "Execute else block. Log <code>\"h is a consonant\"</code> to console.", "variables": { "word": "hello", "char": "h" } },
-    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the second character: <code>\"e\"</code>.", "variables": { "word": "hello", "char": "e" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <var>char</var> is assigned the second character: <code>\"e\"</code>.", "variables": { "word": "hello", "char": "e" } },
     { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is <code>\"e\"</code> in <code>\"aeiouAEIOU\"</code>? <code>true</code>.", "variables": { "word": "hello", "char": "e" } },
     { "lines": "5", "range": { "text": "console.log(`${char} is a vowel`)" }, "description": "Execute if block. Log <code>\"e is a vowel\"</code> to console.", "variables": { "word": "hello", "char": "e" } },
-    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the third character: <code>\"l\"</code>.", "variables": { "word": "hello", "char": "l" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <var>char</var> is assigned the third character: <code>\"l\"</code>.", "variables": { "word": "hello", "char": "l" } },
     { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is <code>\"l\"</code> in <code>\"aeiouAEIOU\"</code>? <code>false</code>.", "variables": { "word": "hello", "char": "l" } },
     { "lines": "7", "range": { "text": "console.log(`${char} is a consonant`)" }, "description": "Execute else block. Log <code>\"l is a consonant\"</code> to console.", "variables": { "word": "hello", "char": "l" } },
-    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the fourth character: <code>\"l\"</code>.", "variables": { "word": "hello", "char": "l" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <var>char</var> is assigned the fourth character: <code>\"l\"</code>.", "variables": { "word": "hello", "char": "l" } },
     { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is <code>\"l\"</code> in <code>\"aeiouAEIOU\"</code>? <code>false</code>.", "variables": { "word": "hello", "char": "l" } },
     { "lines": "7", "range": { "text": "console.log(`${char} is a consonant`)" }, "description": "Execute else block. Log <code>\"l is a consonant\"</code> to console.", "variables": { "word": "hello", "char": "l" } },
-    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <code>char</code> is assigned the fifth character: <code>\"o\"</code>.", "variables": { "word": "hello", "char": "o" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "Next iteration. <var>char</var> is assigned the fifth character: <code>\"o\"</code>.", "variables": { "word": "hello", "char": "o" } },
     { "lines": "4", "range": { "text": "'aeiouAEIOU'.includes(char)" }, "description": "Check condition: Is <code>\"o\"</code> in <code>\"aeiouAEIOU\"</code>? <code>true</code>.", "variables": { "word": "hello", "char": "o" } },
     { "lines": "5", "range": { "text": "console.log(`${char} is a vowel`)" }, "description": "Execute if block. Log <code>\"o is a vowel\"</code> to console.", "variables": { "word": "hello", "char": "o" } },
-    { "lines": "3", "range": { "text": "const char of word" }, "description": "No more characters in <code>word</code>. The loop finishes.", "variables": { "word": "hello" } },
+    { "lines": "3", "range": { "text": "const char of word" }, "description": "No more characters in <var>word</var>. The loop finishes.", "variables": { "word": "hello" } },
     { "lines": "8", "description": "Execution continues after the loop." }
 ]
             </script>
             <div slot="summary">
                 <h3>Key Points:</h3>
                 <ul>
-                    <li><strong>Strings are iterable</strong>: <code>for..of</code> works on strings just like it does on arrays</li>
+                    <li><strong>Strings are iterable</strong>: <code>for..of</code> works on strings just like it does
+                        on arrays</li>
                     <li><strong>Each character is processed</strong>: you get one character per iteration</li>
                     <li><strong>Order is preserved</strong>: always iterates from the first character to the last</li>
                 </ul>
@@ -328,8 +375,7 @@ for (const char of word) {
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 </body>

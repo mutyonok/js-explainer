@@ -4,7 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array Map - JS Concept Explainer</title>
+    <title>JavaScript Array.map(), Step by Step | JS Concept Explainer</title>
+    <meta name="description"
+        content="Learn JavaScript Array.map() step by step: transform arrays into new arrays with callbacks, understand return values, and practice common mapping patterns.">
+    <link rel="canonical" href="array-map.html">
+
+    <meta property="og:site_name" content="JS Concept Explainer">
+    <meta property="og:title" content="JavaScript Array.map(), Step by Step">
+    <meta property="og:description"
+        content="Transform arrays into new arrays with Array.map(), including explicit vs implicit returns and practical examples.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mutyonok.github.io/js-explainer/array-map.html">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JavaScript Array.map(), Step by Step">
+    <meta name="twitter:description"
+        content="Transform arrays into new arrays with Array.map(), including explicit vs implicit returns and practical examples.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -27,6 +42,17 @@
     <script src="js/theme/theme-init.js"></script>
     <script type="module" src="js/theme/theme.js"></script>
     <script type="module" src="js/components/code-explainer.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "JavaScript Array.map(), Step by Step",
+      "description": "Learn JavaScript Array.map() step by step: transform arrays into new arrays with callbacks, understand return values, and practice common mapping patterns.",
+      "articleSection": "Programming",
+      "keywords": "JavaScript, Array, Map"
+    }
+    </script>
 </head>
 
 <body>
@@ -51,7 +77,7 @@
             <p slot="description">
                 You can use map to transform an array of strings to array of their lengths. Note the
                 explicit <code>return</code> inside the <code>map()</code> callback function.
-                In this example, we create a new array called <code>lengths</code> that contains the length of each
+                In this example, we create a new array called <var>lengths</var> that contains the length of each
                 string in the original array.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const strings = ["apple", "banana", "cherry"];
@@ -62,13 +88,13 @@ const lengths = strings.map((str) => {
 [
   { "lines": "1", "variables": {}, "description": "Define source array." },
   { "lines": "2", "variables": { "strings": ["apple","banana","cherry"] }, "description": "Call <code>map()</code>. <code>map()</code> creates a new array and fills it with values returned from the callback function." },
-  { "lines": "2", "range": { "text": "str" }, "variables": { "str": "apple" }, "description": "First iteration. Callback function is called with first element of the array. <code>str</code> is <code>\"apple\"</code>." },
+  { "lines": "2", "range": { "text": "str" }, "variables": { "str": "apple" }, "description": "First iteration. Callback function is called with first element of the array. <var>str</var> is <code>\"apple\"</code>." },
   { "lines": "3", "variables": { "lengths": [5] }, "description": "Return length (<code>5</code>). <code>5</code> is pushed to the new array." },
-  { "lines": "2", "range": { "text": "str" }, "variables": { "str": "banana" }, "description": "Second iteration. <code>str</code> is <code>\"banana\"</code>." },
+  { "lines": "2", "range": { "text": "str" }, "variables": { "str": "banana" }, "description": "Second iteration. <var>str</var> is <code>\"banana\"</code>." },
   { "lines": "3", "variables": { "lengths": [5,6] }, "description": "Return length (<code>6</code>). <code>6</code> is pushed to the new array." },
-  { "lines": "2", "range": { "text": "str" }, "variables": { "str": "cherry" }, "description": "Third iteration. <code>str</code> is <code>\"cherry\"</code>." },
+  { "lines": "2", "range": { "text": "str" }, "variables": { "str": "cherry" }, "description": "Third iteration. <var>str</var> is <code>\"cherry\"</code>." },
   { "lines": "3", "variables": { "lengths": [5,6,6] }, "description": "Return length (<code>6</code>). <code>6</code> is pushed to the new array." },
-  { "lines": "2", "variables": { "lengths": [5,6,6] }, "description": "<code>map</code> finishes and returns new array. We save it in variable <code>lengths</code>." }
+  { "lines": "2", "variables": { "lengths": [5,6,6] }, "description": "<code>map</code> finishes and returns new array. We save it in variable <var>lengths</var>." }
 ]
         </script>
             <div slot="summary">
@@ -87,7 +113,7 @@ const lengths = strings.map((str) => {
                 Callback function can be an <b>arrow function with an implicit return</b>.
                 Implicit return is a short syntax where the result of the expression is automatically returned without
                 using the <code>return</code> keyword or curly braces.<br>
-                In this example, we create a new array called <code>greetings</code> that contains the greetings for
+                In this example, we create a new array called <var>greetings</var> that contains the greetings for
                 each student in the original array.
             </p>
             <pre slot="code" class="line-numbers"><code class="language-javascript">const students = [
@@ -99,9 +125,9 @@ const greetings = students.map(student => `hello, ${student.name}!`);</code></pr
 [
   { "lines": "1-4", "variables": {}, "description": "Define source array of student objects." },
   { "lines": "5", "variables": { "students": [{"name":"Alice","age":20},{"name":"Bob","age":22}] }, "description": "Call <code>map()</code> with an arrow function. We use implicit return here." },
-  { "lines": "5", "range": { "text": "student" }, "variables": { "student": {"name":"Alice","age":20} }, "description": "First iteration. Callback function is called with first element of the array. <code>student</code> is the first object. Implicit return means we don't use <code>return</code> keyword and curly braces <code>{}</code>." },
+  { "lines": "5", "range": { "text": "student" }, "variables": { "student": {"name":"Alice","age":20} }, "description": "First iteration. Callback function is called with first element of the array. <var>student</var> is the first object. Implicit return means we don't use <code>return</code> keyword and curly braces <code>{}</code>." },
   { "lines": "5", "range": { "text": "`hello, ${student.name}!`" }, "variables": { "greetings": ["hello, Alice!"], "student": {"name":"Alice","age":20} }, "description": "The expression after <code>=&gt;</code> is automatically returned. Its value is <code>\"hello, Alice!\"</code> and it is pushed to the new array." },
-  { "lines": "5", "range": { "text": "student" }, "variables": { "greetings": ["hello, Alice!","hello, Bob!"], "student": {"name":"Bob","age":22} }, "description": "Second iteration. <code>student</code> is the second object. Implicit return is used when the function body is a single expression." },
+  { "lines": "5", "range": { "text": "student" }, "variables": { "greetings": ["hello, Alice!","hello, Bob!"], "student": {"name":"Bob","age":22} }, "description": "Second iteration. <var>student</var> is the second object. Implicit return is used when the function body is a single expression." },
   { "lines": "5", "variables": { "greetings": ["hello, Alice!","hello, Bob!"] }, "description": "<code>map</code> finishes. Implicit return is cleaner but only works for single-line expressions. If you need multiple statements, you must use curly braces <code>{}</code> and an explicit <code>return</code>." }
 ]
         </script>
@@ -136,14 +162,14 @@ const titles = songs.map((song) => {
 [
   { "lines": "1", "variables": {}, "description": "Define source array of song strings." },
   { "lines": "2", "variables": { "songs": ["Daft Punk - One More Time","Justice - Genesis"] }, "description": "Call <code>map()</code>. We will iterate through each song string." },
-  { "lines": "2", "range": { "text": "song" }, "variables": { "song": "Daft Punk - One More Time" }, "description": "First iteration. <code>song</code> is the first string." },
-  { "lines": "3", "variables": { "song": "Daft Punk - One More Time", "artistAndTitle": ["Daft Punk","One More Time"] }, "description": "Split the string by <code>\" - \"</code>. <code>artistAndTitle</code> is now an array with two elements: <code>\"Daft Punk\"</code> and <code>\"One More Time\"</code>." },
-  { "lines": "4", "variables": { "song": "Daft Punk - One More Time", "artistAndTitle": ["Daft Punk","One More Time"], "title": "One More Time" }, "description": "Assign the second element to variable <code>title</code>. <code>title</code> is now <code>\"One More Time\"</code>." },
-  { "lines": "5", "variables": { "song": "Daft Punk - One More Time", "artistAndTitle": ["Daft Punk","One More Time"], "title": "One More Time" }, "description": "Return <code>title</code>. <code>\"One More Time\"</code> is pushed to the new array." },
-  { "lines": "2", "range": { "text": "song" }, "variables": { "song": "Justice - Genesis" }, "description": "Second iteration. <code>song</code> is the second string." },
-  { "lines": "3", "variables": { "song": "Justice - Genesis", "artistAndTitle": ["Justice","Genesis"] }, "description": "Split the string by <code>\" - \"</code>. <code>artistAndTitle</code> is now <code>[\"Justice\", \"Genesis\"]</code>." },
-  { "lines": "4", "variables": { "song": "Justice - Genesis", "artistAndTitle": ["Justice","Genesis"], "title": "Genesis" }, "description": "Assign the second element to variable <code>title</code>. <code>title</code> is now <code>\"Genesis\"</code>." },
-  { "lines": "5", "variables": { "song": "Justice - Genesis", "artistAndTitle": ["Justice","Genesis"], "title": "Genesis" }, "description": "Return <code>title</code>. <code>\"Genesis\"</code> is pushed to the new array." },
+  { "lines": "2", "range": { "text": "song" }, "variables": { "song": "Daft Punk - One More Time" }, "description": "First iteration. <var>song</var> is the first string." },
+  { "lines": "3", "variables": { "song": "Daft Punk - One More Time", "artistAndTitle": ["Daft Punk","One More Time"] }, "description": "Split the string by <code>\" - \"</code>. <var>artistAndTitle</var> is now an array with two elements: <code>\"Daft Punk\"</code> and <code>\"One More Time\"</code>." },
+  { "lines": "4", "variables": { "song": "Daft Punk - One More Time", "artistAndTitle": ["Daft Punk","One More Time"], "title": "One More Time" }, "description": "Assign the second element to variable <var>title</var>. <var>title</var> is now <code>\"One More Time\"</code>." },
+  { "lines": "5", "variables": { "song": "Daft Punk - One More Time", "artistAndTitle": ["Daft Punk","One More Time"], "title": "One More Time" }, "description": "Return <var>title</var>. <code>\"One More Time\"</code> is pushed to the new array." },
+  { "lines": "2", "range": { "text": "song" }, "variables": { "song": "Justice - Genesis" }, "description": "Second iteration. <var>song</var> is the second string." },
+  { "lines": "3", "variables": { "song": "Justice - Genesis", "artistAndTitle": ["Justice","Genesis"] }, "description": "Split the string by <code>\" - \"</code>. <var>artistAndTitle</var> is now <code>[\"Justice\", \"Genesis\"]</code>." },
+  { "lines": "4", "variables": { "song": "Justice - Genesis", "artistAndTitle": ["Justice","Genesis"], "title": "Genesis" }, "description": "Assign the second element to variable <var>title</var>. <var>title</var> is now <code>\"Genesis\"</code>." },
+  { "lines": "5", "variables": { "song": "Justice - Genesis", "artistAndTitle": ["Justice","Genesis"], "title": "Genesis" }, "description": "Return <var>title</var>. <code>\"Genesis\"</code> is pushed to the new array." },
   { "lines": "2", "variables": { "titles": ["One More Time","Genesis"] }, "description": "<code>map</code> finishes and returns the new array of titles." }
 ]
         </script>
@@ -168,8 +194,7 @@ const titles = songs.map((song) => {
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 </body>
