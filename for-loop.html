@@ -20,12 +20,9 @@
     <meta name="twitter:title" content="JavaScript for Loops, Step by Step">
     <meta name="twitter:description"
         content="Classic for loops, loops over arrays/strings, and beginner-friendly loop patterns explained step by step.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="assets/fonts/GeistMono-Variable.woff2" as="font" type="font/woff2">
 
     <!-- Prism CSS -->
     <link id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
@@ -165,7 +162,8 @@ for (let i = 0; i < names.length; i++) {
                     <li><strong>Use <code>i &lt; array.length</code> for the condition</strong>: the loop runs exactly
                         once for every element in the array</li>
                     <li><strong>Access elements with index</strong>: <code>names[i]</code> gets the element at position
-                        <var>i</var></li>
+                        <var>i</var>
+                    </li>
                     <li><strong>Index matches array position</strong>: the first element is at index 0, second at index
                         1, and so on</li>
                 </ul>
@@ -258,7 +256,8 @@ for (let i = items.length - 1; i >= 0; i--) {
                     <li><strong>Start from the last index</strong>: use <code>array.length - 1</code> to begin at the
                         end of the array</li>
                     <li><strong>Decrement instead of increment</strong>: use <code>i--</code> to count backwards.
-                        <code>i--</code> means <code>i = i - 1</code></li>
+                        <code>i--</code> means <code>i = i - 1</code>
+                    </li>
                     <li><strong>Condition checks for >= 0</strong>: the loop continues until it reaches and processes
                         the first element - element with index 0</li>
                 </ul>

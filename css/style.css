@@ -1,3 +1,35 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('../assets/fonts/Geist-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url('../assets/fonts/Geist-VariableItalic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../assets/fonts/GeistMono-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../assets/fonts/GeistMono-VariableItalic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
 :root {
     /* Dark Theme (Default) */
     --bg-color: #0f172a;
@@ -133,7 +165,7 @@ select {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Geist', sans-serif;
     margin: 0;
     padding: 2rem;
     display: flex;
@@ -254,7 +286,7 @@ html.light-theme .theme-toggle .icon-moon {
 pre[class*="language-"],
 code[class*="language-"],
 code {
-    font-family: 'IBM Plex Mono', monospace !important;
+    font-family: 'Geist Mono', monospace !important;
     border-radius: 8px !important;
     border: 1px solid var(--prism-border);
     background: var(--prism-bg) !important;
@@ -350,7 +382,7 @@ code-explainer aside {
 }
 
 .variables-container {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Geist Mono', monospace;
     font-size: 0.9rem;
     margin: 0;
     border: 1px solid var(--border-subtle);
@@ -473,7 +505,7 @@ button:hover {
 }
 
 .summary-section code {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Geist Mono', monospace;
     background: var(--prism-bg);
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
@@ -484,7 +516,7 @@ button:hover {
 .step-description var,
 .example-card p var,
 .summary-section var {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Geist Mono', monospace;
     font-style: normal;
     background: var(--prism-bg);
     padding: 0.2rem 0.4rem;
