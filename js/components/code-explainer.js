@@ -62,7 +62,7 @@ class CodeExplainer extends HTMLElement {
                         </div>
                     </aside>
                 </div>
-                <p class="summary-section">${summary}</p>
+                <section class="summary-section">${summary}</section>
             </article>
         `;
 

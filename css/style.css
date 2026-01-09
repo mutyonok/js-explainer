@@ -69,8 +69,10 @@
     --btn-hover-text: white;
 
     /* Fixed height panel measurements */
-    --var-row-height: 2.2rem;       /* 0.9rem font × 1.5 line-height + 0.8rem padding */
-    --max-var-rows: 3;               /* default, overridden by JS */
+    /* 0.9rem font × 1.5 line-height + 0.8rem padding */
+    --var-row-height: 2.2rem;
+    /* default, overridden by JS */
+    --max-var-rows: 3;
 }
 
 html.light-theme {
@@ -128,6 +130,11 @@ html.light-theme {
 
 * {
     margin: 0;
+}
+
+ul,
+ol {
+    padding-inline-start: 1rem;
 }
 
 html,
@@ -346,14 +353,16 @@ code-explainer aside {
     padding: 0.75rem 1rem;
     color: var(--text-muted);
     line-height: 1.6;
-    /* Fixed height for 2 lines: (2 × 1.6rem line-height) + (2 × 0.75rem padding) */
-    height: calc(2 * 1.6rem + 2 * 0.75rem);
+    /* Fixed height for 3 lines: (3 × 1.6rem line-height) + (2 × 0.75rem padding) */
+    height: calc(3 * 1.6rem + 2 * 0.75rem);
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
+    /* Firefox */
+    scrollbar-width: none;
 }
 
 .step-description::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
+    /* Chrome, Safari, Edge */
+    display: none;
 }
 
 .step-description-placeholder {
@@ -392,11 +401,13 @@ code-explainer aside {
     /* Fixed height based on max variable rows */
     height: calc(var(--max-var-rows) * var(--var-row-height));
     /* Hide scrollbar but keep scroll functionality */
-    scrollbar-width: none; /* Firefox */
+    /* Firefox */
+    scrollbar-width: none;
 }
 
 .variables-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
+    /* Chrome, Safari, Edge */
+    display: none;
 }
 
 .empty-state {
@@ -560,9 +571,11 @@ mark.custom-highlight {
     .content-grid {
         grid-template-columns: 1fr;
     }
+
     .controls {
         justify-content: flex-start;
     }
+
     h1 {
         font-size: 2rem;
     }
