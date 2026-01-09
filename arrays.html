@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - JS Concept Explainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Prism CSS -->
+    <link id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/theme/theme-init.js"></script>
+    <script type="module" src="js/theme/theme.js"></script>
+    <script type="module" src="js/components/code-explainer.js"></script>
+</head>
+
+<body>
+    <main id="app">
+        <header class="app-header">
+            <div class="header-content">
+                <a href="index.html" class="back-link">&larr; Back to Concepts</a>
+                <h1>Arrays</h1>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" width="24" height="24">
+                    <use href="assets/moon.svg#icon-moon"></use>
+                </svg>
+                <svg class="icon-sun" width="24" height="24">
+                    <use href="assets/sun.svg#icon-sun"></use>
+                </svg>
+            </button>
+        </header>
+
+        <code-explainer id="example-arrays-array-literals">
+            <h2 slot="title">Creating arrays: array literals</h2>
+            <p slot="description">
+                <strong>Array</strong> is a list of values in a specific order.<br>
+                We usually use arrays to store many items of the <strong>same type</strong> (for example, a list of
+                student names, or a list of prices). JavaScript allows mixed types, but it's discouraged.<br>
+                Create an array with an <strong>array literal</strong>: square brackets
+                <code>[]</code>. Values inside the brackets are called <strong>elements</strong>, separated by commas.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const shoppingList = [];
+
+const scores = [88, 92, 76, 100];
+
+const myCar = 'Mazda';
+const dadsCar = 'Toyota';
+const cars = [myCar, dadsCar];</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "range": { "text": "[]" }, "variables": { "shoppingList": [] }, "description": "Create an empty array using <code>[]</code>. This is useful when you want a list to fill later (for example, add shopping items one by one)." },
+    { "lines": "3", "range": { "text": "[88, 92, 76, 100]" }, "variables": { "shoppingList": [], "scores": [88, 92, 76, 100] }, "description": "Create an array with 4 elements. Here every element is a number (scores), which is the most common way to use arrays: one type repeated in a list." },
+    { "lines": "5-6", "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota" }, "description": "You can also use existing variables when you create an array. Family cars are stored in variables <code>myCar</code> and <code>dadsCar</code>." },
+    { "lines": "7", "range": { "text": "[myCar, dadsCar]" }, "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota" }, "description": "JavaScript reads the values of <code>myCar</code> and <code>dadsCar</code> and puts them into the new array." },
+    { "lines": "7", "variables": { "shoppingList": [], "scores": [88, 92, 76, 100], "myCar": "Mazda", "dadsCar": "Toyota", "cars": ["Mazda", "Toyota"] }, "description": "Now <code>cars</code> is an array with two elements: <code>\"Mazda\"</code> and <code>\"Toyota\"</code>." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li>Create arrays with <code>[]</code> (array literal)</li>
+                    <li>Arrays are lists: elements stay in order</li>
+                    <li>Arrays usually store many values of the same type</li>
+                    <li>You can build an array from variables - the array stores their values</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-arrays-indexing-length">
+            <h2 slot="title">Accessing items: zero-based indexes and length</h2>
+            <p slot="description">
+                Each array item has a position number called an <strong>index</strong>.
+                JavaScript starts counting at <strong>0</strong>, so the first item is index 0.
+                You can also ask an array how many items it has with the <code>array.length</code> property.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const fruits = ['apple', 'banana', 'cherry', 'date'];
+const apple = fruits[0];
+const banana = fruits[1];
+
+console.log(fruits[4]); // undefined - last index is 3
+
+const fruitsAmount = fruits.length;
+
+const lastFruit = fruits[fruits.length - 1];</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "range": { "text": "['apple', 'banana', 'cherry', 'date']" }, "variables": { "fruits": ["apple", "banana", "cherry", "date"] }, "description": "Create a list of fruits so each item gets a position starting at index 0." },
+    { "lines": "2", "range": { "text": "fruits[0]" }, "variables": { "fruits": ["apple", "banana", "cherry", "date"], "apple": "apple" }, "description": "Grab the first item (string <code>apple</code>) using index <code>0</code> and store it in a variable." },
+    { "lines": "3", "range": { "text": "fruits[1]" }, "variables": { "fruits": ["apple", "banana", "cherry", "date"], "apple": "apple", "banana": "banana" }, "description": "Grab the second item (<code>banana</code>) using index <code>1</code>." },
+    { "lines": "5", "range": { "text": "fruits[4]" }, "variables": { "fruits": ["apple", "banana", "cherry", "date"], "apple": "apple", "banana": "banana" }, "description": "Ask for an index that does not exist, and the result is <code>undefined</code>." },
+    { "lines": "7", "range": { "text": "fruits.length" }, "variables": { "fruits": ["apple", "banana", "cherry", "date"], "apple": "apple", "banana": "banana", "fruitsAmount": 4 }, "description": "Use <code>array.length</code> to count how many items are in the array." },
+    { "lines": "9", "range": { "text": "fruits[fruits.length - 1]" }, "variables": { "fruits": ["apple", "banana", "cherry", "date"], "apple": "apple", "banana": "banana", "fruitsAmount": 4, "lastFruit": "date" }, "description": "Last item <strong>always</strong> has the index <code>array.length - 1</code>." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Zero-based</strong> The first item is index 0, not 1</li>
+                    <li><strong>Missing index</strong> Out-of-range access gives <code>undefined</code></li>
+                    <li><strong>Length</strong> <code>array.length</code> tells you how many items exist</li>
+                    <li><strong>Common use case:</strong> Get the last item with <code>array[array.length - 1]</code>
+                    </li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-arrays-modifying-elements">
+            <h2 slot="title">Changing items: modify array elements</h2>
+            <p slot="description">
+                Arrays are <strong>mutable</strong>, which means you can change existing elements.
+                Use square brackets with an index to replace a value or update it based on the current one.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const scores = [85, 90, 78];
+scores[1] = 95;
+
+scores[0] = scores[0] + 5;
+scores[2] -= 8;</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "range": { "text": "[85, 90, 78]" }, "variables": { "scores": [85, 90, 78] }, "description": "Create a list of test scores so each item can be updated later." },
+    { "lines": "2", "range": { "text": "scores[1] = 95" }, "variables": { "scores": [85, 95, 78] }, "description": "Replace the second score: index 1, value <code>90</code> with a new value <code>95</code>." },
+    { "lines": "4", "variables": { "scores": [90, 95, 78] }, "description": "What if you want to increase the first score by 5? You need to read its current value first, increase it and then write it back." },
+    { "lines": "4", "range": { "text": "scores[0]" }, "variables": { "scores": [90, 95, 78] }, "description": "Read the current value of the first score - <code>85</code>." },
+    { "lines": "4", "range": { "text": "scores[0] + 5" }, "variables": { "scores": [90, 95, 78] }, "description": "Increase the first score by 5: <code>85 + 5 = 90</code>." },
+    { "lines": "5", "variables": { "scores": [90, 95, 70] }, "description": "Decrease the last score by 8 using a shorthand update. Same as <code>scores[2] = scores[2] - 8</code>." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Mutable</strong> You can change array elements after creation</li>
+                    <li><strong>Replace value</strong> Assign a new value with <code>array[index] = ...</code></li>
+                    <li><strong>Update from current</strong> Read the current value, adjust it, then write it back. Or
+                        use shorthand operators like <code>+=</code> or <code>-=</code></li>
+                    <li><strong>Common use case</strong> Apply adjustments like +5 or -8 to scores</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-arrays-adding-elements-push">
+            <h2 slot="title">Adding items: to the end, or to the beginning</h2>
+            <p slot="description">
+                Use <code>push()</code> to add a new item to the <strong>end</strong> of an array.
+                This is perfect for growing a list as new data arrives.<br>
+                Use <code>unshift()</code> to add a new item to the <strong>beginning</strong> of an array.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const todoList = [];
+todoList.push('Buy milk');
+todoList.push('Walk dog', 'Homework');
+
+const emergencyTask = 'Call doctor';
+todoList.unshift(emergencyTask);
+
+const evenNumbers = [];
+for (let i = 0; i <= 4; i += 2) {
+    evenNumbers.push(i);
+}</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "range": { "text": "[]" }, "variables": { "todoList": [] }, "description": "Start with an empty list. We will add items to it later." },
+    { "lines": "2", "variables": { "todoList": ["Buy milk"] }, "description": "Add the first task. <code>todoList</code> now has one element." },
+    { "lines": "3", "variables": { "todoList": ["Buy milk", "Walk dog", "Homework"] }, "description": "We can use <code>push</code> to add multiple items at once. Here we add two more items; they go after the first one. Now array has three elements." },
+
+    { "lines": "5", "variables": { "todoList": ["Buy milk", "Walk dog", "Homework"], "emergencyTask": "Call doctor" }, "description": "Add an emergency task to the beginning of the list using <code>unshift()</code>." },
+    { "lines": "6", "variables": { "todoList": ["Call doctor", "Buy milk", "Walk dog", "Homework"], "emergencyTask": "Call doctor" }, "description": "Now <code>todoList</code> has four elements. <code>unshift()</code> adds items to the beginning." },
+
+    { "lines": "7", "variables": { "evenNumbers": [] }, "description": "<strong>Task:</strong> Create array of even numbers from 0 to 4.<br> <strong>Idea:</strong> Start with empty array and add numbers one by one in a loop." },
+    { "lines": "8", "variables": { "evenNumbers": [], "i": 0 }, "description": "Start loop from 0. Loop until 4. Increase <code>i</code> by 2 on each iteration. This way we will get even numbers from 0 to 4." },
+    { "lines": "9", "range": { "text": "evenNumbers.push(i)" }, "variables": { "evenNumbers": [0], "i": 0 }, "description": "Current event number is 0. Push it to array." },
+    
+    { "lines": "8", "range": { "text": "i += 2" }, "variables": { "evenNumbers": [0], "i": 2 }, "description": "Increase <code>i</code> by 2. Next event number is 2." },
+    { "lines": "9", "variables": { "evenNumbers": [0, 2], "i": 2 }, "description": "Push adds <code>2</code> to the end of an array." },
+
+    { "lines": "8", "range": { "text": "i += 2" }, "variables": { "evenNumbers": [0, 2], "i": 4 }, "description": "Increase <code>i</code> by 2. Next event number is 4." },
+    { "lines": "9", "range": { "text": "evenNumbers.push(i)" }, "variables": { "evenNumbers": [0, 2, 4], "i": 4 }, "description": "Push adds <code>4</code> to the end of an array." },
+
+    { "lines": "8", "range": { "text": "i <= 4" }, "variables": { "evenNumbers": [0, 2, 4], "i": 6 }, "description": "Increase <code>i</code> by 2. Next event number is 6. But now <code>i &lt;= 4</code> is false, so loop stops." },
+    
+    { "lines": "10", "variables": { "evenNumbers": [0, 2, 4] }, "description": "Array is now filled with even numbers from 0 to 4." }
+    
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Push</strong> Adds a value to the end of an array</li>
+                    <li><strong>Unshift</strong> Adds a value to the beginning of an array</li>
+                    <li><strong>Loop fill</strong> Combine <code>push</code> with loops to build arrays</li>
+                    <li><strong>Changes original array</strong> These methods modify the array they are called on</li>
+                    <li><strong>Common use case:</strong> Fill array gradually in the loop</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+        <code-explainer id="example-arrays-removing-elements-pop-shift">
+            <h2 slot="title">Removing items: from the end or from the beginning</h2>
+            <p slot="description">
+                Use <code>pop()</code> to remove the <strong>last</strong> item and <code>shift()</code> to remove the
+                <strong>first</strong> item. Both methods also return the removed value, so you can store it in a
+                variable and use it later.
+            </p>
+            <pre slot="code" class="line-numbers"><code class="language-javascript">const watchList = ['Avatar', 'Matrix', 'Titanic'];
+const lastMovie = watchList.pop();
+
+const tasks = ["Call doctor", "Walk dog", "Homework"];
+const firstTask = tasks.shift();
+
+const empty = [];
+console.log(empty.pop()); // undefined
+</code></pre>
+            <script type="application/json">
+[
+    { "lines": "1", "variables": { "watchList": ["Avatar", "Matrix", "Titanic"] }, "description": "Our watch list has three movies. We always want to watch the last added movie first." },
+    { "lines": "2", "range": { "text": "watchList.pop()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic" }, "description": "Remove the last element from array and store it in <code>lastMovie</code>." },
+    { "lines": "4", "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Call doctor", "Walk dog", "Homework"] }, "description": "When we have a task list, we always want to do the first added task first." },
+    { "lines": "5", "range": { "text": "tasks.shift()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Walk dog", "Homework"], "firstTask": "Call doctor" }, "description": "Remove the first element from array and store it in <code>firstTask</code>." },
+    { "lines": "7", "range": { "text": "const empty = []" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Walk dog", "Homework"], "firstTask": "Call doctor", "empty": [] }, "description": "What happens if we try to remove elements from empty array?" },
+    { "lines": "8", "range": { "text": "empty.pop()" }, "variables": { "watchList": ["Avatar", "Matrix"], "lastMovie": "Titanic", "tasks": ["Walk dog", "Homework"], "firstTask": "Call doctor", "empty": [] }, "description": "Using <code>pop()</code> on an empty array gives <code>undefined</code>. Same for <code>shift()</code>." }
+]
+            </script>
+            <div slot="summary">
+                <h3>Key Points:</h3>
+                <ul>
+                    <li><strong>Pop</strong> Removes the last item and returns it</li>
+                    <li><strong>Shift</strong> Removes the first item and returns it</li>
+                    <li><strong>Empty arrays</strong> Removing from an empty array gives <code>undefined</code></li>
+                    <li><strong>Changes original array</strong> These methods modify the array they are called on</li>
+                    <li><strong>Common use case</strong> Take the next or last item from a queue or stack</li>
+                </ul>
+            </div>
+        </code-explainer>
+
+    </main>
+
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/keep-markup/prism-keep-markup.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
+</body>
+
+</html>
