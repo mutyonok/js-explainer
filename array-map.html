@@ -72,7 +72,7 @@
             </button>
         </header>
 
-        <code-explainer id="example-array-map">
+        <code-explainer id="example-array-map" style="--max-var-rows: 1;">
             <h2 slot="title">Array Map</h2>
             <p slot="description">
                 You can use map to transform an array of strings to array of their lengths. Note the
@@ -107,7 +107,7 @@ const lengths = strings.map((str) => {
             </div>
         </code-explainer>
 
-        <code-explainer id="example-array-map-students">
+        <code-explainer id="example-array-map-students" style="--max-var-rows: 2;">
             <h2 slot="title">Array Map: Implicit Return</h2>
             <p slot="description">
                 Callback function can be an <b>arrow function with an implicit return</b>.
@@ -143,7 +143,7 @@ const greetings = students.map(student => `hello, ${student.name}!`);</code></pr
         </code-explainer>
 
 
-        <code-explainer id="example-array-map-songs">
+        <code-explainer id="example-array-map-songs" style="--max-var-rows: 3;">
             <h2 slot="title">Array Map: Song Titles</h2>
             <p slot="description">
                 Callback function can be a regular function with multiple statements.<br>

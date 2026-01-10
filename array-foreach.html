@@ -72,7 +72,7 @@
             </button>
         </header>
 
-        <code-explainer id="example-foreach-basic">
+        <code-explainer id="example-foreach-basic" style="--max-var-rows: 1;">
             <h2 slot="title">Basic <code>forEach</code> with Even/Odd Check</h2>
             <p slot="description">
                 The <code>forEach</code> method executes a callback function once for each array element - from first to
@@ -118,7 +118,7 @@ numbers.forEach((num) => {
             </div>
         </code-explainer>
 
-        <code-explainer id="example-foreach-objects">
+        <code-explainer id="example-foreach-objects" style="--max-var-rows: 1;">
             <h2 slot="title"><code>forEach</code> with Array of Objects</h2>
             <p slot="description">
                 <code>forEach</code> works on arrays of any type of elements: numbers, strings, objects, etc. It always
@@ -151,7 +151,7 @@ students.forEach((student) => {
             </div>
         </code-explainer>
 
-        <code-explainer id="example-foreach-sum">
+        <code-explainer id="example-foreach-sum" style="--max-var-rows: 2;">
             <h2 slot="title"><code>forEach</code> to Calculate a Sum</h2>
             <p slot="description">
                 We can read and modify variables declared outside the callback function.
@@ -191,7 +191,7 @@ console.log(total);</code></pre>
             </div>
         </code-explainer>
 
-        <code-explainer id="example-foreach-index">
+        <code-explainer id="example-foreach-index" style="--max-var-rows: 2;">
             <h2 slot="title"><code>forEach</code> with Index Parameter</h2>
             <p slot="description">
                 The callback function can receive a second parameter: the index of the current element in the array.
@@ -224,7 +224,7 @@ tasks.forEach((task, index) => {
             </div>
         </code-explainer>
 
-        <code-explainer id="example-foreach-vs-forof">
+        <code-explainer id="example-foreach-vs-forof" style="--max-var-rows: 2;">
             <h2 slot="title">Comparison: <code>forEach</code> vs <code>for..of</code></h2>
             <p slot="description">
                 Both <code>forEach</code> and <code>for..of</code> iterate through arrays in the same way: from first to

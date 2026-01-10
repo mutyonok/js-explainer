@@ -72,7 +72,7 @@
             </button>
         </header>
 
-        <code-explainer id="example-filter-even">
+        <code-explainer id="example-filter-even" style="--max-var-rows: 1;">
             <h2 slot="title">Keep Even Numbers</h2>
             <p slot="description">
                 The <code>filter()</code> method creates a new array containing only the elements that pass a test.
@@ -117,7 +117,7 @@ const evens = numbers.filter((num) => {
             </div>
         </code-explainer>
 
-        <code-explainer id="example-filter-words">
+        <code-explainer id="example-filter-words" style="--max-var-rows: 2;">
             <h2 slot="title">Filter Words by Length</h2>
             <p slot="description">
                 We use <code>filter()</code> to keep only words that are longer than 3 characters.
@@ -155,7 +155,7 @@ const longWords = words.filter((word) => {
             </div>
         </code-explainer>
 
-        <code-explainer id="example-filter-adults">
+        <code-explainer id="example-filter-adults" style="--max-var-rows: 1;">
             <h2 slot="title">Filter Adults (Implicit Return)</h2>
             <p slot="description">
                 We filter an array of person objects to find only adults (age 18 or older).
@@ -192,7 +192,7 @@ const adults = people.filter(person => person.age >= 18);</code></pre>
             </div>
         </code-explainer>
 
-        <code-explainer id="example-filter-falsy">
+        <code-explainer id="example-filter-falsy" style="--max-var-rows: 1;">
             <h2 slot="title">Remove Empty Values</h2>
             <p slot="description">
                 Arrays sometimes contain empty or missing values like <code>""</code> (empty string) or
@@ -233,7 +233,7 @@ const cleaned = data.filter((item) => {
             </div>
         </code-explainer>
 
-        <code-explainer id="example-filter-multiple">
+        <code-explainer id="example-filter-multiple" style="--max-var-rows: 1;">
             <h2 slot="title">Filter with Multiple Conditions</h2>
             <p slot="description">
                 Sometimes you need to check multiple conditions at once. We use the <code>&&</code> (AND) operator
